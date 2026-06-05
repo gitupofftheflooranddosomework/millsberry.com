@@ -780,10 +780,59 @@ function findRoute(url) {
   if (url.search) return null;
   const pathOnly = pathFallbackIndex.get(canonicalPath(url.pathname));
   if (pathOnly) return preferActivePageEntry(pathOnly, url.pathname);
+  const variantPaths = commonPathVariants(url.pathname);
+  for (const variant of variantPaths) {
+    const candidate = pathFallbackIndex.get(variant);
+    if (candidate) return preferActivePageEntry(candidate, variant);
+  }
   if (url.pathname === "/") {
     return preferActivePageEntry(pathFallbackIndex.get("/gamepages/") || pathFallbackIndex.get("/gamepages/games_list.phtml"), "/");
   }
   return null;
+}
+
+function commonPathVariants(pathname = "") {
+  const base = canonicalPath(pathname);
+  const variants = new Set();
+  variants.add(base);
+
+  if (!base.endsWith(".phtml") && !base.endsWith(".html")) {
+    variants.add(`${base}.phtml`);
+    variants.add(`${base}.html`);
+  }
+
+  if (!base.endsWith("/")) {
+    variants.add(`${base}/`);
+    variants.add(`${base}/index.phtml`);
+    variants.add(`${base}/index.html`);
+  } else {
+    variants.add(`${base}index.phtml`);
+    variants.add(`${base}index.html`);
+  }
+
+  if (/\/(index\.(phtml|html))$/i.test(base)) {
+    variants.add(base.replace(/\/(index\.(phtml|html))$/i, "/"));
+  }
+
+  return [...variants].filter(Boolean);
+}
+
+function commonPathAlias(pathname = "") {
+  const normalized = canonicalPath(pathname);
+  const map = new Map([
+    ["/communitycenter", "/communitycenter/"],
+    ["/academy", "/academy/"],
+    ["/bank", "/bank/"],
+    ["/home", "/home/"],
+    ["/farm", "/farm/"],
+    ["/post_office", "/post_office/index.phtml"],
+    ["/colhurst", "/colhurst/index.phtml"],
+    ["/complex/arcade", "/complex/arcade.phtml"],
+    ["/gamepages/games_list", "/gamepages/games_list.phtml"],
+    ["/gamepages/hiscores", "/gamepages/hiscores.phtml"],
+    ["/site_search", "/site_search.phtml"]
+  ]);
+  return map.get(normalized) || "";
 }
 
 function findAsset(url) {
@@ -1221,6 +1270,45 @@ function sendEmptyCss(req, url, res) {
     "X-Replay-Fallback": "missing-official-css"
   });
   res.end("/* Missing official CSS; replay fallback. */\n");
+}
+
+function sendLegacyJsFallback(req, url, res) {
+  recordMissing(req, url, "js-fallback");
+  res.writeHead(200, {
+    "Content-Type": "application/javascript; charset=utf-8",
+    "Cache-Control": "no-store",
+    "X-Replay-Fallback": "missing-official-js"
+  });
+  res.end(`/* Missing official JS; replay compatibility fallback. */
+window.openWin = window.openWin || function(page, winWidth, winHeight, showTools, winName) {
+  var name = winName || 'millsberry_replay_win';
+  var tools = showTools ? 'scrollbars=yes,resizable=yes' : 'scrollbars=no,resizable=no';
+  var features = 'width=' + (winWidth || 700) + ',height=' + (winHeight || 520) + ',' + tools;
+  return window.open(page, name, features);
+};
+
+window.addShortcut = window.addShortcut || function(toUrl, defaultTitle) {
+  var title = defaultTitle || toUrl || 'shortcut';
+  window.location = '/process_shortcut.phtml?action=add&url=' + encodeURIComponent(toUrl || '/') + '&name=' + encodeURIComponent(title);
+};
+
+window.flash_object = window.flash_object || function(src, width, height, flashvars) {
+  var html = '<object data="' + String(src || '') + '" type="application/x-shockwave-flash" width="' + String(width || 600) + '" height="' + String(height || 400) + '">' +
+    '<param name="movie" value="' + String(src || '') + '">' +
+    '<param name="flashvars" value="' + String(flashvars || '') + '">' +
+    '</object>';
+  document.write(html);
+};
+
+window.MM_reloadPage = window.MM_reloadPage || function() { return; };
+`);
+}
+
+function sendXmlFallback(req, url, res) {
+  recordMissing(req, url, "xml-fallback");
+  const pathname = canonicalPath(url.pathname);
+  const xml = `<?xml version="1.0" encoding="UTF-8"?><response success="1" path="${escapeXml(pathname)}">Recovered replay XML fallback</response>`;
+  return sendText(res, 200, xml, "application/xml; charset=utf-8");
 }
 
 function renderIndex(user, activeView = "routes") {
@@ -3142,6 +3230,11 @@ async function handleRequest(req, res) {
   const bodyParams = await requestParams(req);
   const user = accounts.userForRequest(req);
 
+  const alias = commonPathAlias(url.pathname);
+  if (alias) {
+    return sendRedirect(res, alias);
+  }
+
   const accountResponse = await handleAccountRequest(req, url, bodyParams, user, res);
   if (accountResponse !== false) return accountResponse;
 
@@ -3309,6 +3402,14 @@ async function handleRequest(req, res) {
 
   if (/\.css$/i.test(url.pathname)) {
     return sendEmptyCss(req, url, res);
+  }
+
+  if (/\.js$/i.test(url.pathname)) {
+    return sendLegacyJsFallback(req, url, res);
+  }
+
+  if (/\.xml$/i.test(url.pathname)) {
+    return sendXmlFallback(req, url, res);
   }
 
   if (/\.(gif|png|jpe?g|ico)$/i.test(url.pathname)) {
