@@ -1079,7 +1079,7 @@ function sendEmptyCss(req, url, res) {
   res.end("/* Missing official CSS; replay fallback. */\n");
 }
 
-function renderIndex(user) {
+function renderIndex(user, activeView = "routes") {
   const uniqueRoutes = [];
   const seen = new Set();
   for (const route of browsableRoutes) {
@@ -1087,8 +1087,12 @@ function renderIndex(user) {
     seen.add(route.route);
     uniqueRoutes.push(route);
   }
+
+  const recoveredSwfs = recoveredSwfEntries();
+  const isSwfView = activeView === "swfs";
   const quickLinks = [
     ["/arcade", "Recovered Arcade"],
+    ["/swfs", "Recovered SWFs"],
     ["/gamepages/games_list.phtml", "Games Listing"],
     ["/gamepages/hiscores.phtml", "Hi Scores"],
     ["/main_map.phtml", "Main Map"],
@@ -1103,6 +1107,30 @@ function renderIndex(user) {
     ["/__missing", "Missing Report"]
   ];
   const groups = routeGroups(uniqueRoutes);
+  const tabs = [
+    { href: "/", label: "Recovered Routes", active: !isSwfView },
+    { href: "/swfs", label: "Recovered SWFs", active: isSwfView }
+  ];
+  const listTitle = isSwfView ? "Recovered SWFs" : "Recovered Routes";
+  const listNote = isSwfView
+    ? "These are recovered SWF files and playable binaries. Search by filename, title, or path, then click through to open the file directly."
+    : "Recovered official pages, navigation, and SWF assets served locally.";
+  const filterPlaceholder = isSwfView
+    ? "Filter SWFs, e.g. g400_v14, interior_180, item_7018"
+    : "Filter routes, e.g. arcade, game_id=420, historical";
+  const resultsLabel = isSwfView ? "swf" : "route";
+  const rowCount = isSwfView ? recoveredSwfs.length : uniqueRoutes.length;
+  const listRows = isSwfView
+    ? recoveredSwfs.map((entry) => {
+      const search = entry.search;
+      return `<div class="route-row" data-route-row data-route="${escapeHtml(entry.path)}" data-timestamp="${escapeHtml(entry.timestamp)}" data-search="${escapeHtml(search)}"><a class="route-path" href="${escapeHtml(entry.href)}">${escapeHtml(entry.label)}</a><span class="route-meta">${escapeHtml(entry.kind)}${entry.timestamp ? ` · ${escapeHtml(entry.timestamp)}` : ""}</span></div>`;
+    }).join("")
+    : uniqueRoutes.map((route) => {
+      const search = `${route.route} ${route.original} ${route.timestamp}`.toLowerCase();
+      const href = route.route === "/" ? "/__official-root" : route.route;
+      return `<div class="route-row" data-route-row data-route="${escapeHtml(route.route)}" data-timestamp="${escapeHtml(route.timestamp)}" data-search="${escapeHtml(search)}"><a class="route-path" href="${escapeHtml(href)}">${escapeHtml(route.route)}</a><span class="route-meta">${escapeHtml(route.timestamp)}</span></div>`;
+    }).join("");
+
   return `<!doctype html>
 <html>
 <head>
@@ -1127,6 +1155,7 @@ function renderIndex(user) {
       <span class="pill">${routeIndex.size} exact routes</span>
       <span class="pill">${assetIndex.size} host assets</span>
       <span class="pill">${pagesByDigest.size} recovered page files</span>
+      <span class="pill">${recoveredSwfs.length} recovered SWFs</span>
       <span class="pill">${user ? `Signed in: ${escapeHtml(user.username)}` : "Guest session"}</span>
     </div>
     <div class="grid">
@@ -1137,34 +1166,34 @@ function renderIndex(user) {
         </div>
         ${user ? `<p class="note"><b>${escapeHtml(user.displayName)}</b><br>${Number(user.millsBucks || 0).toLocaleString("en-US")} Millsbucks</p>` : `<p class="note">Test account: <b>${escapeHtml(TEST_USERNAME)}</b> / <b>${escapeHtml(TEST_PASSWORD)}</b></p>`}
         <p class="note">Flash embeds are served and Ruffle is injected into recovered pages. Some original SWFs may still depend on old browser behavior or missing server APIs.</p>
-        <h2 class="section-title">Route Groups</h2>
+        ${isSwfView ? `<p class="note">The SWF tab is for direct file browsing. Playable binaries open through the recovered game files, while the rest are the archived assets that were found in the official mirrors.</p>` : `<h2 class="section-title">Route Groups</h2>
         <div class="group-list">
           ${groups.map((group) => `<button type="button" data-route-filter="${escapeHtml(group.filter)}"><span>${escapeHtml(group.label)}</span><b>${group.count}</b></button>`).join("")}
-        </div>
+        </div>`}
       </section>
       <section class="panel">
-        <h2>Recovered Routes</h2>
+        <nav class="map-tabs" aria-label="Recovered content tabs">
+          ${tabs.map((tab) => `<a href="${tab.href}" class="${tab.active ? "active" : ""}">${escapeHtml(tab.label)}</a>`).join("")}
+        </nav>
+        <h2>${escapeHtml(listTitle)}</h2>
+        <p class="note">${escapeHtml(listNote)}</p>
         <div class="filter-controls">
           <div class="filter">
-          <input data-filter type="search" placeholder="Filter routes, e.g. arcade, game_id=420, historical">
+          <input data-filter type="search" placeholder="${escapeHtml(filterPlaceholder)}">
           </div>
           <div class="sort-wrap">
             <label for="route-sort">Sort:</label>
             <select id="route-sort" data-sort>
-              <option value="route-asc">Route A-Z</option>
-              <option value="route-desc">Route Z-A</option>
+              <option value="route-asc">${isSwfView ? "SWF A-Z" : "Route A-Z"}</option>
+              <option value="route-desc">${isSwfView ? "SWF Z-A" : "Route Z-A"}</option>
               <option value="time-desc">Newest first</option>
               <option value="time-asc">Oldest first</option>
             </select>
-            <span class="note" data-results-count>${uniqueRoutes.length} routes</span>
+            <span class="note" data-results-count data-results-label="${resultsLabel}">${rowCount} ${resultsLabel}${rowCount === 1 ? "" : "s"}</span>
           </div>
         </div>
         <div class="route-list" data-route-list>
-          ${uniqueRoutes.map((route) => {
-            const search = `${route.route} ${route.original} ${route.timestamp}`.toLowerCase();
-            const href = route.route === "/" ? "/__official-root" : route.route;
-            return `<div class="route-row" data-route-row data-route="${escapeHtml(route.route)}" data-timestamp="${escapeHtml(route.timestamp)}" data-search="${escapeHtml(search)}"><a class="route-path" href="${escapeHtml(href)}">${escapeHtml(route.route)}</a><span class="route-meta">${escapeHtml(route.timestamp)}</span></div>`;
-          }).join("")}
+          ${listRows}
         </div>
       </section>
     </div>
@@ -1299,6 +1328,46 @@ function routeGroups(routes) {
       count: routes.filter((route) => route.route.startsWith(prefix)).length
     }))
     .filter((group) => group.count > 0);
+}
+
+function recoveredSwfEntries() {
+  const entries = [];
+  const seen = new Set();
+
+  for (const asset of assetIndex.values()) {
+    const pathname = canonicalPath(asset.pathname || "");
+    if (!/\.swf$/i.test(pathname)) continue;
+    const key = `asset:${asset.host}${pathname}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const label = path.basename(pathname, ".swf") || pathname;
+    entries.push({
+      kind: "Asset SWF",
+      href: pathname,
+      label,
+      path: pathname,
+      timestamp: asset.timestamp || "",
+      search: `${pathname} ${asset.host || ""} ${label}`.toLowerCase()
+    });
+  }
+
+  for (const game of GAME_CATALOG.playableGames()) {
+    const key = `game:${game.gameId}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const href = `/__games/${encodeURIComponent(game.file)}`;
+    entries.push({
+      kind: "Playable SWF",
+      href,
+      label: game.title,
+      path: game.file,
+      timestamp: game.timestamp || "",
+      search: `${game.gameId} ${game.title} ${game.file} playable swf`.toLowerCase()
+    });
+  }
+
+  entries.sort((a, b) => a.path.localeCompare(b.path) || b.timestamp.localeCompare(a.timestamp) || a.label.localeCompare(b.label));
+  return entries;
 }
 
 function recordMissing(req, url, kind) {
@@ -2451,6 +2520,10 @@ async function handleRequest(req, res) {
 
   if (url.pathname === "/arcade") {
     return sendText(res, 200, renderRecoveredArcade(user));
+  }
+
+  if (url.pathname === "/swfs") {
+    return sendText(res, 200, renderIndex(user, "swfs"));
   }
 
   if (url.pathname === "/" || url.pathname === "/index.html" || url.pathname === "/index.phtml") {

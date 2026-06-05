@@ -3,6 +3,7 @@ class ReplayRouteIndexController {
     this.filterInput = document.querySelector("[data-filter]");
     this.sortSelect = document.querySelector("[data-sort]");
     this.resultsCount = document.querySelector("[data-results-count]");
+    this.resultsLabel = String(this.resultsCount?.dataset.resultsLabel || "route");
     this.routeList = document.querySelector("[data-route-list]");
     this.groupButtons = Array.from(document.querySelectorAll("[data-route-filter]"));
     this.rows = Array.from(document.querySelectorAll("[data-route-row]"));
@@ -88,7 +89,7 @@ class ReplayRouteIndexController {
 
   updateResultsCount(visibleCount) {
     if (!this.resultsCount) return;
-    this.resultsCount.textContent = `${visibleCount} route${visibleCount === 1 ? "" : "s"}`;
+    this.resultsCount.textContent = `${visibleCount} ${this.resultsLabel}${visibleCount === 1 ? "" : "s"}`;
   }
 }
 
