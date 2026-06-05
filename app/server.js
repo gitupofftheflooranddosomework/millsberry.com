@@ -797,6 +797,129 @@ function findAsset(url) {
     assetVersionlessFallbackIndex.get(versionlessAssetName(filename));
 }
 
+function firstExistingAssetPath(candidates = []) {
+  for (const candidate of candidates) {
+    const normalized = canonicalPath(candidate || "");
+    const entry = assetPathFallbackIndex.get(normalized);
+    if (entry && entry.filePath && fs.existsSync(entry.filePath)) {
+      return normalized;
+    }
+  }
+  return "";
+}
+
+function swfFallbackPathForRequest(pathname = "") {
+  const normalized = canonicalPath(pathname).toLowerCase();
+  const sharedInteriorFallback = firstExistingAssetPath([
+    "/site_gfx/interiors/classifieds.swf",
+    "/site_gfx/interiors/classifieds_ravenwood.swf",
+    "/site_gfx/interiors/classifieds_lakeview.swf"
+  ]);
+
+  if (normalized.includes("/site_gfx/maps/")) {
+    return firstExistingAssetPath([
+      "/site_gfx/maps/mainmap_v31_winter.swf",
+      "/site_gfx/maps/mainmap_v30.swf",
+      "/site_gfx/maps/downtown_v31.swf"
+    ]) || sharedInteriorFallback;
+  }
+
+  if (normalized.includes("/site_gfx/interiors/int_")) {
+    if (normalized.includes("ravenwood")) {
+      return firstExistingAssetPath([
+        "/site_gfx/interiors/int_ravenwood_v14_winter.swf",
+        "/site_gfx/interiors/int_ravenwood_v13.swf"
+      ]) || sharedInteriorFallback;
+    }
+    if (normalized.includes("westridge")) {
+      return firstExistingAssetPath([
+        "/site_gfx/interiors/int_westridge_v10_winter.swf",
+        "/site_gfx/interiors/int_westridge_v9.swf"
+      ]) || sharedInteriorFallback;
+    }
+    if (normalized.includes("golden")) {
+      return firstExistingAssetPath([
+        "/site_gfx/interiors/int_goldenvalley_v10_winter.swf",
+        "/site_gfx/interiors/int_goldenvalley_v8.swf"
+      ]) || sharedInteriorFallback;
+    }
+    if (normalized.includes("metro")) {
+      return firstExistingAssetPath([
+        "/site_gfx/interiors/int_metropark_v13_winter.swf",
+        "/site_gfx/interiors/int_metropark_v8.swf"
+      ]) || sharedInteriorFallback;
+    }
+    return firstExistingAssetPath([
+      "/site_gfx/interiors/int_lakeview_v12.swf",
+      "/site_gfx/interiors/int_lakeview_v9.swf"
+    ]) || sharedInteriorFallback;
+  }
+
+  if (normalized.includes("/items/item_")) {
+    return firstExistingAssetPath([
+      "/site_gfx/interiors/classifieds.swf",
+      "/site_gfx/interiors/classifieds_ravenwood.swf"
+    ]);
+  }
+
+  return sharedInteriorFallback || "/site_gfx/interiors/classifieds.swf";
+}
+
+function overlapScore(requestPath = "", candidatePath = "") {
+  const requestedParts = canonicalPath(requestPath).toLowerCase().split("/").filter(Boolean);
+  const candidateParts = canonicalPath(candidatePath).toLowerCase().split("/").filter(Boolean);
+  let score = 0;
+  for (let i = 0; i < Math.min(requestedParts.length, candidateParts.length); i += 1) {
+    if (requestedParts[i] === candidateParts[i]) score += 3;
+  }
+  const requestedDir = requestedParts.slice(0, -1).join("/");
+  const candidateDir = candidateParts.slice(0, -1).join("/");
+  if (requestedDir && candidateDir && (requestedDir.includes(candidateDir) || candidateDir.includes(requestedDir))) {
+    score += 4;
+  }
+  return score;
+}
+
+function findClosestRecoveredPage(pathname = "") {
+  const normalized = canonicalPath(pathname);
+  const basename = path.posix.basename(normalized).toLowerCase();
+  if (!basename || basename === "/") return null;
+  const candidates = browsableRoutes.filter((entry) => {
+    const entryPath = canonicalPath(entry.pathname || "");
+    if (!entryPath || entryPath === normalized) return false;
+    return path.posix.basename(entryPath).toLowerCase() === basename;
+  });
+  if (!candidates.length) return null;
+  candidates.sort((a, b) => {
+    const scoreDiff = overlapScore(normalized, canonicalPath(b.pathname || "")) - overlapScore(normalized, canonicalPath(a.pathname || ""));
+    if (scoreDiff) return scoreDiff;
+    return String(b.timestamp || "").localeCompare(String(a.timestamp || ""));
+  });
+  return candidates[0] || null;
+}
+
+function sectionFallbackPath(pathname = "") {
+  const normalized = canonicalPath(pathname).toLowerCase();
+  const sectionMap = [
+    ["/town_hall/", "/town_hall/faq.phtml"],
+    ["/communitycenter/", "/communitycenter/"],
+    ["/academy/", "/academy/"],
+    ["/bank/", "/bank/"],
+    ["/buddy/", "/buddies.phtml"],
+    ["/complex/", "/complex/arcade.phtml"],
+    ["/colhurst/", "/colhurst/index.phtml"],
+    ["/post_office/", "/post_office/index.phtml"],
+    ["/gamepages/", "/gamepages/games_list.phtml"],
+    ["/museum/", "/main_map.phtml?location=downtown"]
+  ];
+  for (const [prefix, target] of sectionMap) {
+    if (normalized.startsWith(prefix) && normalized !== target) {
+      return target;
+    }
+  }
+  return "";
+}
+
 function localizeUrl(rawValue, currentHost = "www.millsberry.com") {
   if (!rawValue || /^(javascript:|mailto:|#)/i.test(rawValue)) return rawValue;
   const decoded = rawValue.replace(/&amp;/g, "&");
@@ -3135,12 +3258,12 @@ async function handleRequest(req, res) {
 
   if (/^\/items\/item_\d+(?:_v\d+)?\.swf$/i.test(canonicalPath(url.pathname))) {
     recordMissing(req, url, "item-swf-unavailable");
-    return sendRedirect(res, "/site_gfx/interiors/classifieds.swf");
+    return sendRedirect(res, swfFallbackPathForRequest(url.pathname));
   }
 
   if (/^\/site_gfx\/interiors\/int_[a-z0-9_]+_v\d+\.swf$/i.test(canonicalPath(url.pathname))) {
     recordMissing(req, url, "interior-swf-unavailable");
-    return sendRedirect(res, "/site_gfx/interiors/classifieds.swf");
+    return sendRedirect(res, swfFallbackPathForRequest(url.pathname));
   }
 
   const route = findRoute(url);
@@ -3181,7 +3304,20 @@ async function handleRequest(req, res) {
 
   if (/\.swf$/i.test(url.pathname)) {
     recordMissing(req, url, "swf-fallback");
-    return sendRedirect(res, "/site_gfx/interiors/classifieds.swf");
+    return sendRedirect(res, swfFallbackPathForRequest(url.pathname));
+  }
+
+  const sectionFallback = sectionFallbackPath(url.pathname);
+  if (sectionFallback) {
+    recordMissing(req, url, "section-fallback");
+    return sendRedirect(res, sectionFallback);
+  }
+
+  const closestPage = findClosestRecoveredPage(url.pathname);
+  if (closestPage && closestPage.filePath && fs.existsSync(closestPage.filePath)) {
+    recordMissing(req, url, "closest-page-fallback");
+    const html = fs.readFileSync(closestPage.filePath, "latin1");
+    return sendText(res, 200, rewriteHtml(html, closestPage, user));
   }
 
   recordMissing(req, url, "not-recovered");
