@@ -1097,6 +1097,8 @@ function renderIndex(user, activeView = "routes") {
     ["/arcade", "Recovered Arcade"],
     ["/swfs", "Recovered SWFs"],
     ["/swf-teasers", "SWF Teaser Gallery"],
+    ["/classifieds.phtml", "Yard Sale Classifieds"],
+    ["/buy_ad.phtml", "Post Yard Sale Ad"],
     ["/gamepages/games_list.phtml", "Games Listing"],
     ["/gamepages/hiscores.phtml", "Hi Scores"],
     ["/main_map.phtml", "Main Map"],
@@ -1817,6 +1819,87 @@ const YARD_SALE_ITEMS = [
   shopId: "yard-sale"
 }));
 
+const CLASSIFIED_NEIGHBORHOODS = [
+  "Downtown",
+  "Lakeview",
+  "Golden Valley",
+  "Metro Park",
+  "Ravenwood",
+  "Westridge"
+];
+
+function classifiedsListings() {
+  return YARD_SALE_ITEMS.map((item, index) => ({
+    ...item,
+    neighborhood: CLASSIFIED_NEIGHBORHOODS[index % CLASSIFIED_NEIGHBORHOODS.length],
+    seller: ["MapleFamily", "RetroCollector", "ParkTreasures", "LakeviewLoft", "RavenwoodDeals", "GoldenValleyShop"][index % 6],
+    street: ["Thunderbird Place", "Willow Wood Way", "Oakridge Lane", "Elm Street", "Cedar Court", "Pine Ridge Road"][index % 6],
+    saleOffset: index
+  }));
+}
+
+function renderBuyAdPage(user, message = "", error = "", values = {}) {
+  const content = `
+    <p class="note">Post a replay classified ad so other citizens can find your Yard Sale listing by neighborhood or keyword.</p>
+    <form class="account-form" method="post" action="/buy_ad.phtml">
+      <label>Ad title
+        <input name="title" value="${escapeHtml(values.title || "")}" maxlength="80" required>
+      </label>
+      <label>Neighborhood
+        <select name="neighborhood" required>
+          <option value="">Choose a neighborhood</option>
+          ${CLASSIFIED_NEIGHBORHOODS.map((name) => `<option value="${escapeHtml(name)}" ${values.neighborhood === name ? "selected" : ""}>${escapeHtml(name)}</option>`).join("")}
+        </select>
+      </label>
+      <label>Item keyword
+        <input name="q" value="${escapeHtml(values.q || "")}" maxlength="80" placeholder="e.g. sweater, boots, armor" required>
+      </label>
+      <button type="submit">Post replay ad</button>
+    </form>
+    <div class="quick-links"><a href="/classifieds.phtml">Back to classifieds</a><a href="/yard_sale.phtml">Browse yard sales</a><a href="/inventory.phtml">My Stuff</a></div>`;
+  return renderAppPage("Buy Yard Sale Ad", content, user, message, error);
+}
+
+function renderClassifiedsPage(user, searchParams, message = "", error = "") {
+  const query = String(searchParams.get("q") || "").trim().toLowerCase();
+  const neighborhood = String(searchParams.get("neighborhood") || "").trim();
+  const listings = classifiedsListings().filter((listing) => {
+    const queryMatch = !query || `${listing.name} ${listing.description}`.toLowerCase().includes(query);
+    const neighborhoodMatch = !neighborhood || listing.neighborhood.toLowerCase() === neighborhood.toLowerCase();
+    return queryMatch && neighborhoodMatch;
+  });
+
+  const listingHtml = listings.length
+    ? listings.map((listing) => `
+      <article class="inventory-item yard-sale-item">
+        <img class="yard-sale-icon" src="${escapeHtml(listing.assetPath)}" alt="">
+        <h2>${escapeHtml(listing.name)}</h2>
+        <p>${escapeHtml(listing.description)}</p>
+        <p><b>${escapeHtml(listing.neighborhood)}</b> · ${escapeHtml(listing.street)} · Seller: ${escapeHtml(listing.seller)}</p>
+        <strong>${Number(listing.price).toLocaleString("en-US")} Millsbucks</strong>
+        <div class="quick-links"><a href="/yard_sale.phtml?offset=${listing.saleOffset}">Visit this sale</a></div>
+      </article>`).join("")
+    : `<p class="note">No classifieds matched this filter yet. Try a different neighborhood or keyword.</p>`;
+
+  const content = `
+    <form class="account-form" method="get" action="/classifieds.phtml">
+      <label>Neighborhood
+        <select name="neighborhood">
+          <option value="">All neighborhoods</option>
+          ${CLASSIFIED_NEIGHBORHOODS.map((name) => `<option value="${escapeHtml(name)}" ${neighborhood.toLowerCase() === name.toLowerCase() ? "selected" : ""}>${escapeHtml(name)}</option>`).join("")}
+        </select>
+      </label>
+      <label>Item keyword
+        <input name="q" value="${escapeHtml(searchParams.get("q") || "")}" maxlength="80" placeholder="Search item names or descriptions">
+      </label>
+      <button type="submit">Search classifieds</button>
+    </form>
+    <p class="note">This replay preserves Yard Sale browsing behavior with recovered art and local account data. Original live marketplace state was not archived.</p>
+    <div class="inventory-grid">${listingHtml}</div>
+    <div class="quick-links"><a href="/buy_ad.phtml">Post an ad</a><a href="/yard_sale.phtml">Browse yard sales</a><a href="/main_map.phtml?location=downtown">Downtown map</a></div>`;
+  return renderAppPage("Yard Sale Classifieds", content, user, message, error);
+}
+
 function renderYardSalePage(user, message = "", error = "", offset = 0) {
   const normalizedOffset = Math.max(0, Number(offset) || 0) % YARD_SALE_ITEMS.length;
   const visibleItems = Array.from(
@@ -1851,9 +1934,9 @@ function renderYardSalePage(user, message = "", error = "", offset = 0) {
       </div>
       <a class="app-action" href="/yard_sale.phtml?offset=${nextOffset}">Visit another sale</a>
     </div>
-    <p class="note">The authenticated yard-sale response was not archived. This replay uses official artwork and the local account inventory system; it does not claim to reproduce the original live listings.</p>
+    <p class="note">The authenticated yard-sale response was not archived. This replay uses official artwork and local account inventory data; it does not claim to reproduce the original live listings.</p>
     <div class="inventory-grid">${cards}</div>
-    <div class="quick-links"><a href="/classifieds.phtml">Yard Sale Classifieds</a><a href="/inventory.phtml">My Stuff</a><a href="/main_map.phtml">Map</a></div>`;
+    <div class="quick-links"><a href="/classifieds.phtml">Yard Sale Classifieds</a><a href="/buy_ad.phtml">Post an Ad</a><a href="/inventory.phtml">My Stuff</a><a href="/main_map.phtml">Map</a></div>`;
   return renderAppPage("Millsberry Yard Sale", content, user, message, error);
 }
 
@@ -2392,6 +2475,8 @@ function sideNavXml() {
   <item label="Map" url="/main_map.phtml" />
   <item label="Games" url="/gamepages/games_list.phtml" />
   <item label="Arcade" url="/complex/arcade.phtml" />
+  <item label="Classifieds" url="/classifieds.phtml" />
+  <item label="Yard Sale" url="/yard_sale.phtml" />
   <item label="Bank" url="/bank/" />
   <item label="Academy" url="/academy/" />
   <item label="Community" url="/communitycenter/" />
@@ -2484,13 +2569,13 @@ async function handleAccountRequest(req, url, bodyParams, user, res) {
     return sendRedirect(res, location, { "Set-Cookie": expiredSessionCookie() });
   }
 
-    if (pathname === "/__account") {
-      const redirect = safeLocalRedirect(url.searchParams.get("redirect") || "/__account");
-      if (user && redirect !== "/__account") {
-        return sendRedirect(res, redirect);
-      }
-      return sendText(res, 200, renderAccountPage(user, "", "", redirect));
+  if (pathname === "/__account") {
+    const redirect = safeLocalRedirect(url.searchParams.get("redirect") || "/__account");
+    if (user && redirect !== "/__account") {
+      return sendRedirect(res, redirect);
     }
+    return sendText(res, 200, renderAccountPage(user, "", "", redirect));
+  }
 
   if (pathname === "/signup.phtml" && req.method === "GET") {
     return sendText(res, 200, renderSignupPage(user));
@@ -2527,21 +2612,52 @@ async function handleAccountRequest(req, url, bodyParams, user, res) {
     return sendText(res, 200, renderInventoryPage(user));
   }
 
-    if (pathname === "/yard_sale.phtml" && req.method === "GET") {
-      if (!user) {
-        const redirect = `${pathname}${url.search}`;
-        return sendRedirect(res, `/__account?redirect=${encodeURIComponent(redirect)}`);
-      }
-      return sendText(res, 200, renderYardSalePage(user, "", "", url.searchParams.get("offset")));
+  if (pathname === "/classifieds.phtml" && req.method === "GET") {
+    if (url.searchParams.get("buyad") === "1") {
+      return sendRedirect(res, "/buy_ad.phtml");
     }
+    return sendText(res, 200, renderClassifiedsPage(user, url.searchParams));
+  }
 
-    if (pathname === "/yard_sale.phtml" && req.method === "POST") {
-      if (!user) {
-        return sendRedirect(
-          res,
-          `/__account?redirect=${encodeURIComponent("/yard_sale.phtml")}`,
-        );
-      }
+  if (pathname === "/buy_ad.phtml" && req.method === "GET") {
+    if (!user) {
+      const redirect = `${pathname}${url.search}`;
+      return sendRedirect(res, `/__account?redirect=${encodeURIComponent(redirect)}`);
+    }
+    return sendText(res, 200, renderBuyAdPage(user));
+  }
+
+  if (pathname === "/process_buy_ad.phtml" && req.method === "GET") {
+    return sendRedirect(res, `/buy_ad.phtml${url.search || ""}`);
+  }
+
+  if ((pathname === "/buy_ad.phtml" || pathname === "/process_buy_ad.phtml") && req.method === "POST") {
+    if (!user) {
+      return sendRedirect(res, `/__account?redirect=${encodeURIComponent("/buy_ad.phtml")}`);
+    }
+    const values = {
+      title: bodyParams.get("title") || "",
+      neighborhood: bodyParams.get("neighborhood") || "",
+      q: bodyParams.get("q") || ""
+    };
+    if (!values.title.trim() || !values.neighborhood.trim() || !values.q.trim()) {
+      return sendText(res, 400, renderBuyAdPage(user, "", "Please complete all ad fields.", values));
+    }
+    const confirmation = `Ad posted for ${values.neighborhood}: ${values.title}.`;
+    return sendText(res, 200, renderClassifiedsPage(user, new URLSearchParams({ neighborhood: values.neighborhood, q: values.q }), confirmation, ""));
+  }
+
+  if (pathname === "/yard_sale.phtml" && req.method === "GET") {
+    return sendText(res, 200, renderYardSalePage(user, "", "", url.searchParams.get("offset")));
+  }
+
+  if (pathname === "/yard_sale.phtml" && req.method === "POST") {
+    if (!user) {
+      return sendRedirect(
+        res,
+        `/__account?redirect=${encodeURIComponent("/yard_sale.phtml")}`,
+      );
+    }
     const itemId = bodyParams.get("item_id") || "";
     const item = YARD_SALE_ITEMS.find((candidate) => candidate.id === itemId);
     if (!item) {
