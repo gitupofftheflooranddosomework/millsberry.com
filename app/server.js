@@ -2453,7 +2453,7 @@ async function handleRequest(req, res) {
     return sendText(res, 200, renderRecoveredArcade(user));
   }
 
-  if (url.pathname === "/" || url.pathname === "/index.html") {
+  if (url.pathname === "/" || url.pathname === "/index.html" || url.pathname === "/index.phtml") {
     return sendText(res, 200, renderIndex(user));
   }
 
