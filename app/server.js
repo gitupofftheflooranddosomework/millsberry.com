@@ -2429,6 +2429,10 @@ function handleStubEndpoint(url, res) {
     return sendText(res, 200, sideNavXml(), "application/xml; charset=utf-8");
   }
 
+  if (pathname === "/museum/paint/winners.phtml") {
+    return sendRedirect(res, classifiedsSwfCompatibilityRedirect(url));
+  }
+
   if (pathname === "/campaigns/frudare2010/ajax.phtml" || pathname.endsWith("/ajax.phtml")) {
     return sendText(res, 200, "<response success=\"1\"><message>Recovered replay stub</message></response>", "application/xml; charset=utf-8");
   }
@@ -2456,6 +2460,45 @@ function safeLocalRedirect(value) {
     return "/";
   }
   return value.startsWith("/") ? value : `/${value}`;
+}
+
+function neighborhoodToMapLocation(neighborhood = "") {
+  const normalized = String(neighborhood || "").trim().toLowerCase();
+  const aliases = new Map([
+    ["golden valley", "goldenvalley"],
+    ["metro park", "metropark"],
+    ["lakeview", "lakeview"],
+    ["ravenwood", "ravenwood"],
+    ["westridge", "westridge"],
+    ["downtown", "downtown"]
+  ]);
+  return aliases.get(normalized) || "downtown";
+}
+
+function classifiedsSwfCompatibilityRedirect(url) {
+  const neighborhood = String(url.searchParams.get("neighborhood") || "").trim();
+  const q = String(url.searchParams.get("q") || "").trim();
+  const back = String(url.searchParams.get("back") || "").trim();
+  const classifiedsParams = new URLSearchParams();
+  if (neighborhood) classifiedsParams.set("neighborhood", neighborhood);
+  if (q) classifiedsParams.set("q", q);
+  const classifiedsHref = `/classifieds.phtml${classifiedsParams.toString() ? `?${classifiedsParams.toString()}` : ""}`;
+
+  // Legacy interior SWFs route neighborhood buttons through this endpoint.
+  if (back === "1") {
+    return `/yard_sale.phtml${neighborhood ? `?neighborhood=${encodeURIComponent(neighborhood)}` : ""}`;
+  }
+  if (back === "2") {
+    return `/buy_ad.phtml${neighborhood ? `?neighborhood=${encodeURIComponent(neighborhood)}` : ""}`;
+  }
+  if (back === "3") {
+    const location = neighborhoodToMapLocation(neighborhood);
+    return `/main_map.phtml?location=${encodeURIComponent(location)}`;
+  }
+  if (back === "4") {
+    return "/main_map.phtml?location=downtown";
+  }
+  return classifiedsHref;
 }
 
 function topNavXml() {
