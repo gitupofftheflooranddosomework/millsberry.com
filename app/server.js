@@ -1860,9 +1860,22 @@ function renderBuyAdPage(user, message = "", error = "", values = {}) {
   return renderAppPage("Buy Yard Sale Ad", content, user, message, error);
 }
 
+function classifiedsSwfPathForNeighborhood(neighborhood = "") {
+  const normalized = String(neighborhood || "").trim().toLowerCase();
+  const map = new Map([
+    ["golden valley", "/site_gfx/interiors/classifieds_golden_valley.swf"],
+    ["metro park", "/site_gfx/interiors/classifieds_metro_park.swf"],
+    ["lakeview", "/site_gfx/interiors/classifieds_lakeview.swf"],
+    ["ravenwood", "/site_gfx/interiors/classifieds_ravenwood.swf"],
+    ["westridge", "/site_gfx/interiors/classifieds_westridge.swf"]
+  ]);
+  return map.get(normalized) || "/site_gfx/interiors/classifieds.swf";
+}
+
 function renderClassifiedsPage(user, searchParams, message = "", error = "") {
   const query = String(searchParams.get("q") || "").trim().toLowerCase();
   const neighborhood = String(searchParams.get("neighborhood") || "").trim();
+  const selectedSwf = classifiedsSwfPathForNeighborhood(neighborhood);
   const listings = classifiedsListings().filter((listing) => {
     const queryMatch = !query || `${listing.name} ${listing.description}`.toLowerCase().includes(query);
     const neighborhoodMatch = !neighborhood || listing.neighborhood.toLowerCase() === neighborhood.toLowerCase();
@@ -1871,33 +1884,144 @@ function renderClassifiedsPage(user, searchParams, message = "", error = "") {
 
   const listingHtml = listings.length
     ? listings.map((listing) => `
-      <article class="inventory-item yard-sale-item">
-        <img class="yard-sale-icon" src="${escapeHtml(listing.assetPath)}" alt="">
-        <h2>${escapeHtml(listing.name)}</h2>
-        <p>${escapeHtml(listing.description)}</p>
-        <p><b>${escapeHtml(listing.neighborhood)}</b> · ${escapeHtml(listing.street)} · Seller: ${escapeHtml(listing.seller)}</p>
-        <strong>${Number(listing.price).toLocaleString("en-US")} Millsbucks</strong>
-        <div class="quick-links"><a href="/yard_sale.phtml?offset=${listing.saleOffset}">Visit this sale</a></div>
-      </article>`).join("")
-    : `<p class="note">No classifieds matched this filter yet. Try a different neighborhood or keyword.</p>`;
+      <tr>
+        <td><img src="${escapeHtml(listing.assetPath)}" alt="" width="24" height="24"></td>
+        <td><b>${escapeHtml(listing.name)}</b><br><span>${escapeHtml(listing.description)}</span></td>
+        <td>${escapeHtml(listing.neighborhood)}</td>
+        <td>${escapeHtml(listing.street)}</td>
+        <td>${escapeHtml(listing.seller)}</td>
+        <td><b>${Number(listing.price).toLocaleString("en-US")}</b></td>
+        <td><a href="/yard_sale.phtml?offset=${listing.saleOffset}">Visit</a></td>
+      </tr>`).join("")
+    : `<tr><td colspan="7">No classifieds matched this filter yet. Try a different neighborhood or keyword.</td></tr>`;
 
-  const content = `
-    <form class="account-form" method="get" action="/classifieds.phtml">
-      <label>Neighborhood
-        <select name="neighborhood">
-          <option value="">All neighborhoods</option>
-          ${CLASSIFIED_NEIGHBORHOODS.map((name) => `<option value="${escapeHtml(name)}" ${neighborhood.toLowerCase() === name.toLowerCase() ? "selected" : ""}>${escapeHtml(name)}</option>`).join("")}
-        </select>
-      </label>
-      <label>Item keyword
-        <input name="q" value="${escapeHtml(searchParams.get("q") || "")}" maxlength="80" placeholder="Search item names or descriptions">
-      </label>
-      <button type="submit">Search classifieds</button>
-    </form>
-    <p class="note">This replay preserves Yard Sale browsing behavior with recovered art and local account data. Original live marketplace state was not archived.</p>
-    <div class="inventory-grid">${listingHtml}</div>
-    <div class="quick-links"><a href="/buy_ad.phtml">Post an ad</a><a href="/yard_sale.phtml">Browse yard sales</a><a href="/main_map.phtml?location=downtown">Downtown map</a></div>`;
-  return renderAppPage("Yard Sale Classifieds", content, user, message, error);
+  const notice = error
+    ? `<div class="legacy-alert legacy-alert-error">${escapeHtml(error)}</div>`
+    : (message ? `<div class="legacy-alert legacy-alert-success">${escapeHtml(message)}</div>` : "");
+  const signedInText = user
+    ? `Signed in as <b>${escapeHtml(user.username)}</b>`
+    : `Browsing as guest. <a href="/__account?redirect=${encodeURIComponent("/classifieds.phtml")}">Sign in</a> for account features.`;
+
+  return `<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Millsberry - Classifieds</title>
+  ${ruffleSnippet()}
+  <style>
+    body { margin: 0; font-family: Verdana, Arial, sans-serif; background: #8b5e34 url('/site_gfx/tile_mill.gif') repeat; color: #111; }
+    .legacy-shell { max-width: 1180px; margin: 0 auto; padding: 14px; }
+    .legacy-header { background: #d8f3ff; border: 2px solid #2a6a8a; display: flex; align-items: center; gap: 16px; padding: 8px 10px; }
+    .legacy-header img { height: 58px; width: auto; }
+    .legacy-header-links { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; }
+    .legacy-header-links a { color: #114c6d; text-decoration: none; font-weight: 700; }
+    .legacy-header-links a:hover { text-decoration: underline; }
+    .legacy-grid { margin-top: 10px; display: grid; grid-template-columns: 170px 1fr; gap: 10px; }
+    .legacy-nav { background: #c4e8f7; border: 2px solid #2a6a8a; padding: 10px; }
+    .legacy-nav a { display: block; margin: 6px 0; color: #0f4d6f; text-decoration: none; font-weight: 700; font-size: 13px; }
+    .legacy-nav a:hover { text-decoration: underline; }
+    .legacy-main { background: #fff; border: 2px solid #2a6a8a; padding: 12px; }
+    .legacy-title { margin: 0 0 6px 0; font-size: 28px; letter-spacing: 0.3px; }
+    .legacy-sub { margin: 0 0 8px 0; color: #2d2d2d; font-size: 13px; }
+    .legacy-alert { margin: 8px 0; padding: 8px 10px; border: 1px solid; font-size: 13px; }
+    .legacy-alert-error { background: #ffe6e6; border-color: #bb4f4f; }
+    .legacy-alert-success { background: #ecffeb; border-color: #4d9c4d; }
+    .legacy-search { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin: 10px 0; }
+    .legacy-search label { display: flex; flex-direction: column; font-size: 12px; font-weight: 700; }
+    .legacy-search input, .legacy-search select { padding: 5px; min-width: 190px; border: 1px solid #6ea7c0; }
+    .legacy-search button { border: 1px solid #245b76; background: #2f77a0; color: #fff; padding: 6px 10px; font-weight: 700; cursor: pointer; }
+    .legacy-interior { margin: 10px 0 14px; background: #d8d8d8; border: 1px solid #909090; overflow: auto; }
+    .legacy-interior object, .legacy-interior embed, .legacy-interior ruffle-player { display: block; width: 960px; height: 720px; background: #000; }
+    .legacy-table-wrap { overflow-x: auto; }
+    .legacy-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .legacy-table th, .legacy-table td { border: 1px solid #c6d9e3; padding: 6px; vertical-align: top; }
+    .legacy-table th { background: #e9f5fb; text-align: left; }
+    .legacy-foot { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; font-size: 13px; }
+    .legacy-foot a { color: #0f4d6f; font-weight: 700; }
+    @media (max-width: 980px) {
+      .legacy-grid { grid-template-columns: 1fr; }
+      .legacy-interior object, .legacy-interior embed, .legacy-interior ruffle-player { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+    }
+  </style>
+</head>
+<body>
+  <div class="legacy-shell">
+    <header class="legacy-header">
+      <a href="/"><img src="/site_gfx/logo.gif" alt="Millsberry"></a>
+      <div>
+        <h1 class="legacy-title">Yard Sale Classifieds</h1>
+        <p class="legacy-sub">Reconstructed from recovered SWFs and archived route behavior. ${signedInText}</p>
+        <div class="legacy-header-links">
+          <a href="/home/">My Home</a>
+          <a href="/main_map.phtml?location=downtown">Town Center</a>
+          <a href="/gamepages/hiscores.phtml">Hi Scores</a>
+          <a href="/town_hall/faq.phtml">Help</a>
+        </div>
+      </div>
+    </header>
+    <div class="legacy-grid">
+      <nav class="legacy-nav">
+        <a href="/classifieds.phtml">All Classifieds</a>
+        <a href="/classifieds.phtml?neighborhood=Lakeview">Lakeview</a>
+        <a href="/classifieds.phtml?neighborhood=Golden+Valley">Golden Valley</a>
+        <a href="/classifieds.phtml?neighborhood=Metro+Park">Metro Park</a>
+        <a href="/classifieds.phtml?neighborhood=Ravenwood">Ravenwood</a>
+        <a href="/classifieds.phtml?neighborhood=Westridge">Westridge</a>
+        <a href="/buy_ad.phtml">Place An Ad</a>
+        <a href="/yard_sale.phtml">Browse Yard Sales</a>
+      </nav>
+      <main class="legacy-main">
+        ${notice}
+        <form class="legacy-search" method="get" action="/classifieds.phtml">
+          <label>Neighborhood
+            <select name="neighborhood">
+              <option value="">All neighborhoods</option>
+              ${CLASSIFIED_NEIGHBORHOODS.map((name) => `<option value="${escapeHtml(name)}" ${neighborhood.toLowerCase() === name.toLowerCase() ? "selected" : ""}>${escapeHtml(name)}</option>`).join("")}
+            </select>
+          </label>
+          <label>Item keyword
+            <input name="q" value="${escapeHtml(searchParams.get("q") || "")}" maxlength="80" placeholder="Search item names or descriptions">
+          </label>
+          <button type="submit">Search Classifieds</button>
+        </form>
+
+        <div class="legacy-interior">
+          <object data="${escapeHtml(selectedSwf)}" type="application/x-shockwave-flash" width="960" height="720">
+            <param name="movie" value="${escapeHtml(selectedSwf)}">
+            <param name="quality" value="high">
+            <embed src="${escapeHtml(selectedSwf)}" type="application/x-shockwave-flash" width="960" height="720" quality="high">
+          </object>
+        </div>
+
+        <div class="legacy-table-wrap">
+          <table class="legacy-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Listing</th>
+                <th>Neighborhood</th>
+                <th>Street</th>
+                <th>Seller</th>
+                <th>Price (MB)</th>
+                <th>Sale</th>
+              </tr>
+            </thead>
+            <tbody>${listingHtml}</tbody>
+          </table>
+        </div>
+
+        <div class="legacy-foot">
+          <a href="/buy_ad.phtml">Place an Ad</a>
+          <a href="/yard_sale.phtml">Visit Yard Sale</a>
+          <a href="/main_map.phtml?location=downtown">Downtown Map</a>
+          <a href="/__missing">Recovery Status</a>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>`;
 }
 
 function renderYardSalePage(user, message = "", error = "", offset = 0) {
