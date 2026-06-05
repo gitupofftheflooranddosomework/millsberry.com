@@ -124,12 +124,18 @@ const PROCESS_ENDPOINTS = new Set([
   "/process_buddy_list.phtml",
   "/process_signup.phtml",
   "/buddy/process_buddy.phtml",
+  "/buddy/buddy_change_process.phtml",
   "/buddy/load_buddy_xml.phtml",
   "/buddy/process_buddy_xml.phtml",
   "/load_buddy_xml.phtml",
   "/complex/process_theater.phtml",
   "/complex/process_theater_tr.phtml",
   "/colhurst/process_tunnels.phtml",
+  "/colhurst/process_key.phtml",
+  "/communitycenter/dojo/process_sensei.phtml",
+  "/process_elephant.phtml",
+  "/process_form.phtml",
+  "/process_search.phtml",
   "/process_colhurst.phtml"
 ]);
 
@@ -2522,6 +2528,49 @@ function renderGamePlaceholder(url) {
 </html>`;
 }
 
+function renderSiteSearchPage(url, user) {
+  const term = String(url.searchParams.get("search") || url.searchParams.get("q") || "").trim();
+  const normalized = term.toLowerCase();
+  const rows = normalized
+    ? browsableRoutes.filter((entry) => {
+      const hay = `${entry.pathname || ""} ${entry.filePath || ""}`.toLowerCase();
+      return hay.includes(normalized);
+    }).slice(0, 120)
+    : [];
+  const results = rows.length
+    ? rows.map((entry) => `<tr><td><a href="${escapeHtml(entry.pathname || "/")}">${escapeHtml(entry.pathname || "/")}</a></td><td>${escapeHtml(entry.host || "")}</td><td>${escapeHtml(entry.timestamp || "")}</td></tr>`).join("")
+    : (term ? `<tr><td colspan="3">No recovered routes matched this search.</td></tr>` : `<tr><td colspan="3">Enter a keyword to search recovered routes.</td></tr>`);
+  return `<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Millsberry Search</title>
+  <link rel="stylesheet" href="/__app/app.css">
+</head>
+<body class="replay-index">
+  <main class="shell">
+    <section class="panel">
+      <h1>Site Search</h1>
+      <p class="note">Search recovered Millsberry routes by path and source file metadata.</p>
+      <form class="account-form" method="get" action="/site_search.phtml">
+        <label>Search term
+          <input name="search" value="${escapeHtml(term)}" maxlength="120" placeholder="classifieds, arcade, yard_sale, main_map">
+        </label>
+        <button type="submit">Search</button>
+      </form>
+      <p class="note">${term ? `${rows.length} result${rows.length === 1 ? "" : "s"} shown` : "No search submitted yet."}</p>
+      <table class="route-table">
+        <thead><tr><th>Route</th><th>Host</th><th>Timestamp</th></tr></thead>
+        <tbody>${results}</tbody>
+      </table>
+      <div class="quick-links"><a href="/">Recovered Routes</a><a href="/swfs">Recovered SWFs</a><a href="/__missing">Missing Report</a></div>
+    </section>
+  </main>
+</body>
+</html>`;
+}
+
 
 function placeholderTitle(pathname) {
   const labels = {
@@ -2555,6 +2604,17 @@ function handleStubEndpoint(url, res) {
 
   if (pathname === "/museum/paint/winners.phtml") {
     return sendRedirect(res, classifiedsSwfCompatibilityRedirect(url));
+  }
+
+  if (pathname === "/process_search.phtml") {
+    const params = new URLSearchParams(url.searchParams);
+    const search = params.get("search") || params.get("q") || "";
+    return sendRedirect(res, `/site_search.phtml?search=${encodeURIComponent(search)}`);
+  }
+
+  if (pathname === "/process_form.phtml") {
+    const redirect = decodeURIComponentSafe(url.searchParams.get("redirect") || "/");
+    return sendRedirect(res, safeLocalRedirect(redirect));
   }
 
   if (pathname === "/campaigns/frudare2010/ajax.phtml" || pathname.endsWith("/ajax.phtml")) {
@@ -2993,6 +3053,10 @@ async function handleRequest(req, res) {
 
   if (url.pathname === "/__missing.json") {
     return sendText(res, 200, JSON.stringify(missingRows(), null, 2), "application/json; charset=utf-8");
+  }
+
+  if (canonicalPath(url.pathname) === "/site_search.phtml") {
+    return sendText(res, 200, renderSiteSearchPage(url, user));
   }
 
   if (url.pathname === "/arcade") {
