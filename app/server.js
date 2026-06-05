@@ -824,6 +824,20 @@ function swfFallbackPathForRequest(pathname = "") {
     ]) || sharedInteriorFallback;
   }
 
+  if (normalized.includes("map_weather_system_assets")) {
+    return firstExistingAssetPath([
+      "/site_gfx/maps/mainmap_v31_winter.swf",
+      "/site_gfx/maps/mainmap_v30.swf"
+    ]) || sharedInteriorFallback;
+  }
+
+  if (normalized.includes("/site_gfx/greetings/")) {
+    return firstExistingAssetPath([
+      "/site_gfx/greetings/greet_yard_sale_1_v2.swf",
+      "/site_gfx/interiors/classifieds.swf"
+    ]) || sharedInteriorFallback;
+  }
+
   if (normalized.includes("/site_gfx/interiors/int_")) {
     if (normalized.includes("ravenwood")) {
       return firstExistingAssetPath([
