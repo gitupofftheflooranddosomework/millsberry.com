@@ -1,3 +1,4 @@
+AGENTS.md
 .playwright-cli/
 app/data/accounts.json
 app/data/*.tmp
