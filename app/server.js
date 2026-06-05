@@ -2617,6 +2617,22 @@ function handleStubEndpoint(url, res) {
     return sendRedirect(res, safeLocalRedirect(redirect));
   }
 
+  if (pathname === "/buddy/buddy_change_process.phtml") {
+    return sendRedirect(res, "/buddies.phtml");
+  }
+
+  if (pathname === "/communitycenter/dojo/process_sensei.phtml") {
+    return sendRedirect(res, "/communitycenter/");
+  }
+
+  if (pathname === "/colhurst/process_key.phtml") {
+    return sendRedirect(res, "/colhurst/index.phtml");
+  }
+
+  if (pathname === "/process_elephant.phtml") {
+    return sendRedirect(res, "/main_map.phtml?location=downtown");
+  }
+
   if (pathname === "/campaigns/frudare2010/ajax.phtml" || pathname.endsWith("/ajax.phtml")) {
     return sendText(res, 200, "<response success=\"1\"><message>Recovered replay stub</message></response>", "application/xml; charset=utf-8");
   }
