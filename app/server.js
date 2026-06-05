@@ -3022,7 +3022,8 @@ async function handleRequest(req, res) {
     ) {
       return sendFile(res, gamePath);
     }
-    return sendText(res, 404, "Recovered game file not found.", "text/plain; charset=utf-8");
+    recordMissing(req, url, "game-file-unavailable");
+    return sendText(res, 200, renderGamePlaceholder(url));
   }
 
   if (
@@ -3052,7 +3053,8 @@ async function handleRequest(req, res) {
     ) {
       return sendFile(res, rufflePath);
     }
-    return sendText(res, 404, "Ruffle asset not found.", "text/plain; charset=utf-8");
+    recordMissing(req, url, "ruffle-asset-unavailable");
+    return sendText(res, 200, "", "application/javascript; charset=utf-8");
   }
 
   if (url.pathname.startsWith("/__app/")) {
@@ -3060,7 +3062,14 @@ async function handleRequest(req, res) {
     if (filePath.startsWith(path.join(APP_ROOT, "public")) && fs.existsSync(filePath)) {
       return sendFile(res, filePath);
     }
-    return sendText(res, 404, "Not found", "text/plain; charset=utf-8");
+    recordMissing(req, url, "app-asset-unavailable");
+    if (/\.css$/i.test(url.pathname)) {
+      return sendEmptyCss(req, url, res);
+    }
+    if (/\.js$/i.test(url.pathname)) {
+      return sendText(res, 200, "", "application/javascript; charset=utf-8");
+    }
+    return sendText(res, 200, "", "text/plain; charset=utf-8");
   }
 
   if (url.pathname === "/__missing") {
@@ -3126,22 +3135,12 @@ async function handleRequest(req, res) {
 
   if (/^\/items\/item_\d+(?:_v\d+)?\.swf$/i.test(canonicalPath(url.pathname))) {
     recordMissing(req, url, "item-swf-unavailable");
-    return sendText(
-      res,
-      404,
-      `Official item SWF not recovered: ${escapeHtml(canonicalPath(url.pathname))}`,
-      "text/plain; charset=utf-8"
-    );
+    return sendRedirect(res, "/site_gfx/interiors/classifieds.swf");
   }
 
   if (/^\/site_gfx\/interiors\/int_[a-z0-9_]+_v\d+\.swf$/i.test(canonicalPath(url.pathname))) {
     recordMissing(req, url, "interior-swf-unavailable");
-    return sendText(
-      res,
-      404,
-      `Official interior SWF not recovered: ${escapeHtml(canonicalPath(url.pathname))}`,
-      "text/plain; charset=utf-8"
-    );
+    return sendRedirect(res, "/site_gfx/interiors/classifieds.swf");
   }
 
   const route = findRoute(url);
@@ -3180,8 +3179,13 @@ async function handleRequest(req, res) {
     return sendTransparentGif(res);
   }
 
+  if (/\.swf$/i.test(url.pathname)) {
+    recordMissing(req, url, "swf-fallback");
+    return sendRedirect(res, "/site_gfx/interiors/classifieds.swf");
+  }
+
   recordMissing(req, url, "not-recovered");
-  return sendText(res, 404, renderNotFound(url));
+  return sendText(res, 200, renderPlaceholderRoute(url));
 }
 
 function generatedNavImageLabel(pathname) {
