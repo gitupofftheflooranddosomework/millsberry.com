@@ -1,0 +1,17 @@
+maps/downtown_v24.swf
+maps/interiors/int_arcade_v3.swf
+maps/interiors/int_classroom_v11.swf
+maps/interiors/int_entertainment_v5.swf
+maps/interiors/int_ext_com_center_v9_winter.swf
+maps/interiors/int_gym_v1.swf
+maps/interiors/int_hallway_v11.swf
+maps/interiors/int_lab_v2.swf
+maps/interiors/int_museum_v4.swf
+maps/interiors/int_park_v13.swf
+maps/interiors/int_police_v1.swf
+maps/interiors/int_postoffice_v1.swf
+maps/interiors/int_recording_studio_v1.swf
+maps/interiors/sylvana_lake_with_sylvie_v8.swf
+maps/mainmap_fall_v22.swf
+template/side_nav.swf
+template/top_nav.swf

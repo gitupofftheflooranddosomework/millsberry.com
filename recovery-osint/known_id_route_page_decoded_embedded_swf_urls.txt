@@ -1,0 +1,7 @@
+http://graphics.millsberry.com/game_interiors/interior_13_v2.swf
+http://graphics.millsberry.com/site_gfx/stat_icon_fitness_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_16_v3.swf
+http://graphics.millsberry.com/site_gfx/stat_icon_civics_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_80_v1.swf
+http://graphics.millsberry.com/site_gfx/stat_icon_intelligence_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_12_v3.swf

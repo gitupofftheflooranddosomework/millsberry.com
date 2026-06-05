@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /changelog/
+Disallow: /css/
+Disallow: /currency_share/
+Disallow: /gamingsystem/
+Disallow: /pets/
+Disallow: /promocodes/
+Disallow: /site_stats/
+Disallow: /test/
+Disallow: /tracking/
+Disallow: /transcontent/
+Disallow: /translations/
+
+Disallow: /lbstatus.phtml
+Disallow: /poolinfo.phtml
+Disallow: /poolstatus.phtml
+
+# Changelog ------------------------------------------------------------------
+# 2006-06-08 / joshuar / File created... please add entries in lexical order

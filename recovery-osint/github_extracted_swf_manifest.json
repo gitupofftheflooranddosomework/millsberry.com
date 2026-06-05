@@ -1,0 +1,87 @@
+[
+  {
+    "file": "downtown_v24.swf",
+    "bytes": 364541,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/downtown_v24.swf"
+  },
+  {
+    "file": "int_arcade_v3.swf",
+    "bytes": 273029,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_arcade_v3.swf"
+  },
+  {
+    "file": "int_classroom_v11.swf",
+    "bytes": 92869,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_classroom_v11.swf"
+  },
+  {
+    "file": "int_entertainment_v5.swf",
+    "bytes": 80709,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_entertainment_v5.swf"
+  },
+  {
+    "file": "int_ext_com_center_v9_winter.swf",
+    "bytes": 159199,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_ext_com_center_v9_winter.swf"
+  },
+  {
+    "file": "int_gym_v1.swf",
+    "bytes": 60422,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_gym_v1.swf"
+  },
+  {
+    "file": "int_hallway_v11.swf",
+    "bytes": 125565,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_hallway_v11.swf"
+  },
+  {
+    "file": "int_lab_v2.swf",
+    "bytes": 164648,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_lab_v2.swf"
+  },
+  {
+    "file": "int_museum_v4.swf",
+    "bytes": 128934,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_museum_v4.swf"
+  },
+  {
+    "file": "int_park_v13.swf",
+    "bytes": 208675,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_park_v13.swf"
+  },
+  {
+    "file": "int_police_v1.swf",
+    "bytes": 24612,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_police_v1.swf"
+  },
+  {
+    "file": "int_postoffice_v1.swf",
+    "bytes": 61738,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_postoffice_v1.swf"
+  },
+  {
+    "file": "int_recording_studio_v1.swf",
+    "bytes": 76571,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/int_recording_studio_v1.swf"
+  },
+  {
+    "file": "mainmap_fall_v22.swf",
+    "bytes": 351113,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/mainmap_fall_v22.swf"
+  },
+  {
+    "file": "side_nav.swf",
+    "bytes": 90330,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/37259d6eeb1b1e04c53761330af89a24f001ecd6/template/side_nav.swf"
+  },
+  {
+    "file": "sylvana_lake_with_sylvie_v8.swf",
+    "bytes": 315275,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/ec8777d4fc4c95378afd9b34c4817ecd4d9ff6ec/maps/interiors/sylvana_lake_with_sylvie_v8.swf"
+  },
+  {
+    "file": "top_nav.swf",
+    "bytes": 31834,
+    "source_raw_url": "https://raw.githubusercontent.com/TylerTheLoser/Millsberry-JS/37259d6eeb1b1e04c53761330af89a24f001ecd6/template/top_nav.swf"
+  }
+]

@@ -1,0 +1,259 @@
+/* ------------------------------------------------------------------------------------------- /
+ template.css
+ Defines the template layout elements, anything else should be defined 
+ in either a page.css, file or in global.css for site-wide stuff.
+ Indentation is an organizational method to show hierarchy visually
+ NOTE: Please see /css/template.ie.css for IE hacks of these styles
+/ ------------------------------------------------------------------------------------------- */
+/* Header section of the layout */
+
+#top {
+	width: 775px;
+	height: 75px;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+#top #logo {
+	width: 192px;
+	height: 80px;
+	position: absolute;
+	top: 2px;
+	padding: 0px;
+	margin: 0px;
+	z-index: 20;
+	background: transparent url('http://graphics.millsberry.com/site_gfx/layout/title_logo.png') no-repeat;
+	cursor: pointer;
+}
+
+/* This override was created for the Alvin Squeakquel advert
+   at the top of the home page only. We'll do a similiar one
+   for template.ie.css.
+*/
+#top #logo-banner
+{
+	width: 192px;
+	height: 80px;
+	position: absolute;
+	top: 90px;
+	padding: 0px;
+	margin: 0px;
+	z-index: 20;
+	background: transparent url('http://graphics.millsberry.com/site_gfx/layout/title_logo.png') no-repeat;
+	cursor: pointer;	
+}
+	
+#top #layout_head {
+	margin: 0px;
+	width: 775px;
+	padding: 10px 0px 0px 0px;
+}
+	
+#top #layout_head #login_info {
+	text-align: right;
+	font-size: 11px;
+	font-weight: bold;
+	color: black;
+	margin: 0px auto;
+	width: 750px; 
+	height: 20px;
+}
+			#top #layout_head #login_info a {
+				font-size: 11px;
+			}
+			#top #layout_head #login_info a:hover {
+				font-size: 11px;
+			}
+			#top #layout_head #login_info input {
+				border: 1px solid black;
+				font-size: 11px;
+				font-weight: normal;
+			}
+			
+#top #layout_head #stripe {
+	height: 45px;
+	width: 755px;
+	margin: 0px auto;
+	padding: 0px 0px 0px 0px;
+}
+
+#gazette_banner { /* used by the homepage */
+    padding: 4px 8px 4px 7px;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* Beginning of the template layout */
+#body {
+	width: 775px;
+	margin: 0 auto;
+	padding: 0px;
+	position: relative;
+}
+	#body #layout_body {
+		clear: both;
+		width: 755px;
+		margin: 0px auto;
+		border-width: 0 2px 0 2px;
+	}
+	
+		/* ------------------------------------------------------------------------------------------ */
+		/* Left navigation bar */
+		#body #layout_body  #side_nav {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+			width: 155px;
+			height: 1300px;
+			margin: 0px;
+			border: 0px;
+			padding: 0px;
+            z-index:18;         
+		}
+
+		/* ------------------------------------------------------------------------------------------ */
+		/* The large box where content goes */
+		#body #layout_body #main {
+			float: right;
+			margin: 0px;
+			padding: 0px;
+			width: 600px;
+            min-height: 1300px;      
+            background-color: #f1f1f1; 
+		}
+
+			#body #layout_body #main #interior {
+				width: 600px;
+				margin: 0px;
+				padding: 0px;
+			}
+			#body #layout_body #main #interior_stripe, #interior_stripe {
+				width: 590px;
+				margin: 0;
+				padding: 2px 5px 2px 5px;
+				font-weight: bold;
+				font-style: italic;
+				color: white;
+			}
+			#body #layout_body #main #interior_stripe a, #interior_stripe a {
+				color: white;
+			}
+			#body #layout_body #main #interior_stripe a:hover, #interior_stripe a:hover {
+				color: #FFFF40;
+			}
+			#body #layout_body #main #content {
+				width: 590px;
+				margin: 0;
+				padding: 5px;
+			}
+                /* -------------------------------------------------------------------------------- */
+                /* styles only applied when ad serving is visible on the page */
+                #body #layout_body #main #content #content_description {
+                     width:275px;
+                     min-height:275px;
+                }
+                #body #layout_body #main #content #content_ad_spot {
+                    float:right;
+                }
+                #body #layout_body #main #content #content_ad_spot div{
+                    padding: 2px 0 0 0;
+                }
+
+			#body #layout_body #main #content #content_gutter {
+				clear: both;
+				height: 18px;
+				font-weight: bold;
+				text-align: center;
+				background-color: silver;
+			}
+		/* ------------------------------------------------------------------------------------------ */
+		/* Gutter of template layout (copyright info, etc.) */
+        #body #footer {
+			clear: both;
+            padding: 7px 0 0 0;
+			text-align: center;
+			font-size: 10px;
+			line-height: 1.2em;
+			color: #E1E1E1;
+		}
+		    #body  #footer a {
+				font-size: 10px;
+				color: white;
+			}
+			#body  #footer a:hover {
+				font-size: 10px;
+				color: #FFFF40;
+			}
+            #body #footer #ad_spot {
+                float:left;
+                position:relative;
+                top: 3px;
+                left: 50px;
+                z-index: 30;
+            }
+
+#bottom {
+	width: 775px;
+	height: 15px;
+	font-size: 1px;
+	line-height: 1px;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* Below the template, usually has debugging information if available */
+#debug {
+	width: 100%;
+	text-align: left;
+	font-family: 'Times New Roman', Times, Helvetica, serif;
+	font-size: 85%;
+	color: black;
+	background: none transparent;
+}
+
+/* -SignUp Process- */
+#header-signup-process {
+	color: #ffffff;
+	background-color: #0032cc;
+	margin-top: 35px;
+	margin-bottom: 12px;
+	font-size: 28pt;
+	font-weight: bold;
+}
+
+#breadcrumbs-signup {
+	color: #555555;
+	font-size: 16pt;
+	margin-bottom: 5px;
+}
+
+.center_cont_full
+{
+	width: 100%;
+	text-align: center;
+}
+.center_both
+{
+	text-align: center;
+	margin-left: auto; 
+	margin-right: auto; 
+}
+.center_cont
+{
+	text-align: center;
+}
+.center
+{
+	margin-left: auto; 
+	margin-right: auto; 
+}
+.left
+{
+	float: left;
+}
+.right
+{
+	float: right;
+}
+.clear
+{
+	clear: both;
+}

@@ -1,0 +1,10 @@
+http://graphics.millsberry.com/game_interiors/interior_420_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_440_v3.swf
+http://graphics.millsberry.com/game_interiors/interior_484_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_486_v2.swf
+http://graphics.millsberry.com/game_interiors/interior_505_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_510_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_511_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_515_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_520_v1.swf
+http://graphics.millsberry.com/game_interiors/interior_525_v1.swf

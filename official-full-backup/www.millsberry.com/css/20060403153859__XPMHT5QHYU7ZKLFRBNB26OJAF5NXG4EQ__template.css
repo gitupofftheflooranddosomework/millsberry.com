@@ -1,0 +1,417 @@
+/* ---------------------------------------------------------------- /
+ template.css
+ 2006-01-26 / joshuar
+ Defines the site-wide styles and the template layout elements
+ Indentation is an organizational method to show hierarchy visually
+ NOTE: Please see /css/ie.css for modifications to these styles
+ NOTE: Language specific images should be inside a div that is 
+		identified with _$lang, alternate styles should be defined for
+		each language
+// ---------------------------------------------------------------- */
+
+
+/* Site-wide styling */
+body, td, p, a {
+	font-family: "Trebuchet MS", "Comic Sans MS", "Helvetica", sans-serif;
+	font-size: 10pt;
+}
+body, form, h1, h2, h3, h4 {
+	padding: 0;
+	margin: 0;
+}
+a, a:link, a:active, a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	color: #000099;
+}
+a:hover {
+	color: #990000;
+}
+input, textarea, select {
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-variant: normal;
+}
+.header_stripe_TD {
+	padding-left: 2px;
+	font-size: 13px;
+	font-weight: bold;
+	font-style: italic;
+	color: white;
+}
+.header_stripe_TD a {
+	color: white;
+}
+.header_stripe_TD a:hover {
+	color: #990000;
+}
+.error {
+	padding-bottom: 5px;
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	color: red;
+}
+.error a {
+	font-size: 12pt;
+}
+.success {
+	padding-bottom: 5px;
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	color: green;
+}
+.success a {
+	font-size: 12pt;
+}
+#my_pyramid {
+	margin: 0 auto;
+	width: 500px;
+	padding: 5px;
+	background-color: white;
+	border: 1px solid black;
+}
+#my_pyramid td {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* Header section of the layout */
+#top {
+	width: 770px;
+	height: 66px;
+	margin: 0 auto;
+}
+	#top #logo {
+		width: 192px;
+		height: 80px;
+		position: absolute;
+		top: 0;
+		padding: 0;
+		margin: 0;
+		z-index: 20;
+		background: transparent url('http://graphics.millsberry.com/site_gfx/layout/title_logo.png') no-repeat;
+		cursor: pointer;
+	}
+	#top #layout_head {
+		width: 754px;
+		margin: 0 auto;
+	}
+		#top #layout_head #login_info {
+			float: right;
+			width: 560px;
+			height: 33px;
+			padding: 0;
+			margin: 0;
+			text-align: right;
+			font-size: 8pt;
+			font-weight: bold;
+			color: black;
+		}
+			#top #layout_head #login_info a {
+				font-size: 8pt;
+			}
+			#top #layout_head #login_info a:hover {
+				font-size: 8pt;
+			}
+			#top #layout_head #login_info input {
+				border: 1px solid black;
+				font-size: 8pt;
+				font-weight: normal;
+			}
+		#top #layout_head #stripe {
+			float: right;
+			width: 750px;
+			height: 27px;
+			padding: 6px 2px 0 2px;
+			font-size: 11pt;
+			font-weight: bold;
+			font-variant: small-caps;
+			color: white;
+		}
+			#top #layout_head #stripe td {
+				font-size: 11pt;
+			}
+			#top #layout_head #stripe a {
+				font-size: 11pt;
+				font-variant: small-caps;
+				color: white;
+			}
+			#top #layout_head #stripe a:hover {
+				font-size: 11pt;
+				font-variant: small-caps;
+				color: #FFFF40;
+			}
+			#top #layout_head #stripe .stripe_button {
+				float: left;
+				display: block;
+				width: 23px;
+				height: 20px;
+			}
+			#top #layout_head #stripe .stripe_button:hover {
+				background: transparent url('http://graphics.millsberry.com/site_gfx/nav/stripe_hover.gif');
+				cursor: pointer;
+			}
+			/* ------------------------------------------------------------------------------------------ */
+			/* Shortcuts menu and controls */
+			#top #layout_head #stripe #stripe_shortcuts {
+				float: left;
+				padding-left: 200px;
+			}
+				#top #layout_head #stripe #stripe_shortcuts #shortcuts {
+					margin: 0;
+					padding: 0;
+					list-style: none;
+				}
+					/* Shortcuts drop menu */
+					#top #layout_head #stripe #stripe_shortcuts #shortcuts li {
+						float: left;
+						display: block;
+						position: relative;
+						width: 4.6em;
+					}
+						/* Shortcuts drop menu items */
+						#top #layout_head #stripe #stripe_shortcuts #shortcuts li #menu {
+							display: none;
+							position: absolute;
+							margin: 0;
+							padding: 1px 3px 3px 5px;
+							line-height: 1.0em;
+							border: 1px solid black;
+							background: #F1F1F1;
+							list-style: none;
+							top: 1.3em;
+							left: 0;
+						}
+						/* Override top and left alignment in browsers other than IE, which position to the top right
+					   of the containing li, rather than bottom left */
+						/*#top #layout_head #stripe #stripe_shortcuts #shortcuts li>#menu {
+							top: auto;
+							left: auto;
+						}*/
+						/* Drop menu display on hover. Include .over class to use IE hover hack */
+						#top #layout_head #stripe #stripe_shortcuts #shortcuts li:hover #menu,
+						#top #layout_head #stripe #stripe_shortcuts #shortcuts li.over #menu {
+							display: block;
+							/* Newer Gecko/CSS3 */
+							opacity: 0.85;
+							/* Older Gecko */
+							-moz-opacity: 0.85;
+							/* MSIE */
+							filter:alpha(opacity=85);
+						}
+							#top #layout_head #stripe #stripe_shortcuts #shortcuts li #menu li {
+								overflow: hidden;
+								min-width: 12em;
+							}
+							#top #layout_head #stripe #stripe_shortcuts #shortcuts li #menu a {
+								font-size: 8pt;
+								font-variant: normal;
+								color: #000099;
+							}
+							#top #layout_head #stripe #stripe_shortcuts #shortcuts li #menu a:hover {
+								font-size: 8pt;
+								font-variant: normal;
+								color: #990000;
+							}
+					/* Shortcut controls */
+					#top #layout_head #stripe #stripe_shortcuts #shortcut_minus {
+						float: left;
+						display: block;
+						width: 23px;
+						height: 20px;
+						background-image: url('http://graphics.millsberry.com/site_gfx/nav/nav_minus.png');
+					}
+					#top #layout_head #stripe #stripe_shortcuts #shortcut_plus {
+						float: left;
+						display: block;
+						width: 23px;
+						height: 20px;
+						background-image: url('http://graphics.millsberry.com/site_gfx/nav/nav_plus.png');
+					}
+			/* ------------------------------------------------------------------------------------------ */
+			/* The site search box (address book) */
+			#top #layout_head #stripe #stripe_search {
+				float: right;
+				padding-right: 10px;
+			}
+				#top #layout_head #stripe #stripe_search input {
+					border: 1px solid black;
+					font-size: 12px;
+					font-weight: normal;
+					color: black;
+				}
+				#top #layout_head #stripe #stripe_search #search_button {
+					display: block;
+					width: 23px;
+					height: 20px;
+					background-image: url('http://graphics.millsberry.com/site_gfx/nav/nav_go.png');
+					cursor: pointer;
+				}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* Beginning of the template layout */
+#body {
+	width: 770px;
+	margin: 0 auto;
+}
+	#body #layout_body {
+		clear: both;
+		width: 750px;
+		margin: 0 auto;
+		border-width: 0 2px 0 2px;
+		background-image: url('http://graphics.millsberry.com/site_gfx/layout/body_bg.gif');
+		background-position: repeat-y;
+	}
+		/* ------------------------------------------------------------------------------------------ */
+		/* Left navigation bar */
+		#body #layout_body #side_nav {
+			float: left;
+			width: 148px;
+			margin: 0 auto;
+			padding: 13px 0 0 0;
+			border-width: 0 2px 0 0;
+			text-align: center;
+		}
+			/* Side navigation buttons */
+			#body #layout_body #side_nav .nav_button {
+				display: block;
+				width: 130px;
+				height: 35px;
+				margin: 0 auto;
+			}
+			#body #layout_body #side_nav .nav_button:hover {
+				display: block;
+				width: 130px;
+				height: 35px;
+				margin: 0 auto;
+				background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_hover.gif') no-repeat;
+				cursor: pointer;
+			}
+			/* ------------------------------------------------------------------------------------------ */
+			/* Navigation buttons--need a set for each language */
+			/* ------------------------------------------------------------------------------------------ */
+			/* Buddy status meters and info */
+			#body #layout_body #side_nav #status {
+				width: 136px;
+				margin: 0;
+				padding: 0;
+			}
+				#body #layout_body #side_nav #status .status_icon {
+					float: left;
+					width: 35px;
+					height: 24px;
+					padding: 0;
+					text-align: center;
+				}
+				#body #layout_body #side_nav #status .status_info {
+					float: left;
+					width: 101px;
+					height: 24px;
+					margin: 0;
+					padding: 0;
+					text-align: left;
+					font-weight: bold;
+				}
+					#body #layout_body #side_nav #status .status_info a {
+						color: black;
+					}
+					#body #layout_body #side_nav #status .status_info a:hover {
+						color: #800000;
+					}
+
+			/* Site-wide featured links */
+			#body #layout_body #side_nav #side_nav_links {
+				clear: left;
+				font-size: 10pt;
+				font-weight: bold;
+				text-align: center;
+			}
+				#body #layout_body #side_nav #side_nav_links a {
+					color: white;
+				}
+				#body #layout_body #side_nav #side_nav_links a:hover {
+					color: #990000;
+				}
+
+			/* Site-wide option box */
+			#body #layout_body #side_nav #side_nav_options {
+				clear: left;
+			}
+				#body #layout_body #side_nav #side_nav_options td {
+					font-size: 8pt;
+					font-weight: bold;
+					color: white;
+				}
+				#body #layout_body #side_nav #side_nav_options select {
+					border: 1px solid black;
+					font-size: 10px;
+					color: black;
+				}
+		/* ------------------------------------------------------------------------------------------ */
+		/* The large box where content goes */
+		#body #layout_body #main {
+			float: right;
+			margin: 0;
+			padding: 0;
+			width: 600px;
+		}
+			#body #layout_body #main #interior {
+				width: 600px;
+				margin: 0;
+				padding: 0;
+			}
+			#body #layout_body #main #interior_stripe {
+				width: 590px;
+				margin: 0;
+				padding: 2px 5px 2px 5px;
+				font-weight: bold;
+				font-style: italic;
+				color: white;
+			}
+			#body #layout_body #main #content {
+				width: 590px;
+				margin: 0;
+				padding: 5px;
+			}
+		/* ------------------------------------------------------------------------------------------ */
+		/* Gutter of template layout (copyright info, etc.) */
+		#body #layout_body #footer {
+			clear: both;
+			padding: 7px 0 0 0;
+			width: 100%;
+			text-align: center;
+			font-size: 10px;
+			line-height: 1.2em;
+			color: #E1E1E1;
+		}
+			#body #layout_body #footer a {
+				font-size: 10px;
+				color: white;
+			}
+			#body #layout_body #footer a:hover {
+				font-size: 10px;
+				color: #FFFF40;
+			}
+
+#bottom {
+	width: 770px;
+	height: 15px;
+	font-size: 1px;
+	line-height: 1px;
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* Below the template, usually has debugging information if available */
+#debug {
+	width: 100%;
+	text-align: left;
+	font-family: 'Times New Roman', Times, Helvetica, serif;
+	font-size: 8pt;
+	color: black;
+	background: none transparent;
+}

@@ -1,0 +1,1 @@
+coverButton.useHandCursor = false;

@@ -1,0 +1,22 @@
+services:
+  millsberry:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    restart: unless-stopped
+    volumes:
+      - ../official-core-recovered:/data/official-core-recovered:ro
+      - ../official-recovered:/data/official-recovered:ro
+      - ../official-recovered-assets:/data/official-recovered-assets:ro
+      - ../official-full-backup:/data/official-full-backup:ro
+      - ../recovery-osint:/data/recovery-osint:ro
+      - ./data:/app/data
+      - ./output:/app/output
+    environment:
+      DATA_ROOT: /data
+      ACCOUNT_STORE_PATH: /app/data/accounts.json
+      TEST_USERNAME: testcitizen
+      TEST_PASSWORD: millsberry
+      MISSING_LOG_PATH: /app/output/missing-requests.jsonl
+      RUFFLE_URL: /__ruffle/ruffle.js
+      PORT: 3000

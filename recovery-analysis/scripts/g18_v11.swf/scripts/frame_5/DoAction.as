@@ -1,0 +1,1 @@
+fscommand("trapallkeys","true");

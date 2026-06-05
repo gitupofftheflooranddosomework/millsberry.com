@@ -1,0 +1,54 @@
+body {
+	background-color: #E6ECFF;
+}
+
+#top {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/layout/shadow_top_1.gif') no-repeat 0 25px;
+}
+#body {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/layout/shadow_body_1.gif') repeat-y;
+}
+#bottom {
+	background: #001E7B url('http://graphics.millsberry.com/site_gfx/layout/shadow_bottom_1.gif') no-repeat;
+}
+
+#top #layout_head #stripe {
+	background-color: #001E7B;
+}
+	#top #layout_head #stripe input {
+		background-color: #E6ECFF;
+	}
+
+#body #layout_body {
+	border: 2px solid #0D1E7D;
+	background-color: #7F98E5;
+}
+	#body #layout_body #side_nav {
+		border: 2px solid #001E7B;
+		background-color: #7F98E5;
+	}
+		#body #layout_body #side_nav #side_nav_links {
+			background-color: #6078BF;
+		}
+		#body #layout_body #side_nav #side_nav_options td {
+			background-color: #001E7B;
+		}
+		#body #layout_body #side_nav #side_nav_options select {
+			background-color: #E6ECFF;
+		}
+		#body #layout_body #side_nav #status .status_info a {
+			color: #000000;
+		}
+		#body #layout_body #side_nav #status .status_info a:hover {
+			color: #800000;
+		}
+	#body #layout_body #footer {
+		background-color: #001E7B;
+	}
+
+#interior, #gazette_banner, #coach_link #coach {
+	background-color: #316BF0;
+}
+#interior_stripe, .header_stripe_TD, #syndicated_ad {
+	background-color: #001E7B;
+}

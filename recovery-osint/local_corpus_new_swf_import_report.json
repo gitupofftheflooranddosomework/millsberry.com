@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-06-04T23:37:17",
+  "copied_count": 15,
+  "copied": [
+    {
+      "name": "downtown_v24.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\downtown_v24.swf",
+      "size": 364541,
+      "destination": "app\\recovered-games\\discovered\\downtown_v24.swf"
+    },
+    {
+      "name": "int_arcade_v3.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_arcade_v3.swf",
+      "size": 273029,
+      "destination": "app\\recovered-games\\discovered\\int_arcade_v3.swf"
+    },
+    {
+      "name": "int_classroom_v11.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_classroom_v11.swf",
+      "size": 92869,
+      "destination": "app\\recovered-games\\discovered\\int_classroom_v11.swf"
+    },
+    {
+      "name": "int_entertainment_v5.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_entertainment_v5.swf",
+      "size": 80709,
+      "destination": "app\\recovered-games\\discovered\\int_entertainment_v5.swf"
+    },
+    {
+      "name": "int_ext_com_center_v9_winter.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_ext_com_center_v9_winter.swf",
+      "size": 159199,
+      "destination": "app\\recovered-games\\discovered\\int_ext_com_center_v9_winter.swf"
+    },
+    {
+      "name": "int_gym_v1.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_gym_v1.swf",
+      "size": 60422,
+      "destination": "app\\recovered-games\\discovered\\int_gym_v1.swf"
+    },
+    {
+      "name": "int_hallway_v11.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_hallway_v11.swf",
+      "size": 125565,
+      "destination": "app\\recovered-games\\discovered\\int_hallway_v11.swf"
+    },
+    {
+      "name": "int_lab_v2.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_lab_v2.swf",
+      "size": 164648,
+      "destination": "app\\recovered-games\\discovered\\int_lab_v2.swf"
+    },
+    {
+      "name": "int_museum_v4.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_museum_v4.swf",
+      "size": 128934,
+      "destination": "app\\recovered-games\\discovered\\int_museum_v4.swf"
+    },
+    {
+      "name": "int_park_v13.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_park_v13.swf",
+      "size": 208675,
+      "destination": "app\\recovered-games\\discovered\\int_park_v13.swf"
+    },
+    {
+      "name": "int_police_v1.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_police_v1.swf",
+      "size": 24612,
+      "destination": "app\\recovered-games\\discovered\\int_police_v1.swf"
+    },
+    {
+      "name": "int_postoffice_v1.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_postoffice_v1.swf",
+      "size": 61738,
+      "destination": "app\\recovered-games\\discovered\\int_postoffice_v1.swf"
+    },
+    {
+      "name": "int_recording_studio_v1.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\int_recording_studio_v1.swf",
+      "size": 76571,
+      "destination": "app\\recovered-games\\discovered\\int_recording_studio_v1.swf"
+    },
+    {
+      "name": "mainmap_fall_v22.swf",
+      "source": "recovery-osint\\github-extracted-swfs\\mainmap_fall_v22.swf",
+      "size": 351113,
+      "destination": "app\\recovered-games\\discovered\\mainmap_fall_v22.swf"
+    },
+    {
+      "name": "mainmap_v31_winter.swf",
+      "source": "recovery-osint\\sample-assets\\mainmap_v31_winter.swf",
+      "size": 250327,
+      "destination": "app\\recovered-games\\discovered\\mainmap_v31_winter.swf"
+    }
+  ]
+}

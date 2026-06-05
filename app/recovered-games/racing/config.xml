@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<driver id="1" trackingtag="Bowyer">
+		<thumbnail filename="driver1.swf" />
+		<car filename="car1.swf" />
+	</driver>
+	<driver id="2" trackingtag="Jenson">
+		<thumbnail filename="driver2.swf" />
+		<car filename="car2.swf" />
+	</driver>
+	<driver id="3" trackingtag="Adams">
+		<thumbnail filename="driver3.swf" />
+		<car filename="car3.swf" />
+	</driver>
+	<driver id="4" trackingtag="Jacobs">
+		<thumbnail filename="driver4.swf" />
+		<car filename="car4.swf" />
+	</driver>
+	
+	<track id="1" trackingtag="Kingshill">
+		<name><![CDATA[KING’S HILL MOTOR SPEEDWAY]]></name>
+		<thumbnail filename="track1.swf" />
+		<course filename="course1.swf" timelimit="40" lapsrequired="3">
+			<blimp status="on" filename="ad_blimp_trix.jpg" />
+			<billboard status="on" filename="ad_billboard_trix.jpg" />
+		</course>			
+	</track>
+	<track id="2" trackingtag="Colhurst">
+		<name><![CDATA[COLHURST SUPER SPEEDWAY]]></name>
+		<thumbnail filename="track2.swf" />
+		<course filename="course2.swf" timelimit="55" lapsrequired="3">
+			<blimp status="on" filename="ad_blimp_fruit.jpg" />
+			<billboard status="on" filename="ad_billboard_fruit.jpg" />
+		</course>
+	</track>
+	<track id="3" trackingtag="Mills500">
+		<name><![CDATA[MILLSBERRY 500]]></name>
+		<thumbnail filename="track3.swf" />
+		<course filename="course3.swf" timelimit="70" lapsrequired="3">
+			<blimp status="on" filename="ad_blimp_honeynut.jpg" />
+			<billboard status="on" filename="ad_billboard_honeynut.jpg" />
+		</course>
+	</track>
+</config>

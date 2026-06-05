@@ -1,0 +1,16 @@
+gMyScoringSystem.reset();
+stop();
+_root.buttonSound = new Sound(_root);
+_root.buttonSound.attachSound("buttonNoise");
+_root.buzzerSound = new Sound(_root);
+_root.buzzerSound.attachSound("buzzerNoise");
+_root.correctSound = new Sound(_root);
+_root.correctSound.attachSound("correctNoise");
+_root.nextLevelSound = new Sound(_root);
+_root.nextLevelSound.attachSound("nlNoise");
+_root.scrambleSound = new Sound(_root);
+_root.scrambleSound.attachSound("scrambleNoise");
+_root.tickSound = new Sound(_root);
+_root.tickSound.attachSound("tickNoise");
+_root.wrongSound = new Sound(_root);
+_root.wrongSound.attachSound("wrongNoise");

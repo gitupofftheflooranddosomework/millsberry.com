@@ -1,0 +1,14 @@
+{
+  "name": "millsberry-official-replay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "crawl": "node tools/crawl-replay.js",
+    "test:auth": "node tools/test-auth.js",
+    "test:economy": "node tools/test-economy.js"
+  },
+  "dependencies": {}
+}

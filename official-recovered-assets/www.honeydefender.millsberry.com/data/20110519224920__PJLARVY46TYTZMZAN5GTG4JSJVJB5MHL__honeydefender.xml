@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<honeydefender>
+	
+	<buzzheader><![CDATA[Buzz is the youngest Honey Defender™ in the history of the Hive. Help him save the honey in all the games on this site.]]></buzzheader>
+	
+	<characters>
+		<character>
+			<assetURL><![CDATA[assets/characters/C_1_Yellowjack.flv]]></assetURL>
+			<clickURL><![CDATA[levels.htm]]></clickURL>
+			<bodyCopy><![CDATA[Yellow Jack takes no prisoners. He does, however, take all the honey he can get. Stop him in <span class="highlight">Save the Honey</span>.]]></bodyCopy>
+			<tracking id="101">
+					<wt_ti><![CDATA[Thumbnail: Yellow Jack]]></wt_ti>
+					<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+					<wt_dcsuri><![CDATA[/thumb/YellowJack_thumb]]></wt_dcsuri>
+					<ga_page><![CDATA[/thumb/YellowJack_thumb]]></ga_page>
+			</tracking>
+		</character>
+		<character>
+			<assetURL><![CDATA[assets/characters/C_2_Maddy.flv]]></assetURL>
+			<clickURL><![CDATA[honeydefender/]]></clickURL>
+			<bodyCopy><![CDATA[Greed for honey drove him mad. Genius made him a scientist. Outsmart Maddy the Mad Scientist in <span class="highlight">Honey Defender™</span>.]]></bodyCopy>
+			<tracking id="102">
+					<wt_ti><![CDATA[Thumbnail: Maddy]]></wt_ti>
+					<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+					<wt_dcsuri><![CDATA[/thumb/Maddy_thumb]]></wt_dcsuri>
+					<ga_page><![CDATA[/thumb/Maddy_thumb]]></ga_page>
+			</tracking>
+		</character>
+		<character>
+			<assetURL><![CDATA[assets/characters/C_3_Mumbee.flv]]></assetURL>
+			<clickURL><![CDATA[mumbee.aspx]]></clickURL>
+			<bodyCopy><![CDATA[Uncontrollable passion for honey and an ancient curse give Mumbee his power. Unravel his evil plans in <span class="highlight">Buzz Adventures</span>.]]></bodyCopy>
+			<tracking id="103">
+				<wt_ti><![CDATA[Thumbnail: Mumbee]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/thumb/Mumbee_thumb]]></wt_dcsuri>
+				<ga_page><![CDATA[/thumb/Mumbee_thumb]]></ga_page>
+			</tracking>
+		</character>
+		<character>
+			<assetURL><![CDATA[assets/characters/C_4_Beenita.flv]]></assetURL>
+			<clickURL><![CDATA[honeydefender/]]></clickURL>
+			<bodyCopy><![CDATA[Beenita is one of Buzz's best friends. She always keeps her cool no matter how much honey is on the line. See her in <span class="highlight">Honey Defender™</span>.]]></bodyCopy>
+			<tracking id="104">
+				<wt_ti><![CDATA[Thumbnail: Beenita]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/thumb/Beenita_thumb]]></wt_dcsuri>
+				<ga_page><![CDATA[/thumb/Beenita_thumb]]></ga_page>
+			</tracking>
+		</character>
+		<character>
+			<assetURL><![CDATA[assets/characters/C_5_Marcus.flv]]></assetURL>
+			<clickURL><![CDATA[honeydefender/]]></clickURL>
+			<bodyCopy><![CDATA[Bixbee is another best friend of Buzz. He might be small but he's always there when you need him. See him in <span class="highlight">Honey Defender™</span>.]]></bodyCopy>
+			<tracking id="105">
+				<wt_ti><![CDATA[Thumbnail: Bixbee]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/thumb/Bixbee_thumb]]></wt_dcsuri>
+				<ga_page><![CDATA[/thumb/Bixbee_thumb]]></ga_page>
+			</tracking>
+		</character>
+		<character>
+			<assetURL><![CDATA[assets/characters/C_6_Thug.flv]]></assetURL>
+			<clickURL><![CDATA[honeyhero/]]></clickURL>
+			<bodyCopy><![CDATA[These guys provide an instant army for any villain.  Usually Yellow Jacket is ready to hire them. Show them who's boss in <span class="highlight">Honey Hero™</span>.]]></bodyCopy>
+			<tracking id="106">
+				<wt_ti><![CDATA[Thumbnail: Thug]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/thumb/Thug_thumb]]></wt_dcsuri>
+				<ga_page><![CDATA[/thumb/Thug_thumb]]></ga_page>
+			</tracking>
+		</character>
+		<character>
+			<assetURL><![CDATA[assets/characters/C_7_Hector.flv]]></assetURL>
+			<clickURL><![CDATA[augmentedreality/]]></clickURL>
+			<bodyCopy><![CDATA[When male modeling failed, Handsome Hector became a full-time honey bandit. Stop him from stealing the honey in <span class="highlight">Honeyway Train</span>.]]></bodyCopy>
+			<tracking id="107">
+				<wt_ti><![CDATA[Thumbnail: Hector]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/thumb/Hector_thumb]]></wt_dcsuri>
+				<ga_page><![CDATA[/thumb/Hector_thumb]]></ga_page>
+			</tracking>
+		</character>
+		<character>
+			<assetURL><![CDATA[assets/characters/C_8_Yellowjacket.flv]]></assetURL>
+			<clickURL><![CDATA[honeyhero/]]></clickURL>
+			<bodyCopy><![CDATA[Yellow Jacket is a wasp, which means he can't make honey. But that's no reason to steal it!  Teach him a lesson in <span class="highlight">Honey Hero™</span>.]]></bodyCopy>
+			<tracking id="108">
+				<wt_ti><![CDATA[Thumbnail: Yellow Jacket]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/thumb/YellowJacket_thumb]]></wt_dcsuri>
+				<ga_page><![CDATA[/thumb/YellowJacket_thumb]]></ga_page>
+			</tracking>
+		</character>
+	</characters>
+	
+	<featured>
+    <feature secondsDisplayed="6">
+      <assetURL><![CDATA[assets/featured/feature_decoder.swf]]></assetURL>
+      <clickURL><![CDATA[decoder/]]></clickURL>
+      <tracking id="206">
+        <wt_ti><![CDATA[Featured: Decoder]]></wt_ti>
+        <wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+        <wt_dcsuri><![CDATA[/featured/Decoder_featured]]></wt_dcsuri>
+        <ga_page><![CDATA[/featured/Decoder_featured]]></ga_page>
+      </tracking>
+    </feature>
+  </featured>
+	
+	<featuredNav>
+    <button>
+      <tracking id="306">
+        <wt_ti><![CDATA[Featured: Nav 1]]></wt_ti>
+        <wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+        <wt_dcsuri><![CDATA[/featured_nav/Nav1_featured]]></wt_dcsuri>
+        <ga_page><![CDATA[/featured_nav/Nav1_featured]]></ga_page>
+      </tracking>
+    </button>
+  </featuredNav>
+	
+	<archive>
+    <game>
+      <assetURL><![CDATA[assets/archive/archive_honeybust.swf]]></assetURL>
+      <clickURL><![CDATA[honeybust/]]></clickURL>
+      <bodyCopy><![CDATA[Stop Yellow Jacket™<br>by launching him far<br>away from the honey!]]></bodyCopy>
+      <tracking id="408">
+        <wt_ti><![CDATA[Arcade: Honey Bust]]></wt_ti>
+        <wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+        <wt_dcsuri><![CDATA[/archive/HoneyBust_arcade]]></wt_dcsuri>
+        <ga_page><![CDATA[/archive/HoneyBust_arcade]]></ga_page>
+      </tracking>
+    </game>
+    <game>
+      <assetURL><![CDATA[assets/archive/archive_buzzdecoder.swf]]></assetURL>
+      <clickURL><![CDATA[decoder/]]></clickURL>
+      <bodyCopy><![CDATA[Outsmart Yellow<br>Jacket™ to save the<br>Honey Express™]]></bodyCopy>
+      <tracking id="408">
+        <wt_ti><![CDATA[Arcade: Decoder]]></wt_ti>
+        <wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+        <wt_dcsuri><![CDATA[/archive/Decoder_arcade]]></wt_dcsuri>
+        <ga_page><![CDATA[/archive/Decoder_arcade]]></ga_page>
+      </tracking>
+    </game>
+    <game>
+      <assetURL><![CDATA[assets/archive/archive_comiccreator.swf]]></assetURL>
+      <clickURL><![CDATA[honeydefender/comiccreator/]]></clickURL>
+      <bodyCopy><![CDATA[Create your very own comic and design exciting new characters!]]></bodyCopy>
+      <tracking id="408">
+        <wt_ti><![CDATA[Arcade: Comic Creator]]></wt_ti>
+        <wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+        <wt_dcsuri><![CDATA[/archive/ComicCreator_arcade]]></wt_dcsuri>
+        <ga_page><![CDATA[/archive/ComicCreator_arcade]]></ga_page>
+      </tracking>
+    </game>
+    <game>
+			<assetURL><![CDATA[assets/archive/archive_honeywaytrain.swf]]></assetURL>
+			<clickURL><![CDATA[augmentedreality/]]></clickURL>
+			<bodyCopy><![CDATA[Stop Handsome<br>Hector™ from stealing<br>the Honey Express™!]]></bodyCopy>
+			<tracking id="401">
+				<wt_ti><![CDATA[Arcade: Honeyway Train]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/archive/HoneywayTrain_arcade]]></wt_dcsuri>
+				<ga_page><![CDATA[/archive/HoneywayTrain_arcade]]></ga_page>
+			</tracking>
+		</game>
+		<game>
+			<assetURL><![CDATA[assets/archive/archive_honeydefender.swf]]></assetURL>
+			<clickURL><![CDATA[honeydefender/]]></clickURL>
+			<bodyCopy><![CDATA[Explore, collect and defend to save the Hive's honey!]]></bodyCopy>
+			<tracking id="402">
+				<wt_ti><![CDATA[Arcade: Honey Defender]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/archive/HoneyDefender_arcade]]></wt_dcsuri>
+				<ga_page><![CDATA[/archive/HoneyDefender_arcade]]></ga_page>
+			</tracking>
+		</game>
+		<game>
+			<assetURL><![CDATA[assets/archive/archive_honeyhero.swf]]></assetURL>
+			<clickURL><![CDATA[honeyhero/]]></clickURL>
+			<bodyCopy><![CDATA[Stop Yellow Jacket™<br>and his henchmen from stealing the honey!]]></bodyCopy>
+			<tracking id="403">
+				<wt_ti><![CDATA[Arcade: Honey Hero]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/archive/HoneyHero_arcade]]></wt_dcsuri>
+				<ga_page><![CDATA[/archive/HoneyHero_arcade]]></ga_page>
+			</tracking>
+		</game>
+		<game>
+			<assetURL><![CDATA[assets/archive/archive_buzzadv.swf]]></assetURL>
+			<clickURL><![CDATA[mumbee.aspx]]></clickURL>
+			<bodyCopy><![CDATA[Prepare for magic<br>spells and a plot to<br>steal the honey!]]></bodyCopy>
+			<tracking id="404">
+				<wt_ti><![CDATA[Arcade: Buzz Adventures]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/archive/BuzzAdventures_arcade]]></wt_dcsuri>
+				<ga_page><![CDATA[/archive/BuzzAdventures_arcade]]></ga_page>
+			</tracking>
+		</game>
+		<game>
+			<assetURL><![CDATA[assets/archive/archive_savethehoney.swf]]></assetURL>
+			<clickURL><![CDATA[levels.htm]]></clickURL>
+			<bodyCopy><![CDATA[Recover honey from Yellow Jack™ with steady aim and your lasso!]]></bodyCopy>
+			<tracking id="405">
+				<wt_ti><![CDATA[Arcade: Save the Honey]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/archive/SaveTheHoney_arcade]]></wt_dcsuri>
+				<ga_page><![CDATA[/archive/SaveTheHoney_arcade]]></ga_page>
+			</tracking>
+		</game>
+		<game>
+			<assetURL><![CDATA[assets/archive/archive_thechase.swf]]></assetURL>
+			<clickURL><![CDATA[http://submit.pointroll.com/clients/GeneralMills/HoneyNutCheeriosKidsFY08/Game.aspx]]></clickURL>
+			<bodyCopy><![CDATA[Sink Maddy's<br>submarine to stop him<br>from getting away!]]></bodyCopy>
+			<tracking id="406">
+				<wt_ti><![CDATA[Arcade: The Chase]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/archive/TheChase_arcade]]></wt_dcsuri>
+				<ga_page><![CDATA[/archive/TheChase_arcade]]></ga_page>
+			</tracking>
+		</game>
+		<game>
+			<assetURL><![CDATA[assets/archive/archive_greenhouse.swf]]></assetURL>
+			<clickURL><![CDATA[http://www.millsberry.com/greenhouse/]]></clickURL>
+			<bodyCopy><![CDATA[Buzz over to get<br>prizes, flowers, bugs<br>and more.]]></bodyCopy>
+			<tracking id="407">
+				<wt_ti><![CDATA[Arcade: Greenhouse]]></wt_ti>
+				<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+				<wt_dcsuri><![CDATA[/archive/Greenhouse_arcade]]></wt_dcsuri>
+				<ga_page><![CDATA[/archive/Greenhouse_arcade]]></ga_page>
+			</tracking>
+		</game>				
+	</archive>
+	
+	<miscTracking>
+		<tracking id="1001">
+			<wt_ti><![CDATA[Activity Break]]></wt_ti>
+			<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+			<wt_dcsuri><![CDATA[/ActivityBreak]]></wt_dcsuri>
+			<ga_page><![CDATA[/ActivityBreak]]></ga_page>
+		</tracking>
+		<tracking id="1002">
+			<wt_ti><![CDATA[Activity Break: Take a Break]]></wt_ti>
+			<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+			<wt_dcsuri><![CDATA[/AB_TakeaBreak]]></wt_dcsuri>
+			<ga_page><![CDATA[/AB_TakeaBreak]]></ga_page>
+		</tracking>
+		<tracking id="1003">
+			<wt_ti><![CDATA[Activity Break: Continue]]></wt_ti>
+			<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+			<wt_dcsuri><![CDATA[/AB_Continue]]></wt_dcsuri>
+			<ga_page><![CDATA[/AB_Continue]]></ga_page>
+		</tracking>
+		<tracking id="1004">
+			<wt_ti><![CDATA[Return To Site]]></wt_ti>
+			<wt_dcssip><![CDATA[http://www.honeydefender.millsberry.com]]></wt_dcssip>
+			<wt_dcsuri><![CDATA[/archive/ReturnToSite]]></wt_dcsuri>
+			<ga_page><![CDATA[/archive/ReturnToSite]]></ga_page>
+		</tracking>
+	</miscTracking>
+	
+</honeydefender>

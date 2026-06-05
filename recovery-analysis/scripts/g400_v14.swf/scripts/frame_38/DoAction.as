@@ -1,0 +1,2 @@
+ScoringSystem.reset();
+stop();

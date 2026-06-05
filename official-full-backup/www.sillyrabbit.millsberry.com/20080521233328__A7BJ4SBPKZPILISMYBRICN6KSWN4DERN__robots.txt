@@ -1,0 +1,132 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><title>
+	General Mills Maintenance
+</title><link rel="stylesheet" href="/Standard.css" type="text/css" /></head>
+<body>
+    <form name="aspnetForm" method="post" action="Default.aspx" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY3MTgwMzU3NWRk60pzWOG466/GW9tnQyYJGDrIF8Q=" />
+
+    <div>
+        
+            <img src="/hm_genmils.gif" width="310" height="32" alt="Logo"/>
+        
+        
+        <br/><br/><br/>
+        
+        
+            <div class="paragraph">
+                This Web site is temporarily unavailable while we perform required maintenance.
+                <br/><br/>
+                We're working hard to improve your online experience and apologize for the inconvenience.<br/><br/>
+                Please check back soon!<br /><br />
+            </div>
+        
+        
+        
+    
+    <div id="ReplaceMe" class="paragraph"><span id="Disp"></span>&nbsp;until the site is available.</div>
+    <script type="text/javascript" language="JavaScript">
+		<!-- //Begin
+		var up,down;
+		var min1,sec1;
+		var cmin1,csec1,chour1,cmin2,csec2,chour2;
+		
+		function Minutes(data) {
+		for(var i=0;i<data.length;i++) 
+		if(data.substring(i,i+1)==":") 
+		break;  
+		return(data.substring(0,i)); 
+		}
+		
+		function Seconds(data) {        
+		for(var i=0;i<data.length;i++) 
+		if(data.substring(i,i+1)==":") 
+		break;  
+		return(data.substring(i+1,data.length)); 
+		}
+		
+		function Display(hours,min,sec) {     
+		var disp;       
+		if(hours<=9) disp="0";   
+		else disp="";  
+		disp+=hours+":";  
+		if(min<=9) disp+="0";   
+		else disp+="";  
+		disp+=min+":";  
+		if(sec<=9) disp+="0"+sec;       
+		else disp+=sec; 
+		return(disp); 
+		}
+		
+		function Down() {       
+		chour2=-11673;
+		cmin2=-4;        
+		csec2=-28;
+		DownRepeat(); 
+		}
+		
+		function DownRepeat() { 
+		csec2--;        
+		if(csec2==-1) { 
+		csec2=59; cmin2--; 
+		}       
+		if(cmin2==-1) { 
+		cmin2=59; chour2--; 
+		}       
+		Disp.innerHTML=Display(chour2,cmin2,csec2);
+		if((chour2==0)&&(cmin2==0)&&(csec2==0)) {
+			ReplaceMe.innerHTML = "";
+			//ReplaceMe.innerHTML = "Please check back later.";
+			//window.location="http://www.generalmills.com";
+			}
+		else if ((chour2<0)||(cmin2<0)||(csec2<0)) {
+			ReplaceMe.innerHTML = "";
+			//ReplaceMe.innerHTML = "Please check back later.";
+		}
+		else down=setTimeout("DownRepeat()",1000); 
+		}
+		
+		function Up() { 
+		chour1=0;        
+		cmin1=0;        
+		csec1=0;        
+		UpRepeat(); 
+		}
+		
+		function UpRepeat() {   
+		csec1++;        
+		if(csec1==60) {
+		csec1=0; cmin1++; 
+		}
+		if(cmin1==60) {
+		cmin1=0; chour1++; 
+		}
+		Disp.innerHTML="-" + Display(chour1,cmin1,csec1);
+		up=setTimeout("UpRepeat()",1000); 
+		}
+		
+        Down();
+		// End -->
+    </script>
+
+        
+        <br/><br/><br/>
+        
+        
+            <div style="width:650px;">
+                <img src="/corporate_G.gif" alt="General Mills Corporate" />
+            </div>
+            <div style="background-image:url(/dot_pattern.gif); background-repeat:repeat;width:650px;">&nbsp;</div>
+            <br />
+            <div style="text-align:center;width:650px;font-size:smaller;">
+                © Copyright 2008 General Mills, Inc. All Rights Reserved.
+            </div>
+        
+        
+        <br/><br/>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- 10.100.56.28 -->
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='imagetoolbar' content='no'>
+<meta name='keywords' content="Mills,Millsbury,Milsberry,Milsbury,Millberry,Millbury,Fun games,Spanish language games,Educational games,Active games,Citizen,Cool stuff,Arcade,Music Mix,Fun,Games,Explore,Adventure,Create,Character,Buddy,Care,Academy,School,Gym,Gymnasium,Solver,Science,Project,Town,Pets,Children's games,Games for kid,Kid games,Kids games,Kid's games,Children,Safe gaming">
+<title>Millsberry - Grocery Store</title>
+<!-- Appending v=# to these files causes them to recache in the user's browser when # changes -->
+<link rel='stylesheet' type='text/css' href='/css/theme/royal.css?v=2'>
+<link rel='stylesheet' type='text/css' href='/css/template.css?v=2'>
+<!--[if lt IE 7.00]>
+<link rel='stylesheet' type='text/css' href='/css/ie.css?v=1'>
+<![endif]-->
+<script type='text/javascript' src='/hidden.js?v=1'></script>
+<script type='text/javascript'>
+<!--
+// Allows users to assign names to their shortcuts
+function addShortcut (to_url, default_title) {
+	assign_title = default_title;
+	var user_title = prompt ("What name do you want to give this shortcut?\nLeave this blank to use the page's existing title.","");
+	if (user_title.length > 0) {
+		assign_title = base64_encode (utf8_encode (user_title));
+	}
+	window.location='/process_shortcut.phtml?action=add&url=' + to_url + '&name=' + assign_title;
+}
+//-->
+</script>
+<link rel='shortcut icon' href='/favicon.ico'>
+</head>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<body>
+
+<div id='top'>
+<a href='/index.phtml'><span id='logo'>&nbsp;</span></a>
+<div id='layout_head'>
+	<div id='login_info'><form name='login' method='post' action='/shop.phtml?shop_id=4&p=1&msg=You+just+purchased+Tomato%21&class=success'>
+Username <input type='text' name='login_username' size='10'>&nbsp;&nbsp;
+Password <input type='password' name='login_pass' size='10'>
+<input type='submit' value='Go'>
+</form></div>
+	<div id='stripe'>
+		<div id='stripe_shortcuts'>
+			<table width='95' border='0' cellpadding='0' cellspacing='0'><tr>
+				<td width='72'></td>
+				<td width='23' valign='bottom'></td>
+			</tr></table>
+		</div>
+		<div id='stripe_search'>
+			<form name='search' action='/site_search.phtml' method='get'>
+			<table width='340' border='0' cellpadding='0' cellspacing='0'><tr>
+				<td width='135' align='right'>Address Book&nbsp;</td>
+				<td width='105' align='left' valign='middle'><input type='text' name='search' size='15'></td>
+				<td width='30' align='center' valign='bottom'><a href='javascript: document.search.submit();' class='stripe_button'><span id='search_button'>&nbsp;</span></a></td>
+				<td width='60' align='right'><a href='/town_hall/faq.phtml'>Help</a></td>
+			</tr></table>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id='body'>
+<div id='layout_body'>
+<div id='side_nav'>
+
+<!-- Exclude these from the stylesheet so they can be translated -->
+<style type='text/css'>
+#body #layout_body #side_nav .nav_button_hover #nav_signup {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_signup_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_start {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_start_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_the_city {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_the_city_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_downtown {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_downtown_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_arcade {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_arcade_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_my_stuff {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_my_stuff_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_my_home {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_my_place_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_customize {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_customize_1.png') no-repeat;
+}
+</style>
+<!--[if lt IE 7.00]>
+<style type='text/css'>
+#body #layout_body #side_nav .nav_button_hover #nav_signup {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_signup_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_start {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_start_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_the_city {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_the_city_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_downtown {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_downtown_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_arcade {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_arcade_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_my_stuff {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_my_stuff_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_my_home {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_my_place_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_customize {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_customize_1.png');
+}
+</style>
+<![endif]-->
+
+<a href='/signup.phtml' class='nav_button_hover'><span id='nav_signup' class='nav_button'>&nbsp;</span></a>
+<a href='/main_map.phtml' class='nav_button_hover'><span id='nav_the_city' class='nav_button'>&nbsp;</span></a>
+<a href='/main_map.phtml?location=downtown' class='nav_button_hover'><span id='nav_downtown' class='nav_button'>&nbsp;</span></a>
+<a href='/complex/arcade.phtml' class='nav_button_hover'><span id='nav_arcade' class='nav_button'>&nbsp;</span></a>
+<br><img src='http://graphics.millsberry.com/site_gfx/prebuddy.gif' border='1'><div style='font-size: 3px; line-height: 3px;'>&nbsp;</div>
+
+<table width='100%' border='0' cellpadding='5' cellspacing='0' id='side_nav_options'>
+<tr>
+	<td align='right'>Language</td>
+	<td>
+		<form name='language_form' method='post' action='/shop.phtml?shop_id=4&p=1&msg=You+just+purchased+Tomato%21&class=success'>
+		<select name='lang' onChange='document.language_form.submit();' style='width: 70px;'>
+			<option value='en' selected>English</option>
+			<option value='es' >Espa&ntilde;ol</option>
+		</select>
+		</form>
+	</td>
+</tr>
+
+</table>
+
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id='main'>
+
+	<div id='interior'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '600', '400', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fsite_gfx%252Finteriors%252Fint_grocery_v29.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E600%3C%2Fwidth%3E%3Cheight%3E400%3C%2Fheight%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></div>
+	<div id='interior_stripe'>Grocery Store</div>
+	<!--<a href='/shop.phtml?shop_id=4'>List All</a>-->
+	<div id='content'>
+	
+	<div class='success'>You just purchased Tomato!</div>
+If your stomach's growling, we've got the groceries!<br><br><i>Visit <a href='/refer.phtml?r_id=15' target='_blank' style='color: red;'>MyPyramid</a> to help you decide what to put on your grocery list!</i><TABLE BORDER='0' CELLPADDING='0' CELLSPACING='0' WIDTH='100%'><TR>
+<TD WIDTH='20%'><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/bluebox.gif' WIDTH='20' HEIGHT='20' TITLE='Get your calcium-rich foods' ALT='Dairy'> = Dairy</TD>
+<TD WIDTH='20%'><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/purplebox.gif' WIDTH='20' HEIGHT='20' TITLE='Go lean with protein' ALT='Meat'> = Protein</TD>
+<TD WIDTH='20%'><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/orangebox.gif' WIDTH='20' HEIGHT='20' TITLE='Make half your grains whole' ALT='Grain'> = Grain</TD>
+<TD WIDTH='20%'><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/greenbox.gif' WIDTH='20' HEIGHT='20' TITLE='Vary your veggies' ALT='Vegetables'> = Vegetable</TD>
+<TD WIDTH='20%'><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/redbox.gif' WIDTH='20' HEIGHT='20' TITLE='Focus on fruits' ALT='Fruit'> = Fruit</TD>
+</TR></TABLE>
+<div align='center'><table align='center' border='0' cellpadding='0' cellspacing='0'><tr>
+<td width='21' align='right' height='20'><img src='http://graphics.millsberry.com/site_gfx/pixel.gif' width='21' height='20'></td>
+<td width='16' align='right' height='20'><img src='http://graphics.millsberry.com/site_gfx/pixel.gif' width='16' height='20'></td>
+<td align='center' height='20' valign='top'><span class='page_selected'>1</span><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=2' class='page_link'>2</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=3' class='page_link'>3</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=4' class='page_link'>4</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=5' class='page_link'>5</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=6' class='page_link'>6</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=7' class='page_link'>7</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=8' class='page_link'>8</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=9' class='page_link'>9</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=10' class='page_link'>10</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=11' class='page_link'>11</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=12' class='page_link'>12</a></td>
+<td width='16' height='20' align='left'><img src='http://graphics.millsberry.com/site_gfx/pixel.gif' width='16' height='20'></td>
+<td width='21' height='20' align='left'><img src='http://graphics.millsberry.com/site_gfx/pixel.gif' width='21' height='20'></td>
+</tr></table>
+</div><hr size='1' noshade>
+<form method='post' action='process_shop.phtml' onSubmit='return can_submit (this);'>
+<input type='hidden' name='submitted' value='false'>
+<input type='hidden' name='shop_id' value='4'>
+<input type='hidden' name='p' value='1'>
+<table width='100% border='0' cellpadding='2' cellspacing='0'>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_301.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Slice of Chocolate Cake</b><br><i>Delicious chocolate cake covered with chocolate syrup!</i></td>
+<td align='center'>75<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_301:00161b1d827d9a60ce25a8b75c5b26a0' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 75 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_312.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Peas</b><br><i>Green peas, fresh from the pod!</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/greenbox.gif' WIDTH='20' HEIGHT='20' TITLE='Vary your veggies' ALT='Vegetables'></td>
+<td align='center'>14<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_312:0ea150f021a24146b44bd08c94f8972f' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 14 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_315.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Vanilla Ice Cream Cone</b><br><i>A cold vanilla cone for a hot summer day!</i></td>
+<td align='center'>60<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_315:3f4dd9643d1faf1fbeb9b3b60932d4dd' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 60 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_326.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Broccoli Cheese Potato</b><br><i>Yum! Keeps you warm on a cold day.</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/bluebox.gif' WIDTH='20' HEIGHT='20' TITLE='Get your calcium-rich foods' ALT='Dairy'><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/greenbox.gif' WIDTH='20' HEIGHT='20' TITLE='Vary your veggies' ALT='Vegetables'></td>
+<td align='center'>36<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_326:a04769df82cb20a52bfbd46571273376' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 36 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_331.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Cherries</b><br><i>Cherries make a juicy snack!</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/redbox.gif' WIDTH='20' HEIGHT='20' TITLE='Focus on fruits' ALT='Fruit'></td>
+<td align='center'>13<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_331:f2258ed6a7b32f6f77ed8a804f2ad901' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 13 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_340.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Tomato</b><br><i>You can eat them right off the vine!</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/greenbox.gif' WIDTH='20' HEIGHT='20' TITLE='Vary your veggies' ALT='Vegetables'></td>
+<td align='center'>12<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_340:b78323e60ca5d83f3730a02f4db01894' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 12 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_349_v2.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Carton of Apple Juice</b><br><i>How many apples do you think they had to squeeze?</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/redbox.gif' WIDTH='20' HEIGHT='20' TITLE='Focus on fruits' ALT='Fruit'></td>
+<td align='center'>22<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_349:b8e722d41771385d8cbb2a7ffb7100d7' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 22 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_359.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Chicken Leg</b><br><i>Take a bite!</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/purplebox.gif' WIDTH='20' HEIGHT='20' TITLE='Go lean with protein' ALT='Meat'></td>
+<td align='center'>43<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_359:540ecf57548d2368b8518d5f40a20dbd' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 43 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_1371_v2.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Cinnamon Toast Crunch&reg; Cereal</b><br><i>A yummy part of breakfast! Made with whole grain! Goes great with fresh fruit!</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/orangebox.gif' WIDTH='20' HEIGHT='20' TITLE='Make half your grains whole' ALT='Grain'></td>
+<td align='center'>65<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_1371:4f8340dfd150338cf582137e2b024125' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 65 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_1376_v2.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Pop Secret&reg; Popcorn</b><br><i>Just a moment away from yum!</i></td>
+<td align='center'>47<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_1376:b2b117438bd511f6d8dbe04fdefc9a3b' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 47 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_1378_v2.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Go-GURT&reg; Portable Yogurt</b><br><i>Yogurt on-the-go!</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/bluebox.gif' WIDTH='20' HEIGHT='20' TITLE='Get your calcium-rich foods' ALT='Dairy'></td>
+<td align='center'>32<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_1378:3e5b7f49235c292f0c7c7d6e8f3fa093' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 32 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_3508_v2.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Frankenberry&reg; Cereal</b><br><i>Delicious berry cereal! And it&#039;s a good source of whole grain! Goes great with fresh fruit!</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/orangebox.gif' WIDTH='20' HEIGHT='20' TITLE='Make half your grains whole' ALT='Grain'></td>
+<td align='center'>65<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_3508:6f72895e18acd34dab2230361b1cf9ba' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 65 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6052.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Frozen Blueberries</b><br><i>A delicious topping for your cereal, waffles, or pancakes.</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/redbox.gif' WIDTH='20' HEIGHT='20' TITLE='Focus on fruits' ALT='Fruit'></td>
+<td align='center'>18<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_6052:950de4deeadd3935dd1a96b5af0a99ad' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 18 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6054.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Frozen Peas</b><br><i>A fun-to-eat vegetable.</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/greenbox.gif' WIDTH='20' HEIGHT='20' TITLE='Vary your veggies' ALT='Vegetables'></td>
+<td align='center'>17<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_6054:f7d4a51873b9153b12c0aa8a65dd8ff8' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 17 Millsbucks?');">
+</td>
+</tr>
+<tr>
+<td width='100' height='125' align='center'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6067.swf%3C%2Furl%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153299487', '7', 'noscale');</script></td>
+<td><b>Frozen Waffles</b><br><i>Delicious for breakfast. Add some cinnamon!</i><br><IMG SRC='http://graphics.millsberry.com/site_gfx/choose_breakfast/orangebox.gif' WIDTH='20' HEIGHT='20' TITLE='Make half your grains whole' ALT='Grain'></td>
+<td align='center'>20<br>Millsbucks</td>
+<td width='45' align='center'><input type='image' name='buy_6067:be8921f9d966f7bf4ac57c68318085be' src='http://graphics.millsberry.com/site_gfx/buy_icon.gif' border='0' alt='Buy!' title='Buy!' onClick="return confirm ('Are you SURE you wish to buy this for 20 Millsbucks?');">
+</td>
+</tr>
+</table>
+</form>
+<hr noshade size='1'><div align='center'><table align='center' border='0' cellpadding='0' cellspacing='0'><tr>
+<td width='21' align='right' height='20'><img src='http://graphics.millsberry.com/site_gfx/pixel.gif' width='21' height='20'></td>
+<td width='16' align='right' height='20'><img src='http://graphics.millsberry.com/site_gfx/pixel.gif' width='16' height='20'></td>
+<td align='center' height='20' valign='top'><span class='page_selected'>1</span><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=2' class='page_link'>2</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=3' class='page_link'>3</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=4' class='page_link'>4</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=5' class='page_link'>5</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=6' class='page_link'>6</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=7' class='page_link'>7</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=8' class='page_link'>8</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=9' class='page_link'>9</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=10' class='page_link'>10</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=11' class='page_link'>11</a><span class='page_spacer'>|</span><a href='shop.phtml?shop_id=4&p=12' class='page_link'>12</a></td>
+<td width='16' height='20' align='left'><img src='http://graphics.millsberry.com/site_gfx/pixel.gif' width='16' height='20'></td>
+<td width='21' height='20' align='left'><img src='http://graphics.millsberry.com/site_gfx/pixel.gif' width='21' height='20'></td>
+</tr></table>
+</div>
+</div>
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id='footer'>
+<span style='font-size: 11px;'>THIS PAGE CONTAINS ADVERTISEMENTS</span><br>
+MILLSBERRY, characters, logos, product names and all related indicia are trademarks of Mills Online, Inc., &copy; 2004-2006.<BR> &reg; denotes Reg. US Pat. & TM Office. All rights reserved.<br>Use of this site signifies your acceptance of the <a href='/town_hall/terms.phtml'><b>Terms and Conditions</b></a>.<br>Please view our <a href='/town_hall/terms.phtml'><b>Privacy Policy</b></a>
+</div>
+</div>
+<div id='bottom'>&nbsp;</div>
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id='debug'>
+</div>
+</body>
+</html>

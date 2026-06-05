@@ -1,0 +1,45 @@
+  * {margin:0;padding:0;}
+  img,fieldset {border:0;}
+  ul li {list-style-type:none;}
+  body {background-color:#e0e7fe;font-family:arial;font-size:12px;color:#013467;}
+  #container {margin:10px auto 10px auto;width:979px;border:3px solid #003366;background-color:#6c85dc;position:relative;}
+  #inner-frame {margin:73px 31px 28px 31px;border:2px solid #003366;background-color:#99b0e6;}
+  #content {margin:7px 12px 7px 12px;padding:10px 0 0 0;border:3px solid #003366;background-color:#eae9c3;}
+
+  .clear-after {zoom:1;}
+  .clear-after:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+
+  div.dwnloads-frame h2, div.icons div.icon-frame h2, div.sites div.sites-frame h2 {margin-bottom:4px;}
+
+  /* copy content */
+  div.main {margin:0 auto 28px auto;width:729px;overflow:hidden;}
+  div#thankyou h2, div#thankyou p {padding:0 110px 10px 120px;}
+  div.main p {padding-bottom:10px;}
+
+  /* downloads content */
+  div.dwnloads {float:left;width:335px;height:250px;overflow:hidden;background:url(../images/bg-dwnlds.gif) no-repeat;} 
+  div.dwnloads-frame {padding:12px 11px 0 15px;}
+  div.dwnloads-frame div {background-color:#7f98e5;height:204px;}
+  div.dwnloads-frame div p {padding:10px 8px 5px 8px;}
+  div.dwnloads-frame div p span {float:left;width:50%;} 
+  div.dwnloads-frame div p img.wp-thumb {margin:0 0 10px 0;} 
+  div.dwnloads-frame div p a.wallpaper-link {color:#003366;font-size:10px;}
+  div.dwnloads-frame div p a.wallpaper-link:hover {color:#ffcc00}
+  div.main div#left {margin-right:59px;}
+
+  /* icons content */
+  div.icons {height:146px;overflow:hidden;background:url(../images/bg-dwnlds-icons.gif) no-repeat;z-index:50;position:relative;}
+  div.icons div.icon-frame {padding:9px 11px 10px 15px}
+  div.icon-content {padding:7px 0px 6px 10px;height:92px;background-color:#7f98e5;} 
+  div.icon-content span {float:left;display:inline;width:114px;margin-bottom:10px;}
+  div.icon-content span img.icn-thumb {margin:0 5px 0px 0;}
+  div.icon-content span p {padding:5px 0 0 0;height:50px;}
+
+  /* sites content */
+  div.sites {margin:0 auto 45px auto;width:610px;height:313px;overflow:hidden;background:url(../images/bg-sites.gif) no-repeat;}
+  div.sites div.sites-frame {padding:15px 15px 15px 15px;}
+  div.sites-content {background-color:#7f98e5;height:259px;}
+  div.sites-content span {float:left;width:33%}
+  div.sites-content span p {padding:20px 0 0 20px;}
+
+  div.footer {font-size:10px;text-align:center;height:15px;position:relative;}

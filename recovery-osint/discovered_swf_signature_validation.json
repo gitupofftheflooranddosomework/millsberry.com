@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-06-04T23:41:43",
+  "total": 147,
+  "valid_count": 145,
+  "invalid_count": 2,
+  "invalid": [
+    {
+      "file": "int_townhall_v11.swf",
+      "size": 13508,
+      "signature": "\r\n\r"
+    },
+    {
+      "file": "mainmap_v13.swf",
+      "size": 13508,
+      "signature": "\r\n\r"
+    }
+  ]
+}

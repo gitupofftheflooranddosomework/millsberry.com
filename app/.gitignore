@@ -1,0 +1,5 @@
+.playwright-cli/
+data/accounts.json
+data/*.tmp
+output/missing-requests.jsonl
+output/*.tmp

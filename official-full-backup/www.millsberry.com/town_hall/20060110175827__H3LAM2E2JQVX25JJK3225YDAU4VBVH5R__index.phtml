@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- chinpweb05.millsberry.com -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="imagetoolbar" content="no">
+	<META NAME="KEYWORDS" CONTENT="Mills,Millsbury,Milsberry,Milsbury,Millberry,Millbury,Fun games,Spanish language games,Educational games,Active games,Citizen,Cool stuff,Arcade,Music Mix,Fun,Games,Explore,Adventure,Create,Character,Buddy,Care,Academy,School,Gym,Gymnasium,Solver,Science,Project,Town,Pets,Children's games,Games for kid,Kid games,Kids games,Kid's games,Children,Safe gaming">
+	<title>Millsberry - Town Hall</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0' background='http://graphics.millsberry.com/site_gfx/tile_mill.gif' >
+
+<script language='javascript' src='/hidden.js'></script>
+<script language='javascript'>
+<!--
+// Opens a destination window of whatever dimensions with or without the window controls
+var view_win  = null;
+var extraArgs = '';
+function openWin (page, winWidth, winHeight, showTools, winName) {
+  if ( !winName ) winName = 'newwin_id'+'_'+winWidth+'_'+winHeight;
+  var props;
+  if (showTools == true)
+    props = 'width='+winWidth+',height='+winHeight+','+'scrolling=yes,scroll=yes,scrollbars=yes,resizable=yes,toolbar=no';
+  else
+    props = 'width='+winWidth+',height='+winHeight+','+'scrolling=no,scroll=no,scrollbars=no,resizable=no,toolbar=no';
+  if (page.indexOf('?') == -1)
+    extraArgs = '?width='+winWidth+'&height='+winHeight;
+  else
+    extraArgs = '&width='+winWidth+'&height='+winHeight;
+  if (view_win)
+    view_win.close();
+  view_win = window.open(page+extraArgs, winName, props);
+  if ( view_win )
+    view_win.focus();
+  else
+    alert('Oops! A window was prevented from displaying! Please disable any popup blockers.');
+}
+
+// Allows users to assign names to their shortcuts
+function addShortcut (to_url, default_title) {
+	assign_title = default_title;
+	var user_title = prompt ("What name do you want to give this shortcut?\nLeave this blank to use the page's existing title.","");
+	if (user_title.length > 0) {
+		assign_title = base64_encode (utf8_encode (user_title));
+	}
+	window.location='/process_shortcut.phtml?action=add&url=' + to_url + '&name=' + assign_title;
+}
+-->
+</script>
+
+<TABLE BORDER="0" HEIGHT="100%" WIDTH="100%" ALIGN="LEFT" CELLSPACING="0" CELLPADDING="0">
+  <TR>
+    <TD ROWSPAN='2' BGCOLOR='#1887B6'><A HREF='/index.phtml'><IMG SRC="http://graphics.millsberry.com/site_gfx/visit_logo_v2.gif" onMouseOut="src='http://graphics.millsberry.com/site_gfx/visit_logo_v2.gif';" onMouseOver="src='http://graphics.millsberry.com/site_gfx/logo_over_v2.gif';" BORDER="0" ALT="Back to MAIN"></A></TD>
+    <TD WIDTH="650" HEIGHT="55" VALIGN="TOP" BGCOLOR='#CEF3FF'>
+      <TABLE BORDER='0' CELLPADDING='0' CELLSPACING='0'>
+        <TR>
+          <TD>
+            <A HREF="/home/"><IMG SRC="http://graphics.millsberry.com/site_gfx/visit_home_v2.gif" BORDER="0" ALT="Visit your Home!" onMouseOut="src='http://graphics.millsberry.com/site_gfx/visit_home_v2.gif';" onMouseOver="src='http://graphics.millsberry.com/site_gfx/visit_home_over_v2.gif';"></A>
+          </TD>
+          <TD>
+            <A HREF="/main_map.phtml?location=downtown"><IMG SRC="http://graphics.millsberry.com/site_gfx/visit_shopping_v2.gif" BORDER="0" ALT="Visit the Town Center!" onMouseOut="src='http://graphics.millsberry.com/site_gfx/visit_shopping_v2.gif';" onMouseOver="src='http://graphics.millsberry.com/site_gfx/visit_shopping_over_v2.gif';"></A>
+          </TD>
+          <TD>
+            <A HREF="/gamepages/hiscores.phtml"><IMG SRC="http://graphics.millsberry.com/site_gfx/visit_hi_scores_v2.gif" BORDER="0" ALT="Visit the Hi Scores!" onMouseOut="src='http://graphics.millsberry.com/site_gfx/visit_hi_scores_v2.gif';" onMouseOver="src='http://graphics.millsberry.com/site_gfx/visit_hi_scores_over_v2.gif';"></A>
+          </TD>
+          <TD>
+            <A HREF="/town_hall/faq.phtml"><IMG SRC="http://graphics.millsberry.com/site_gfx/visit_faq_v2.gif" BORDER="0" ALT="Visit the Help Pages!" onMouseOut="src='http://graphics.millsberry.com/site_gfx/visit_faq_v2.gif';" onMouseOver="src='http://graphics.millsberry.com/site_gfx/visit_faq_over_v2.gif';"></A>
+          </TD>
+        </TR>
+        <FORM NAME='login' ACTION='/index.phtml' method='post'>
+        <TR>            <TD COLSPAN='4' VALIGN='bottom'>
+                          <FONT COLOR="#000000">&nbsp;&nbsp;&nbsp;<B>Username
+                       <input type='text' name='login_username' SIZE='10'>
+                       Password
+                       <input type='password' name='login_pass' SIZE='10'>&nbsp;
+                       <input type='image' src='http://graphics.millsberry.com/site_gfx/visit_log_in.gif' HEIGHT=20 name='login' value='go' border='0' align='top' onMouseOut="src='http://graphics.millsberry.com/site_gfx/visit_log_in.gif';" onMouseOver="src='http://graphics.millsberry.com/site_gfx/visit_log_in_over.gif';"> <A HREF='/town_hall/support.phtml?q=pw'><FONT COLOR='#000000' class='smallfont'>[ forgot your password? ]</FONT></A></B></FONT>
+            </TD>
+          </TR>
+        </FORM>
+      </TABLE>
+    </TD>
+    <TD WIDTH="100%" BGCOLOR='#CEF3FF' COLSPAN='2' VALIGN='TOP'>
+    </TD>
+  </TR>
+  <FORM NAME='search' ACTION='/site_search.phtml' method='get'>
+  <TR>
+		    <TD COLSPAN="3" WIDTH="750" HEIGHT="25" VALIGN="TOP" ALIGN="LEFT" CLASS="header_stripe_TD">
+			<TABLE WIDTH='100%' BORDER='0' CELLPADDING='0' CELLSPACING='0'><TR
+				><TD NOWRAP CLASS='header_stripe_TD'
+						><IMG SRC='http://graphics.millsberry.com/site_gfx/header_stripe.gif'><IMG SRC='http://graphics.millsberry.com/site_gfx/slice_11.gif'
+					></TD
+					><TD NOWRAP ALIGN='RIGHT' CLASS='header_stripe_TD'>Address Book&nbsp;<INPUT TYPE='text' NAME='search'
+					>&nbsp;<INPUT TYPE='image' SRC='http://graphics.millsberry.com/site_gfx/visit_go.gif' HEIGHT='25' NAME='login' BORDER='0' ALIGN='top' onMouseOut="src='http://graphics.millsberry.com/site_gfx/visit_go.gif';" onMouseOver="src='http://graphics.millsberry.com/site_gfx/visit_go_over.gif';" CLASS='checkbox'
+					></TD
+				><TD NOWRAP ALIGN='CENTER' CLASS='header_stripe_TD'
+				>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD
+				></TR
+			></TABLE>
+		</TD>
+  </TR>
+  </FORM>
+  <TR>
+    <TD WIDTH="150" VALIGN="TOP" HEIGHT="100%" CLASS="sidenav_TD" background="http://graphics.millsberry.com/site_gfx/left_side_nav_stripe.gif">
+    <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH='100%'>
+<TR>
+<TD ALIGN='CENTER' VALIGN='TOP'>
+<BR>
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="150" height="70">
+  <param name="movie" value="http://graphics.millsberry.com/site_gfx/sideNavButton_v2.swf?sideNavButtonXML=<button><name>sideNavButton_mc</name><label><text>%3CP%20ALIGN%3D%22CENTER%22%3E%3CFONT%20SIZE%3D%2215%22%3E%3CP%3E%26nbsp%3B%3C%2FP%3E%3C%2FFONT%3E%3CFONT%20SIZE%3D%2228%22%20COLOR%3D%22%23FFFFFF%22%3ESign%20Up%21%21%3C%2FFONT%3E%3C%2FP%3E</text><dropShadow><x>3</x><y>3</y><colorTransform>0,0,0,0,0,0,50,0</colorTransform></dropShadow></label><url>http%3A%2F%2Fwww.millsberry.com%2Fsignup.phtml</url><target>_self</target></button>" />
+  <param name="quality" value="high" />
+  <param name="menu" value="false" />
+  <param name="wmode" value="transparent" />
+  <param name="scale" value="noscale">
+  <param name="salign" value="lt" />
+  <PARAM NAME="FlashVars" VALUE="unixTimeStamp=1136915721">
+  <embed FlashVars="unixTimeStamp=1136915721" src="http://graphics.millsberry.com/site_gfx/sideNavButton_v2.swf?sideNavButtonXML=<button><name>sideNavButton_mc</name><label><text>%3CP%20ALIGN%3D%22CENTER%22%3E%3CFONT%20SIZE%3D%2215%22%3E%3CP%3E%26nbsp%3B%3C%2FP%3E%3C%2FFONT%3E%3CFONT%20SIZE%3D%2228%22%20COLOR%3D%22%23FFFFFF%22%3ESign%20Up%21%21%3C%2FFONT%3E%3C%2FP%3E</text><dropShadow><x>3</x><y>3</y><colorTransform>0,0,0,0,0,0,50,0</colorTransform></dropShadow></label><url>http%3A%2F%2Fwww.millsberry.com%2Fsignup.phtml</url><target>_self</target></button>" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="exactfit" width="150" height="70" wmode="transparent">
+  </embed>
+  </object>
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="150" height="70">
+  <param name="movie" value="http://graphics.millsberry.com/site_gfx/sideNavButton_v2.swf?sideNavButtonXML=<button><name>sideNavButton_mc</name><label><text>%3CP%20ALIGN%3D%22CENTER%22%3E%3CFONT%20SIZE%3D%2215%22%3E%3CP%3E%26nbsp%3B%3C%2FP%3E%3C%2FFONT%3E%3CFONT%20SIZE%3D%2228%22%20COLOR%3D%22%23FFFFFF%22%3EMap%3C%2FFONT%3E%3C%2FP%3E</text><dropShadow><x>3</x><y>3</y><colorTransform>0,0,0,0,0,0,50,0</colorTransform></dropShadow></label><url>http%3A%2F%2Fwww.millsberry.com%2Fmain_map.phtml</url><target>_self</target></button>" />
+  <param name="quality" value="high" />
+  <param name="menu" value="false" />
+  <param name="wmode" value="transparent" />
+  <param name="scale" value="noscale">
+  <param name="salign" value="lt" />
+  <PARAM NAME="FlashVars" VALUE="unixTimeStamp=1136915721">
+  <embed FlashVars="unixTimeStamp=1136915721" src="http://graphics.millsberry.com/site_gfx/sideNavButton_v2.swf?sideNavButtonXML=<button><name>sideNavButton_mc</name><label><text>%3CP%20ALIGN%3D%22CENTER%22%3E%3CFONT%20SIZE%3D%2215%22%3E%3CP%3E%26nbsp%3B%3C%2FP%3E%3C%2FFONT%3E%3CFONT%20SIZE%3D%2228%22%20COLOR%3D%22%23FFFFFF%22%3EMap%3C%2FFONT%3E%3C%2FP%3E</text><dropShadow><x>3</x><y>3</y><colorTransform>0,0,0,0,0,0,50,0</colorTransform></dropShadow></label><url>http%3A%2F%2Fwww.millsberry.com%2Fmain_map.phtml</url><target>_self</target></button>" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="exactfit" width="150" height="70" wmode="transparent">
+  </embed>
+  </object><BR>
+
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="150" height="70">
+  <param name="movie" value="http://graphics.millsberry.com/site_gfx/sideNavButton_v2.swf?sideNavButtonXML=<button><name>sideNavButton_mc</name><label><text>%3CP%20ALIGN%3D%22CENTER%22%3E%3CFONT%20SIZE%3D%2215%22%3E%3CP%3E%26nbsp%3B%3C%2FP%3E%3C%2FFONT%3E%3CFONT%20SIZE%3D%2228%22%20COLOR%3D%22%23FFFFFF%22%3EGames%3C%2FFONT%3E%3C%2FP%3E</text><dropShadow><x>3</x><y>3</y><colorTransform>0,0,0,0,0,0,50,0</colorTransform></dropShadow></label><url>http%3A%2F%2Fwww.millsberry.com%2Fcomplex%2Farcade.phtml</url><target>_self</target></button>" />
+  <param name="quality" value="high" />
+  <param name="menu" value="false" />
+  <param name="wmode" value="transparent" />
+  <param name="scale" value="noscale">
+  <param name="salign" value="lt" />
+  <PARAM NAME="FlashVars" VALUE="unixTimeStamp=1136915721">
+  <embed FlashVars="unixTimeStamp=1136915721" src="http://graphics.millsberry.com/site_gfx/sideNavButton_v2.swf?sideNavButtonXML=<button><name>sideNavButton_mc</name><label><text>%3CP%20ALIGN%3D%22CENTER%22%3E%3CFONT%20SIZE%3D%2215%22%3E%3CP%3E%26nbsp%3B%3C%2FP%3E%3C%2FFONT%3E%3CFONT%20SIZE%3D%2228%22%20COLOR%3D%22%23FFFFFF%22%3EGames%3C%2FFONT%3E%3C%2FP%3E</text><dropShadow><x>3</x><y>3</y><colorTransform>0,0,0,0,0,0,50,0</colorTransform></dropShadow></label><url>http%3A%2F%2Fwww.millsberry.com%2Fcomplex%2Farcade.phtml</url><target>_self</target></button>" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="exactfit" width="150" height="70" wmode="transparent">
+  </embed>
+  </object><BR>
+<A HREF='http://www.millsberry.com/signup.phtml'><IMG SRC='http://graphics.millsberry.com/site_gfx/prebuddy.gif' BORDER='1'></A></TD>
+</TR>
+</TABLE>
+    </TD>
+    <TD WIDTH="650" HEIGHT="100%" VALIGN="TOP" ALIGN='LEFT'>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="600" height="400"><param name=movie value="http://graphics.millsberry.com/site_gfx/interiors/int_townhall_v14.swf"><param name=quality value=high><param name=menu value=true><param name="wmode" value="transparent" /><param name=scale value=exactfit><PARAM NAME="FlashVars" VALUE="unixTimeStamp=1136915721"><embed FlashVars="unixTimeStamp=1136915721" src="http://graphics.millsberry.com/site_gfx/interiors/int_townhall_v14.swf" wmode="transparent" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="exactfit" width="600" height="400"></embed></object>
+      <TABLE WIDTH='100%' BORDER='0' CELLSPACING='0' CELLPADDING='0'>
+        <TR>
+          <TD ALIGN='LEFT' COLSPAN='3' CLASS='header_stripe_TD'>
+            Millsberry Town Hall
+          </TD>
+        </TR>
+      </TABLE><TABLE BORDER='0' CELLPADDING='0' CELLSPACING='0' WIDTH='600' HEIGHT='50'><TR><TD COLSPAN='3'><IMG SRC='http://graphics.millsberry.com/site_gfx/poll_header.gif' WIDTH='600' HEIGHT='85'></TD></TR><TR><TD HEIGHT='100%' WIDTH='58' BACKGROUND='http://graphics.millsberry.com/site_gfx/poll_left.gif'>&nbsp;</TD><TD VALIGN='TOP' WIDTH='484' HEIGHT='100%' BGCOLOR='#ECE7C8'><TABLE BORDER='0' CELLPADDING='5' CELLSPACING='0' WIDTH='484' HEIGHT='100%'><TR><TD WIDTH='484' HEIGHT='100%' VALIGN='TOP'><B>
+      <P>
+      The Town Hall is the oldest building in the city (one of the only buildings to survive the 
+      Great Fire that nearly destroyed it so long ago). Here, the founders of the city wrote up 
+      the city’s charter and drew its first boundaries. 
+      <P>
+      In the Town Hall you can find out all kinds of useful information!  For example, you can access 
+      all of the local Millsberry community regulations. You can also learn a bit about past events 
+      in Millsberry from Edna Nelson at the Historical Society, read the latest Millsberry announcements on the bulletin, 
+      or peruse old clippings from the <I>Millsberry Gazette</I>. 
+      </P>
+      </B></TD></TR></TABLE></TD><TD HEIGHT='100%' WIDTH='58' BACKGROUND='http://graphics.millsberry.com/site_gfx/poll_right.gif'>&nbsp;</TD></TR><TR><TD COLSPAN='3'><IMG SRC='http://graphics.millsberry.com/site_gfx/poll_footer.gif' WIDTH='600' HEIGHT='85'></TD></TR></TABLE></TD>
+<TD WIDTH='150' VALIGN='TOP' ALIGN='CENTER' HEIGHT='100%'>
+<!-- START FAVORITES BLOCK -->
+<!-- END FAVORITES BLOCK -->
+<form name="language_form" method="POST"><font style="font-size:11pt">Select Language:</font><br>
+                <select name="lang" onchange="document.language_form.submit();">
+                  <option value="en" selected="selected">English</option>
+                  <option value="es" >Espa&ntilde;ol</option>
+                </select>
+              </form>          
+          </TD>
+          <TD WIDTH='100%'>
+            &nbsp;
+          </TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="4" WIDTH="100%" ALIGN="CENTER" CLASS="footer_TD">
+      <SPAN CLASS='footerfont'>
+      MILLSBERRY, characters, logos, product names and all related indicia are trademarks of Mills Online, Inc., &copy; 2004, 2005.<BR> &reg; denotes Reg. US Pat. & TM Office. All rights reserved.<br>Narnia&trade;&copy; 2005 Disney/Walden
+        <BR>
+        Use of this site signifies your acceptance of the <A HREF='http://www.millsberry.com/town_hall/terms.phtml'>Terms and Conditions</A>.
+        <BR>
+        Please view our <A HREF='http://www.millsberry.com/town_hall/terms.phtml'>Privacy Policy</A>.      </SPAN>
+    </TD>
+</TABLE>
+</BODY>
+</HTML>

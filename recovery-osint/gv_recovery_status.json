@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-06-05",
+  "status": "no_new_gv_binaries_recovered",
+  "target_ids": [220, 486, 505, 515, 520, 525, 535],
+  "evidence": {
+    "local_workspace_search": {
+      "g_v_files_found": [],
+      "interior_files_referenced": [
+        "interior_220_v2.swf",
+        "interior_486_v2.swf",
+        "interior_505_v1.swf",
+        "interior_515_v1.swf",
+        "interior_520_v1.swf",
+        "interior_525_v1.swf",
+        "interior_535_v1.swf"
+      ]
+    },
+    "wayback_probe_cache": {
+      "file": "recovery-osint/probe_miss_interiors_extra_wayback.json",
+      "available_flags": {
+        "interior_486_v2.swf": false,
+        "interior_505_v1.swf": false,
+        "interior_515_v1.swf": false,
+        "interior_520_v1.swf": false,
+        "interior_525_v1.swf": false
+      }
+    }
+  },
+  "notes": [
+    "Recovered flashgame_ctp and hiscores pages for these IDs consistently reference interior_* wrappers.",
+    "No recovered local files matching g220_v*, g486_v*, g505_v*, g515_v*, g520_v*, g525_v*, or g535_v* were found.",
+    "Server now marks interior-only IDs as not playable until a true g*_v*.swf binary is recovered."
+  ]
+}

@@ -1,0 +1,165 @@
+/* ------------------------------------------------------------------------------------------- /
+ global.css
+ Defines the site-wide elements that are not explicitly part of the template layout.
+ Do NOT include styles here that will only be on one page, make a page.css file for that.
+ NOTE: See global.ie.css for IE hacks of these styles.
+/ ------------------------------------------------------------------------------------------- */
+body, td, p, a {
+	font-family: "Trebuchet MS", "Helvetica", sans-serif;
+	font-size: 13px;
+}
+body, form, h1, h2, h3, h4 {
+	padding: 0;
+	margin: 0;
+}
+h1 {
+	font-size: 26px;
+	font-weight: bold;
+}
+h2 {
+	font-size: 22px;
+	font-weight: bold;
+}
+h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+h4 {
+	font-size: 14px;
+	font-weight: bold;
+}
+a, a:link, a:active, a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	color: #000099;
+}
+a:hover {
+	color: #990000;
+}
+input, textarea, select {
+	font-family: "Arial", "Helvetica", sans-serif;
+	font-variant: normal;
+}
+.header_stripe_TD {
+	padding-left: 2px;
+	font-size: 13px;
+	font-weight: bold;
+	font-style: italic;
+	color: white;
+}
+.header_stripe_TD a {
+	color: white;
+}
+.header_stripe_TD a:hover {
+	color: #990000;
+}
+.error {
+	padding-bottom: 5px;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	color: red;
+}
+.error a {
+	font-size: 15px;
+}
+.success {
+	padding-bottom: 5px;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	color: green;
+}
+.success a {
+	font-size: 15px;
+}
+#gazette_byline {
+    text-align: center;
+    padding: 10px 0 5px 0;
+        
+}
+    
+div#my_pyramid {
+	margin: 0 auto;
+	width: 500px;
+	padding: 5px;
+	background-color: white;
+	border: 1px solid black;
+}
+table#my_pyramid td {
+	font-size: 15px;
+	font-weight: bold;
+}
+div#bq_outer {
+	clear: both;
+	width: 410px;
+	height: 100px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	padding: 5px;
+	border: 1px solid black;
+	background-color: white;
+}
+div#bq_inner {
+	width: 400px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 0 5px 0 5px;
+	background-color: #C8B388;
+	font-weight: bold;
+	text-align: center;
+}
+a.page_link {
+	padding: 1px 4px 0 3px;
+	font-size: 12px;
+}
+span.page_selected {
+	padding: 1px 4px 0 3px;
+	font-size: 12px;
+	font-weight: bold;
+}
+span.page_spacer {
+	padding: 0;
+	margin: 0;
+	margin-left: -2px;
+	font-size: 16px;
+}
+
+div#wce_output {
+	width: 80%;
+	height: 77px;
+	margin: 0 auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+	border: 1px solid black;
+	background-color: #DCFAF5;
+}
+div#wce_output_msg {
+	margin: 20px 0 0 85px;
+	font-weight: bold;
+}
+
+div.tooltip {
+	font-size: 11px;
+	font-style: italic;
+	line-height: 1.1em;
+	color: gray;
+}
+
+span.failed_query {
+	font-weight: bold;
+	color: red;
+}
+span.ok_query {
+	font-weight: normal;
+	color: black;
+}
+
+.list {
+	margin: 0;
+	padding: 0 0 0 25px;
+}
+.list li {
+	padding: 0 0 5px 0;
+}

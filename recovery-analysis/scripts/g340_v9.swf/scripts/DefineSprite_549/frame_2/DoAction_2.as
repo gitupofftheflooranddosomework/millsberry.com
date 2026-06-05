@@ -1,0 +1,10 @@
+_global.translator.addTextField(instruct_p2_1,{htmlText:_level0.IDS_instruct_p2_1});
+_global.translator.addTextField(instruct_p2_2,{htmlText:_level0.IDS_instruct_p2_2});
+_global.translator.addTextField(instruct_p2_3,{htmlText:_level0.IDS_instruct_p2_3});
+_global.translator.addTextField(instruct_p2_4,{htmlText:_level0.IDS_instruct_p2_4});
+_global.translator.addTextField(instruct_p2_5,{htmlText:_level0.IDS_instruct_p2_5});
+_global.translator.addTextField(instruct_p2_6,{htmlText:_level0.IDS_instruct_p2_6});
+_global.translator.addTextField(instruct_p2_7,{htmlText:_level0.IDS_instruct_p2_7});
+_global.translator.addTextField(instruct_p2_8,{htmlText:_level0.IDS_instruct_p2_8});
+_global.translator.addTextField(instruct_p2_9,{htmlText:_level0.IDS_instruct_p2_9});
+_global.translator.addTextField(prev_page,{htmlText:_level0.IDS_prev_page});

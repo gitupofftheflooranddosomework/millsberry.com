@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-06-05T12:29:06",
+  "neopets_domains": null,
+  "gmidev_hits": 0,
+  "fg_script_base_hits": 45,
+  "fg_game_base_hits": 60,
+  "allowdomain_hits": 9,
+  "pivot_ips": null,
+  "candidate_wayback_queries": [
+    "https://web.archive.org/web/*/gmidev.neopets.com/*",
+    "https://web.archive.org/web/*/dev.neopets.com/high_scores/fg_get_info.phtml*",
+    "https://web.archive.org/web/*/webdev.neopets.com/*",
+    "https://web.archive.org/web/*/images50.neopets.com/*",
+    "https://web.archive.org/web/*/graphics.millsberry.com/gamingsystem/flash8/*"
+  ]
+}

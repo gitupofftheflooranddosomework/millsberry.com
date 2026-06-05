@@ -1,0 +1,182 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- 
+
+****************************************************
+
+* Site: Nuts About Honey Augmented Reality Preview *
+
+* Date Created: August 2009                        *
+
+* Developer: Made in Boffswana - www.boffswana.com *
+
+****************************************************
+
+-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CheeriosTeaser</title>
+<style type="text/css">
+html, body {
+margin: 0;
+padding: 0;
+height:100%
+}
+
+body {
+text-align: center;
+}
+
+#content {
+position: relative;
+width: 903px;
+height: 100%;
+margin: auto;
+padding: auto;
+text-align: left;
+background: #fde058;
+overflow:hidden;
+z-index:1;
+}
+
+.column {
+	width: 50%;
+	position: absolute;
+	top: 0;
+	height:100%;
+	overflow: hidden;
+
+}
+
+.left {left: 0;}
+.right {right: 0;}
+
+#leftcol {
+margin-right: 451px;
+background-image:url(images/HoneyCombLeft.png);
+background-position: top right;
+/*background: #009900;*/
+height: 100%;
+z-index:2;
+
+}
+#rightcol {
+margin-left: 451px;
+background-image:url(images/HoneyCombRight.png);
+background-position: top left;
+/*background: #0099FF;*/
+height: 100%;
+z-index:2;
+}
+#this_is{
+position: relative;
+}
+</style> 
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+	function gup( name )
+	{
+	  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	  var regexS = "[\\?&]"+name+"=([^&#]*)";
+	  var regex = new RegExp( regexS );
+	  var results = regex.exec( window.location.href );
+	  if( results == null )
+		return "";
+	  else
+		return results[1];
+	}
+	function minimise(){
+		closeMe();
+	}
+	function launchPrivacy(){
+		new_win("http://honeydefender.millsberry.com/childPrivacy.aspx","467","450"); 
+	}
+	function launchTerms(){
+	    new_win("http://honeydefender.millsberry.com/legal.aspx", "467", "450"); 
+	}
+	function launchContact(){
+		new_win("http://consumercontacts.generalmills.com/ConsolidatedContact.aspx?page=http://www.cheerios.com","467","450"); 
+	}
+	function full_win(url)
+	{
+		window.open(url,"mywin","width=" + +screen.width + ",height=" + +screen.height );
+	}
+	
+	function new_win(url, width, height)
+	{
+		window.open(url,"mywin","width=" + width + ",height=" + height + "toolbar=no,location=no,status=no,menubar=yes,scrollbars=yes,resizable=yes,screenX=160,left=150,screenY=150,top=150");
+	}
+	function closeMe()
+	{
+		var win=window.open("","_self");
+		win.close();
+	}
+
+
+			
+	var flashvars = {};
+	var params = {};
+	var attributes = {};
+	flashvars.jumpto = gup('s')
+	attributes.id = "flashDiv";
+	swfobject.embedSWF("CheeriosTeaser.swf", "contentDiv", "903", "565", "9.0.0", false, flashvars, params, attributes);
+</script>
+
+</head>
+<body bgcolor="#000000">
+<div class="left column">
+	<div id="leftcol"></div>
+</div>
+<div id="content">   
+    <div id="contentDiv">
+        <a href="http://www.adobe.com/go/getflashplayer">
+            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+        </a>
+    </div>
+	<image src="images/FooterExtendGraphic.png" width="903" height="336" />    
+</div>
+<div class="right column">
+	<div id="rightcol"> </div>
+</div>
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-10168938-1");
+	pageTracker._trackPageview();
+	} catch(err) {}
+</script>
+<!-- START OF SmartSource Data Collector TAG -->
+<script language="JavaScript"><!--
+	
+	// Example: var gDcsId="dcs6t7kz2k1afx5rdlnkqqhxi_2z8k";
+	var gDcsId="dcskw180wj1afxl7hn1m7n71v_6t6rt"; 
+	
+	// Example: var gDcsSip="www.EatBetterAmerica.com";
+	var gGmiDcsSip="http://www.nutsabouthoney.com/augmentedreality/";
+	
+	// List of domain names considered "on site" (comma separated)
+	// Example: var gGmiOnsiteDomains="EatBetterAmerica.com, GeneralMills.com";
+	var gGmiOnsiteDomains="http://www.nutsabouthoney.com";
+	
+	
+	function siteTracking(eventTitle, eventTag){
+		// Register Event with WebTrends
+		dcsMultiTrack(
+			'DCS.dcsuri', eventTag,                  // name/value pair for URL
+			'WT.ti', 'FlashEvent:' + eventTitle  // name/value pair for page title
+		);
+	}
+	
+	//-->
+</script>
+<script language="JavaScript" type="text/javascript" src="sdc1.js"></script>
+<script language="JavaScript" type="text/javascript" src="sdc2.js"></script>
+<NOSCRIPT>
+	<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="http://sdc.generalmills.com/dcskw180wj1afxl7hn1m7n71v_6t6rt/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.0">
+</NOSCRIPT>
+<!-- END OF SmartSource Data Collector  TAG -->
+
+</body>
+</html>

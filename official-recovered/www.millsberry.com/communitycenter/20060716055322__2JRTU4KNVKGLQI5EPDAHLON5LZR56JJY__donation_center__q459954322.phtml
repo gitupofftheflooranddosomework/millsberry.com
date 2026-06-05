@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- 10.100.56.25 -->
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='imagetoolbar' content='no'>
+<meta name='keywords' content="Mills,Millsbury,Milsberry,Milsbury,Millberry,Millbury,Fun games,Spanish language games,Educational games,Active games,Citizen,Cool stuff,Arcade,Music Mix,Fun,Games,Explore,Adventure,Create,Character,Buddy,Care,Academy,School,Gym,Gymnasium,Solver,Science,Project,Town,Pets,Children's games,Games for kid,Kid games,Kids games,Kid's games,Children,Safe gaming">
+<title>Millsberry - Donation Center</title>
+<!-- Appending v=# to these files causes them to recache in the user's browser when # changes -->
+<link rel='stylesheet' type='text/css' href='/css/theme/royal.css?v=2'>
+<link rel='stylesheet' type='text/css' href='/css/template.css?v=2'>
+<!--[if lt IE 7.00]>
+<link rel='stylesheet' type='text/css' href='/css/ie.css?v=1'>
+<![endif]-->
+<script type='text/javascript' src='/hidden.js?v=1'></script>
+<script type='text/javascript'>
+<!--
+// Allows users to assign names to their shortcuts
+function addShortcut (to_url, default_title) {
+	assign_title = default_title;
+	var user_title = prompt ("What name do you want to give this shortcut?\nLeave this blank to use the page's existing title.","");
+	if (user_title.length > 0) {
+		assign_title = base64_encode (utf8_encode (user_title));
+	}
+	window.location='/process_shortcut.phtml?action=add&url=' + to_url + '&name=' + assign_title;
+}
+//-->
+</script>
+<link rel='shortcut icon' href='/favicon.ico'>
+</head>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<body>
+
+<div id='top'>
+<a href='/index.phtml'><span id='logo'>&nbsp;</span></a>
+<div id='layout_head'>
+	<div id='login_info'><form name='login' method='post' action='/communitycenter/donation_center.phtml'>
+Username <input type='text' name='login_username' size='10'>&nbsp;&nbsp;
+Password <input type='password' name='login_pass' size='10'>
+<input type='submit' value='Go'>
+</form></div>
+	<div id='stripe'>
+		<div id='stripe_shortcuts'>
+			<table width='95' border='0' cellpadding='0' cellspacing='0'><tr>
+				<td width='72'></td>
+				<td width='23' valign='bottom'></td>
+			</tr></table>
+		</div>
+		<div id='stripe_search'>
+			<form name='search' action='/site_search.phtml' method='get'>
+			<table width='340' border='0' cellpadding='0' cellspacing='0'><tr>
+				<td width='135' align='right'>Address Book&nbsp;</td>
+				<td width='105' align='left' valign='middle'><input type='text' name='search' size='15'></td>
+				<td width='30' align='center' valign='bottom'><a href='javascript: document.search.submit();' class='stripe_button'><span id='search_button'>&nbsp;</span></a></td>
+				<td width='60' align='right'><a href='/town_hall/faq.phtml'>Help</a></td>
+			</tr></table>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id='body'>
+<div id='layout_body'>
+<div id='side_nav'>
+
+<!-- Exclude these from the stylesheet so they can be translated -->
+<style type='text/css'>
+#body #layout_body #side_nav .nav_button_hover #nav_signup {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_signup_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_start {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_start_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_the_city {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_the_city_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_downtown {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_downtown_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_arcade {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_arcade_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_my_stuff {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_my_stuff_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_my_home {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_my_place_1.png') no-repeat;
+}
+#body #layout_body #side_nav .nav_button_hover #nav_customize {
+	background: transparent url('http://graphics.millsberry.com/site_gfx/nav/nav_customize_1.png') no-repeat;
+}
+</style>
+<!--[if lt IE 7.00]>
+<style type='text/css'>
+#body #layout_body #side_nav .nav_button_hover #nav_signup {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_signup_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_start {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_start_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_the_city {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_the_city_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_downtown {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_downtown_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_arcade {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_arcade_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_my_stuff {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_my_stuff_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_my_home {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_my_place_1.png');
+}
+#body #layout_body #side_nav .nav_button_hover #nav_customize {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_customize_1.png');
+}
+</style>
+<![endif]-->
+
+<a href='/signup.phtml' class='nav_button_hover'><span id='nav_signup' class='nav_button'>&nbsp;</span></a>
+<a href='/main_map.phtml' class='nav_button_hover'><span id='nav_the_city' class='nav_button'>&nbsp;</span></a>
+<a href='/main_map.phtml?location=downtown' class='nav_button_hover'><span id='nav_downtown' class='nav_button'>&nbsp;</span></a>
+<a href='/complex/arcade.phtml' class='nav_button_hover'><span id='nav_arcade' class='nav_button'>&nbsp;</span></a>
+<br><img src='http://graphics.millsberry.com/site_gfx/prebuddy.gif' border='1'><div style='font-size: 3px; line-height: 3px;'>&nbsp;</div>
+
+<table width='100%' border='0' cellpadding='5' cellspacing='0' id='side_nav_options'>
+<tr>
+	<td align='right'>Language</td>
+	<td>
+		<form name='language_form' method='post' action='/communitycenter/donation_center.phtml'>
+		<select name='lang' onChange='document.language_form.submit();' style='width: 70px;'>
+			<option value='en' selected>English</option>
+			<option value='es' >Espa&ntilde;ol</option>
+		</select>
+		</form>
+	</td>
+</tr>
+
+</table>
+
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id='main'>
+
+<div id='interior'><script type='text/javascript'>flash_object ('http://graphics.millsberry.com/site_gfx/interiors/int_comcenter_v1.swf', '600', '400', '&unixTimeStamp=1153029202', '7', 'noscale');</script></div>
+<div id='interior_stripe'>Donation Center</div>
+<div id='content'>
+<div align='center'><b><span style='font-weight: bold;'>Hello, feel free to look around, but you'll need to earn some more civics points before you can make a purchase.</span><br><br>
+</b></div>
+Welcome to the Donation Center! If you'd like to contribute a used or unwanted object, then our Director of Donations, Mr. Laslo Balint, will be more than happy to accept your contribution. The Donation Center accepts books, clothes, furniture and toys. Unfortunately food, pets, and pet notes cannot be accepted.<br><h3 align='center'>How to make a donation:</h3>As you look through Your Stuff, you'll notice a <img src='http://graphics.millsberry.com/site_gfx/icon_donate_2_v1.gif'> icon on the right (next to the Yard Sale, Basement, and Throw Out! icons). When you select the <img src='http://graphics.millsberry.com/site_gfx/icon_donate_2_v1.gif'> icon, you'll be asked to certify that you want to contribute this object to the Community Center's donation program. If you click "Yes" and go forward with your donation, then you'll receive a message stating that your contribution has been received. If you'd like to make a donation now, go to <a href='/inventory.phtml'>your stuff</a> and click the donate icon next to the item.<br><br>Those who participate in the donation program receive civic recognition for their generosity. Citizens with strong civics scores will be given the chance, once per day, to make a purchase from the Donation Center.
+<hr noshade size='1'>
+<table width='100%' border='0' cellpadding='0' cellspacing='0'>
+<tr>
+</tr>
+<tr>
+<td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6132_v8.swf%3C%2Furl%3E%3CColorTransform%3E0x888800%3C%2FColorTransform%3E%3Cscale%3E70%3C%2Fscale%3E%3Cx%3E55%3C%2Fx%3E%3Cy%3E70%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Green Bean Bag Chair</b><br>[Donated by: <b>anonymous</b>]<br>
+200 Millsbucks</td><td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6132_v8.swf%3C%2Furl%3E%3CColorTransform%3E0x8822AA%3C%2FColorTransform%3E%3Cscale%3E70%3C%2Fscale%3E%3Cx%3E55%3C%2Fx%3E%3Cy%3E70%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Purple Bean Bag Chair</b><br>[Donated by: <b>anonymous</b>]<br>
+200 Millsbucks</td><td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6133_v3.swf%3C%2Furl%3E%3CColorTransform%3E0xCC2200%3C%2FColorTransform%3E%3Cscale%3E80%3C%2Fscale%3E%3Cx%3E50%3C%2Fx%3E%3Cy%3E60%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Spotted Bean Bag Chair</b><br>[Donated by: <b>anonymous</b>]<br>
+210 Millsbucks</td></tr>
+<tr>
+<td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Cbody%3E%3CobjectName%3Ebody%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fbody_n_1_v1.swf%3C%2Furl%3E%3CdropShadow%3Efalse%3C%2FdropShadow%3E%3Cscale%3E100%3C%2Fscale%3E%3Cx%3E-30%3C%2Fx%3E%3Cy%3E-210%3C%2Fy%3E%3C%2Fbody%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_2665.swf%3C%2Furl%3E%3Cscale%3E100%3C%2Fscale%3E%3Cx%3E-30%3C%2Fx%3E%3Cy%3E-210%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Old Soggy Boot</b><br>[Donated by: <a href='/home/?user=chuchi232'>chuchi232</a>]<br>
+760 Millsbucks</td><td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6137_v2.swf%3C%2Furl%3E%3Cscale%3E60%3C%2Fscale%3E%3Cx%3E50%3C%2Fx%3E%3Cy%3E70%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Vintage Lamp with Polka Dot Lamp Shade</b><br>[Donated by: <b>anonymous</b>]<br>
+310 Millsbucks</td><td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6137_v2.swf%3C%2Furl%3E%3CColorTransform%3E0x88EE66%3C%2FColorTransform%3E%3Cscale%3E70%3C%2Fscale%3E%3Cx%3E40%3C%2Fx%3E%3Cy%3E80%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Vintage Lamp with Polka Dot Lamp Shade</b><br>[Donated by: <b>anonymous</b>]<br>
+310 Millsbucks</td></tr>
+<tr>
+<td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6138_v3.swf%3C%2Furl%3E%3CColorTransform%3E0x00AA66%3C%2FColorTransform%3E%3Cscale%3E100%3C%2Fscale%3E%3Cx%3E50%3C%2Fx%3E%3Cy%3E50%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Green Antique Lamp</b><br>[Donated by: <b>anonymous</b>]<br>
+465 Millsbucks</td><td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6138_v3.swf%3C%2Furl%3E%3CColorTransform%3E0xEE88AA%3C%2FColorTransform%3E%3Cscale%3E70%3C%2Fscale%3E%3Cx%3E40%3C%2Fx%3E%3Cy%3E80%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Pink Antique Lamp</b><br>[Donated by: <b>anonymous</b>]<br>
+465 Millsbucks</td><td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6138_v3.swf%3C%2Furl%3E%3CColorTransform%3E0xEECC22%3C%2FColorTransform%3E%3Cscale%3E70%3C%2Fscale%3E%3Cx%3E40%3C%2Fx%3E%3Cy%3E80%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Yellow Antique Lamp</b><br>[Donated by: <b>anonymous</b>]<br>
+465 Millsbucks</td></tr>
+<tr>
+<td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6130_v2.swf%3C%2Furl%3E%3Cscale%3E60%3C%2Fscale%3E%3Cx%3E50%3C%2Fx%3E%3Cy%3E70%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Vintage Lamp</b><br>[Donated by: <b>anonymous</b>]<br>
+325 Millsbucks</td><td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6148_v2.swf%3C%2Furl%3E%3Cscale%3E90%3C%2Fscale%3E%3Cx%3E70%3C%2Fx%3E%3Cy%3E70%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Happy Face Poster</b><br>[Donated by: <b>anonymous</b>]<br>
+100 Millsbucks</td><td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6136_v2.swf%3C%2Furl%3E%3CColorTransform%3E0xEE2200%3C%2FColorTransform%3E%3Cscale%3E70%3C%2Fscale%3E%3Cx%3E60%3C%2Fx%3E%3Cy%3E50%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Treasure Chest</b><br>[Donated by: <b>anonymous</b>]<br>
+895 Millsbucks</td></tr>
+<tr>
+<td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6136_v2.swf%3C%2Furl%3E%3CColorTransform%3E0x448822%3C%2FColorTransform%3E%3Cscale%3E60%3C%2Fscale%3E%3Cx%3E50%3C%2Fx%3E%3Cy%3E50%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Treasure Chest</b><br>[Donated by: <b>anonymous</b>]<br>
+895 Millsbucks</td><td width='33%' height='200' align='center' valign='bottom'>
+<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v5.swf', '100', '100', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%20%3F%3E%3Cmessage%20success%3D%271%27%20text%20%3D%20%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fitems%252Fitem_6136_v2.swf%3C%2Furl%3E%3CColorTransform%3E0x0088AA%3C%2FColorTransform%3E%3Cscale%3E60%3C%2Fscale%3E%3Cx%3E50%3C%2Fx%3E%3Cy%3E50%3C%2Fy%3E%3C%2Fitem%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E100%3C%2Fwidth%3E%3Cheight%3E100%3C%2Fheight%3E%3Csteps%3E10%3C%2Fsteps%3E%3Cdelay%3E50%3C%2Fdelay%3E%3Cvisible%3E1%3C%2Fvisible%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1153029202', '7', 'noscale');</script><br><b>Treasure Chest</b><br>[Donated by: <b>anonymous</b>]<br>
+895 Millsbucks</td><td>&nbsp;</td></tr>
+</table>
+<br>
+<div id='content_gutter'><a href='/communitycenter/'>Back to the Community Center</a></div>
+</div>
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id='footer'>
+MILLSBERRY, characters, logos, product names and all related indicia are trademarks of Mills Online, Inc., &copy; 2004-2006.<BR> &reg; denotes Reg. US Pat. & TM Office. All rights reserved.<br>Use of this site signifies your acceptance of the <a href='/town_hall/terms.phtml'><b>Terms and Conditions</b></a>.<br>Please view our <a href='/town_hall/terms.phtml'><b>Privacy Policy</b></a>
+</div>
+</div>
+<div id='bottom'>&nbsp;</div>
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id='debug'>
+</div>
+</body>
+</html>

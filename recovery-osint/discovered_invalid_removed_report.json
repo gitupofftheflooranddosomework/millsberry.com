@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-06-04T23:41:51",
+  "removed_count": 2,
+  "removed": [
+    {
+      "file": "app/recovered-games/discovered/int_townhall_v11.swf",
+      "size": 13508
+    },
+    {
+      "file": "app/recovered-games/discovered/mainmap_v13.swf",
+      "size": 13508
+    }
+  ],
+  "discovered_count_after": 145
+}

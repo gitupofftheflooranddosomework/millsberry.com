@@ -1,0 +1,51 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#header {
+	background-image: url(../med/header_bg.gif);
+	background-repeat: no-repeat;
+	width: 450px;
+	height: 138px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#header #title {
+	padding: 25 88 0 125;
+	text-align: right;
+}
+
+#header #nav_links {
+	margin: 65 0 0 140;
+	font-family: arial, sans;
+	font-size: 11px;
+	color: #6a6969;
+}
+
+#header #nav_links a,
+#header #nav_links a:active,
+#header #nav_links a:hover,
+#header #nav_links a:visited {
+	color: #6c2e7a;
+}
+
+#content {
+	margin: 0 20 28 20;
+	width: 450px;
+	font-family: arial, sans;
+	font-size: 12px;
+	color: #6a6969;
+}
+
+#content #title {
+	margin: 10 0 10 0;
+	font-size: 16px;
+	font-weight: bold;
+	color: #5b1483;
+}
+
+#content .header {
+	font-weight: bold;
+}

@@ -1,0 +1,41 @@
+/* ------------------------------------------- /
+ ie.css
+ 2006-03-01 / joshuar
+ Hacks for MSIE to render correctly
+// ------------------------------------------- */
+
+/* template.inc, side_nav.inc */
+#top #logo {
+	margin-left: -8px;
+	cursor: hand;
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/layout/title_logo.png');
+}
+#top #layout_head #stripe .stripe_button:hover {
+	cursor: hand;
+}
+#top #layout_head #stripe #stripe_shortcuts #shortcuts li.over #menu {
+	filter:alpha(opacity=85);
+}
+#top #layout_head #stripe #stripe_shortcuts #shortcuts li #menu li {
+	width: 12em;
+}
+#top #layout_head #stripe #stripe_shortcuts #shortcut_minus {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_minus.png');
+}
+#top #layout_head #stripe #stripe_shortcuts #shortcut_plus {
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_plus.png');
+}
+#top #layout_head #stripe #stripe_search #search_button {
+	cursor: hand;
+	background-image: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://graphics.millsberry.com/site_gfx/nav/nav_go.png');
+}
+#body #layout_body #side_nav .nav_button:hover {
+	cursor: hand;
+}
+#body #layout_body #side_nav #status .status_icon {
+	margin-left: -5px;
+}

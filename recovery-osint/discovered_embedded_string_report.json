@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-06-04T23:41:34",
+  "scanned_files": 147,
+  "files_with_url_hits": 2,
+  "unique_url_count": 10,
+  "unique_host_count": 9,
+  "top_files": [
+    {
+      "file": "int_townhall_v11.swf",
+      "hit_count": 10,
+      "sample": "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd | http://www.w3.org/1999/xhtml | http://www.replacementhelpcenter.com/"
+    },
+    {
+      "file": "mainmap_v13.swf",
+      "hit_count": 10,
+      "sample": "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd | http://www.w3.org/1999/xhtml | http://www.replacementhelpcenter.com/"
+    }
+  ],
+  "outputs": [
+    "recovery-osint/discovered_embedded_urls.txt",
+    "recovery-osint/discovered_embedded_hosts.txt"
+  ]
+}

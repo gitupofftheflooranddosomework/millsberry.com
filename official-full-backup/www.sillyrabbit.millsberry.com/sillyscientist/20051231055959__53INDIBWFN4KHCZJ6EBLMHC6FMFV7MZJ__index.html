@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Trix Silly Scientist</title>
+<script language="JavaScript" src="flash_detection.js"></script>
+<script language="JavaScript">
+<!--
+
+function SymError()
+{
+  return true;
+}
+
+window.onerror = SymError;
+
+//-->
+</script>	
+<script language="JAVASCRIPT" type="TEXT/JAVASCRIPT"><!-- 
+if(screen){ 
+topPos=0 
+leftPos=0 
+} 
+function getPage2(thePage,wt,ht){ 
+leftPos= (screen.width-wt)/2 
+topPos = (screen.height-ht)/2 
+newWin1 = window.open(thePage,'aWin','toolbars=no,resizeable=yes,scrollbars=no,left='+leftPos+',top='+topPos+',width='+wt+',height='+ht) 
+} 
+var popUpWin=0;
+function popUpWindow(URLStr, left, top, width, height)
+{
+ if(popUpWin)
+  {
+    if(!popUpWin.closed) popUpWin.close();
+  }
+  popUpWin = open(URLStr, 'popUpWin', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes,width='+width+',height='+height+',left='+left+', top='+top+',screenX='+left+',screenY='+top+'');
+}
+
+// --> 
+</script> 
+</head>
+<body bgcolor=#50A3CB topmargin=0 leftmargin=0 marginheight=0 marginwidth=0>
+<script language="JavaScript"> 
+if (hasFlash >= versionNeeded&&browser_version3!=true){
+	document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="100%" height="100%" id="silly-sc" align="middle">');
+	document.write('<param name="allowScriptAccess" value="sameDomain" />');
+	document.write('<param name="movie" value="trix_silly-splash.swf" />');
+	document.write('<param name="quality" value="high" />');
+	document.write('<param name="bgcolor" value="#ffffff" />');
+	document.write('<embed src="trix_silly-splash.swf" quality="high" bgcolor="#ffffff" width="100%" height="100%" name="silly-sc" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+	document.write('</object>');
+}else {
+	//NO flash content
+	document.write('<font face="Arial, Helvetica, sans-serif" color="#ffffff">You need to install the latest Flash plug-in on your computer. <br><br><a href="http://www.macromedia.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">Click here</a> to download it for free.<br><br> If you already have Flash installed on your computer, <a href="JavaScript: self.location.reload();">click here</a> to continue.</font>');
+	}
+</script>
+</body>
+</html>

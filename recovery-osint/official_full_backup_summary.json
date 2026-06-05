@@ -1,0 +1,186 @@
+{
+  "file_count": 3809,
+  "total_bytes": 156442465,
+  "by_host": [
+    {
+      "host": "www.millsberry.com",
+      "files": 1636,
+      "bytes": 33812561
+    },
+    {
+      "host": "graphics.millsberry.com",
+      "files": 901,
+      "bytes": 44992380
+    },
+    {
+      "host": "devgraphics.millsberry.com",
+      "files": 502,
+      "bytes": 27074976
+    },
+    {
+      "host": "millsberry.com",
+      "files": 346,
+      "bytes": 2971270
+    },
+    {
+      "host": "honeydefender.millsberry.com",
+      "files": 124,
+      "bytes": 12343140
+    },
+    {
+      "host": "www.sillyrabbit.millsberry.com",
+      "files": 71,
+      "bytes": 7313120
+    },
+    {
+      "host": "www.luckycharms.millsberry.com",
+      "files": 65,
+      "bytes": 9095549
+    },
+    {
+      "host": "dev2graphics.millsberry.com",
+      "files": 48,
+      "bytes": 2655108
+    },
+    {
+      "host": "www.nutsabouthoney.millsberry.com",
+      "files": 41,
+      "bytes": 5540050
+    },
+    {
+      "host": "dev.millsberry.com",
+      "files": 26,
+      "bytes": 245560
+    },
+    {
+      "host": "www.honeydefender.millsberry.com",
+      "files": 26,
+      "bytes": 8491392
+    },
+    {
+      "host": "www.luckycharmsfun.millsberry.com",
+      "files": 16,
+      "bytes": 1780603
+    },
+    {
+      "host": "www.honeynutcheerios.millsberry.com",
+      "files": 6,
+      "bytes": 126211
+    },
+    {
+      "host": "dev2.millsberry.com",
+      "files": 1,
+      "bytes": 545
+    }
+  ],
+  "by_extension": [
+    {
+      "extension": ".phtml",
+      "files": 1517
+    },
+    {
+      "extension": ".swf",
+      "files": 975
+    },
+    {
+      "extension": ".gif",
+      "files": 715
+    },
+    {
+      "extension": ".html",
+      "files": 208
+    },
+    {
+      "extension": ".aspx",
+      "files": 107
+    },
+    {
+      "extension": ".jpg",
+      "files": 88
+    },
+    {
+      "extension": ".js",
+      "files": 68
+    },
+    {
+      "extension": ".png",
+      "files": 52
+    },
+    {
+      "extension": ".css",
+      "files": 36
+    },
+    {
+      "extension": ".htm",
+      "files": 8
+    },
+    {
+      "extension": ".pdf",
+      "files": 7
+    },
+    {
+      "extension": ".txt",
+      "files": 5
+    },
+    {
+      "extension": ".unity3d",
+      "files": 4
+    },
+    {
+      "extension": ".ico",
+      "files": 3
+    },
+    {
+      "extension": ".xml",
+      "files": 3
+    },
+    {
+      "extension": ".4",
+      "files": 2
+    },
+    {
+      "extension": ".php",
+      "files": 1
+    },
+    {
+      "extension": ".specialsubmit",
+      "files": 1
+    },
+    {
+      "extension": ".xmlhttp",
+      "files": 1
+    },
+    {
+      "extension": ".dcssip",
+      "files": 1
+    },
+    {
+      "extension": ".dcsuri",
+      "files": 1
+    },
+    {
+      "extension": ".0",
+      "files": 1
+    },
+    {
+      "extension": ".1",
+      "files": 1
+    },
+    {
+      "extension": ".5",
+      "files": 1
+    },
+    {
+      "extension": ".3",
+      "files": 1
+    },
+    {
+      "extension": ".2",
+      "files": 1
+    },
+    {
+      "extension": ".log",
+      "files": 1
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lucky Charms</title>
+<style>
+body {
+	background: #000 url(images/background.gif) repeat-x 0px 0px;
+	text-align: center;
+	margin: 21px 0px 0px 0px;
+	_height: 100%;
+}
+
+#main {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 200px;
+}
+
+</style>
+<script language="JavaScript" src="flash_detection.js"></script>
+<script language="javascript">
+function openLegends()
+{
+	var wnd = window.open('/legend/index.html', 'luckyLegends', 'width=790, height=460, address=0, scrollbars=0, status=0');
+	wnd.focus();
+}
+
+function openMagicalAdventures()
+{
+	var wnd = window.open('/magic/index.html', 'luckyMagical', 'width=800, height=600, address=0, scrollbars=0, status=0');
+	wnd.focus();
+}
+
+function openChocolate()
+{
+	var wnd = window.open('/chocolate/index.html', 'luckyChocolate', 'width=800, height=460, address=0, scrollbars=0, status=0');
+	wnd.focus();
+}
+
+function openLegal()
+{
+	var wnd = window.open('terms.html', 'luckyLegal', 'width=460, height=400, address=0, scrollbars=1, status=0');
+	wnd.focus();
+}
+
+function openPrivacy()
+{
+	var wnd = window.open('privacy.html', 'luckyLegal', 'width=460, height=400, address=0, scrollbars=1, status=0');
+	wnd.focus();
+}
+</script>
+</head> 
+
+<body>
+<script language="javascript">
+	if (hasFlash >= 6&&browser_version3!=true){
+		var aspPath = "http://www.luckycharms.millsberry.com/"
+			if(location.href.indexOf("q.luckcharmsfun.com") !=-1)aspPath = "http://q.luckycharmsfun.com/";
+			
+			document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="790" height="540" id="main" align="top">');
+			document.write('<param name="allowScriptAccess" value="sameDomain" />');
+			document.write('<param name="movie" value="main.swf?xpath=http://www.luckycharms.millsberry.com/" />');
+			document.write('<param name="quality" value="high" />');
+			document.write('<param name="bgcolor" value="#000000" />');
+			document.write('<param name="scale" value="noscale" />');
+			document.write('<embed src="main.swf?xpath=http://www.luckycharms.millsberry.com/" quality="high" scale="noscale" bgcolor="#000000" width="790" height="540" id="main" align="top" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+			document.write('</object>');
+		}else {
+			//NO flash content
+			document.write('<font face="Arial, Helvetica, sans-serif" color="#ffffff">You need to install the latest Flash plug-in on your computer. <br><br><a href="http://www.macromedia.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">Click here</a> to download it for free.<br><br> If you already have Flash installed on your computer, <a href="JavaScript: self.location.reload();">click here</a> to continue.</font>');
+		}
+</script>
+
+</body>
+</html>

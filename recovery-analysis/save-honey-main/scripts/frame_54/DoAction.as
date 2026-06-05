@@ -1,0 +1,2 @@
+stop();
+mcSubload.gotoAndStop("game");

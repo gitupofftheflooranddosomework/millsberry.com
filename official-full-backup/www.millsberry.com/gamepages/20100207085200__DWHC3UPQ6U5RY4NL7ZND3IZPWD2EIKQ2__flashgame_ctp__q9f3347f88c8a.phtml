@@ -1,0 +1,255 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- www.millsberry.com -->
+<html>
+<!--[if lt IE 7]>
+        <script type="text/javascript" src="/js/unitpngfix/unitpngfix.js"></script>
+<![endif]--> 
+<head>
+
+
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="keywords" content="Mills,Millsbury,Milsberry,Milsbury,Millberry,Millbury,Fun games,Spanish language games,Educational games,Active games,Citizen,Cool stuff,Arcade,Music Mix,Fun,Games,Explore,Adventure,Create,Character,Buddy,Care,Academy,School,Gym,Gymnasium,Solver,Science,Project,Town,Pets,Children's games,Games for kid,Kid games,Kids games,Kid's games,Children,Safe gaming">
+    <meta name="description" content="Explore the virtual world of Millsberry with your own customized buddy. Design a home, play games, grow a farm that helps those in need, and much more!">
+    <title>Millsberry - Arcade - Fruit Roll-Ups&#0174; Scoops&#0153; Memory Game</title>
+    
+    
+    <script type="text/javascript" src="/common.js?v=3"></script>
+    <script type="text/javascript" src="/js/swfobject.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-millsberry.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/theme/royal.phtml?v=3">
+    <link rel="stylesheet" type="text/css" href="/css/template.css?v=6">
+    <link rel="stylesheet" type="text/css" href="/css/global.css?v=3">
+    <link rel="stylesheet" type="text/css" href="/css/jquery/jquery-custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/jquery/jquery-millsberry-css.phtml">
+    <link rel="stylesheet" type="text/css" href="/css/gamepages/flashgame_ctp.css?v=1">
+
+    <!--[if lt IE 7.00]>
+        <link rel="stylesheet" type="text/css" href="/css/template.ie.css?v=2">
+        <link rel="stylesheet" type="text/css" href="/css/global.ie.css?v=2">
+        <link rel="stylesheet" type="text/css" href="/css/jquery/jquery-millsberry-css.ie.phtml">
+        <![endif]-->
+
+</head>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<body  >
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script><script type="text/javascript"> _uacct = "UA-1272972-1"; urchinTracker();</script>
+<!-- BEGIN: LOGIN POPUP -->
+<div id="login_popup" class="dlg_modal" style="width:535px; height:295px; display:none;">
+	<div id="close_overlay" class="close_overlay" onclick="closeDialogWindow('login_popup')" style="position:relative;left:465px;top:-10px;"></div>
+	<div align="left" style="display:block; position:relative; top:55px; left:103px; width:320px">
+		
+		<form action='' method="post">
+			<fieldset style="border:none">
+				<div id="login_name_container" class="input_container input_container_inactive " style="width:157px; height:32px; text-align: center; ">
+					<div id="login_name" style="position:relative; top:5px;">
+						<input width="76" type="text" name="login_username" id="login_username" class="jq_input_field text ui-widget-content ui-corner-all input_field" />
+					</div>
+				</div>
+				<div id="login_password_container" class="input_container input_container_inactive " style="width:157px; height:32px; text-align: center; ">
+					<div id="login_password" style="position:relative; top:5px;">
+						<input width="76" type="password" name="login_pass" id="login_pass" value="" class="jq_input_field text ui-widget-content ui-corner-all input_field" />
+					</div>
+				</div>
+				<!-- width="76" height="27"-->
+				<div style="position:relative; top:7px; left:-100px; width:255px; height:27px; " >
+										<div style="float:right; ">
+						<input type="image" value="Login" src="http://graphics.millsberry.com/site_gfx/login/go-button.gif">						
+					</div>
+						
+				</div>
+				
+			</fieldset>
+		</form>	
+
+		<div style="float:left; position:relative; top:-29px; left:265px">
+			<a href="/signup.phtml"><img src="http://graphics.millsberry.com/site_gfx/login/start-button.gif" width="97" height="27" border="0" name="start" /></a>					
+		</div>
+		
+	</div>
+</div>
+<!-- END: LOGIN POPUP -->
+
+
+<div id='top'>
+    <a href='/'><span id='logo'>&nbsp;</span></a>
+    
+    <div id='layout_head'>
+		<div id='login_info'>
+			2,940 citizens online now&nbsp;|&nbsp; <a href='/town_hall/faq.phtml'>HELP</a>
+		</div> <!--login_info-->
+		<div id='stripe'>
+			     <div id="top_nav_flashcontent">
+     <!--default content-->
+	 </div>
+
+	<script type="text/javascript">
+		// <![CDATA[
+        
+        // redirect to the upgrade page if flash is installed, but version is too low
+		var version = deconcept.SWFObjectUtil.getPlayerVersion();
+        if(version["major"] < 8 && version["major"] > 0) {
+            window.location='/flash.phtml';
+        } else {
+            writeFlashContent();
+        }
+        
+        function writeFlashContent() {
+            var so = new SWFObject("http://graphics.millsberry.com/template/top_nav_v2.swf?url=http%3A%2F%2Fwww.millsberry.com%2Ftop_nav_xml.phtml", "top_nav", "750", "45", "8");
+            so.addParam("wmode", "transparent");
+            so.addParam("scale", "noscale");
+            so.addParam("AllowScriptAccess", "always");
+            so.useExpressInstall('http://graphics.millsberry.com/expressinstall.swf');
+            so.write("top_nav_flashcontent");
+        }
+		
+		// ]]>
+	</script>
+		</div> <!-- stripe -->
+    </div> <!-- layout_head -->
+</div> <!-- top -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div id='body'>
+	<div id='layout_body'>		
+		<div id='side_nav'>
+			<script type='text/javascript'>flash_object ('http://graphics.millsberry.com/template/side_nav_v3.swf', '155', '1300', '&url=http%3A%2F%2Fwww.millsberry.com%2Fside_nav_xml.phtml%3Fpage_relative_url%3D%252Fgamepages%252Fflashgame_ctp.phtml%253Fgame_id%253D520%26now%3D1265532720&unixTimeStamp=1265532720&serverTimeOffset=28800', '8', 'noscale', 'transparent');</script>		</div>
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		<div id='main'>		
+			<div style='padding: 5px; background-color: #EFEFEF; font-weight: bold;'>You are not logged in. A lot of the site's content won't be available to you unless you are logged in. To login, enter your username and password in the boxes at the top right. You can still play games if you aren't a member, but you won't earn any Millsbucks... so <a href='/signup.phtml'>SIGN UP NOW</a>!</div>
+
+<script type='text/javascript'>
+
+var game_win = null;
+  
+function opengamewin_fromplaybutton_520() {
+	opengamewin_520('playButton');
+}
+
+function opengamewin_frommainimage_520() {
+	opengamewin_520('mainImage');
+}
+
+function opengamewin_520(clickSource) {
+	var game_id=520;
+if (game_win) { game_win.close(); }
+// Quality
+if ( document.qualform_520 != null ) {
+	with ( document.qualform_520 ) {
+		quality = quality_select_520.options[quality_select_520.selectedIndex].value;
+  }
+} else {
+	quality = "high";
+}
+// Size
+var width = 560;
+var height = 560;
+
+if ( document.sizeform_520 != null ) {
+	with ( document.sizeform_520 ) {
+		str = size_select_520.options[size_select_520.selectedIndex].value;
+        var tmparr = str.split("-");
+		width = tmparr[0];
+		height = tmparr[1];
+  }
+}
+
+var sizestr = "width=" + width + ", height=" + height;
+if ( width == 999 ) sizestr = "scrolling=no,scroll=no,scrollbars=no,resizable=no,toolbar=no,fullscreen=yes";
+
+var statstr = "stat_strength=FIT,stat_civics=CIV,stat_health=HEA,stat_intelligence=INTEL,stat_hunger=Starving!,stat_hunger_index=FULLNESS,stat_millsbucks=CURRENCY";
+
+urchinTracker('/action-play/game-'+ game_id +'/quality-'+ quality +'/size-'+ width +'-'+ height +'');
+urchinTracker('/action-playSrc/game-'+ game_id +'/launchedFrom-' + clickSource);
+
+game_win = window.open('/gamingsystem/launch_game.phtml?hiscore=0&sp=0&va=0&world=&height=560&width=560&r=451910&game_id=520&questionSet=&quality='+quality, 
+                                 '_blank', 
+                                 '' +sizestr + '' + statstr + '');
+	if (!game_win) {
+		  game_win = window.open('/gamingsystem/launch_game.phtml?hiscore=0&sp=0&va=0&world=&height='+height+'&width='+width+'&r=4755515&game_id=520&questionSet=&quality='+quality, 
+                                 '_self', 
+                                 '' +sizestr + '' + statstr + '');}
+	game_win.focus();}
+</script>    <div id='interior'>
+        <script type='text/javascript'>flash_object ('http://graphics.millsberry.com/item_loader_v6.swf', '600', '400', 'itemLoaderXML=%3C%3Fxml%20version%3D%271.0%27%3F%3E%3Cmessage%20success%3D%271%27%20text%3D%27%27%3E%3Citem%3E%3Cframe%3E1%3C%2Fframe%3E%3CobjectName%3Eitem%3C%2FobjectName%3E%3Curl%3Ehttp%253A%252F%252Fgraphics.millsberry.com%252Fgame_interiors%252Finterior_520_v1.swf%3C%2Furl%3E%3Cscale%3E100%3C%2Fscale%3E%3Cx%3E0%3C%2Fx%3E%3Cy%3E0%3C%2Fy%3E%3CstopItemAnimation%3E1%3C%2FstopItemAnimation%3E%3CugcUrl%3E%3C%2FugcUrl%3E%3C%2Fitem%3E%3Cbutton%3E%3CobjectName%3Ebutton%3C%2FobjectName%3E%3Curl%3Ejavascript%253Aopengamewin_frommainimage_520%2528%2529%253B%3C%2Furl%3E%3Cwindow%3E_self%3C%2Fwindow%3E%3CuseBorderAsRollover%3E1%3C%2FuseBorderAsRollover%3E%3C%2Fbutton%3E%3Cborder%3E%3CobjectName%3Eborder%3C%2FobjectName%3E%3ClineColor%3E0x000099%3C%2FlineColor%3E%3Csize%3E4%3C%2Fsize%3E%3C%2Fborder%3E%3Cpreloader%3E%3CobjectName%3Epreloader%3C%2FobjectName%3E%3Cwidth%3E600%3C%2Fwidth%3E%3Cheight%3E400%3C%2Fheight%3E%3C%2Fpreloader%3E%3C%2Fmessage%3E&unixTimeStamp=1265532720&serverTimeOffset=28800', '7', 'noscale', 'transparent');</script>
+    </div>
+    <div id='interior_stripe'>
+        Fruit Roll-Ups&#0174; Scoops&#0153; Memory Game
+    </div>
+    <div id='content'>
+                <div id='game_console'>
+            <table id='game_launcher' align='center' width='100%' border='0' cellpadding='0' cellspacing='0'>
+                <tr>
+                    <td align='right' width='13%'><b>Reward</b></td>
+                    <td align='left' width='7%'>
+                        <img src='http://graphics.millsberry.com/site_gfx/stat_int_v1.gif' align='bottom'>
+                    </td>
+                    <td align='center' width='30%'>
+                        <form name='qualform_520'><b>Quality</b>
+                            <select name='quality_select_520'> 
+                                <option selected value='High'>High
+                                <option value='Medium'>Medium
+                                <option value='Low'>Low
+                            </select>
+                        </form>
+                    </td>
+                    <td align='center' width='35%'>
+                      <form name='sizeform_520'><b>Size</b>
+                          <select name='size_select_520'> 
+                            <option value='448-448'>Small (640x480)
+                            <option value='560-560' selected>Normal (800x600)
+                            <option value='784-784'>Large (1024x768)
+                            <option value='1008-1008'>X-Large (1600x1200)
+                          </select>
+                      </form>
+                    </td>
+                    <td align='center' width='15%'>
+                        <input type='button' value='Play!' onClick="javascript:opengamewin_fromplaybutton_520();">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table id='game_stats' align='center' width='100%' border='0' cellpadding='0' cellspacing='0'>
+                <tr bgcolor='#CCCCCC'>
+                    <td align='center'><i>Your Scores Today</i>:<br>0</td>
+                    <td align='center'><i>Total Scores Today</i>:<br>1,483</td>
+                    <td align='center'><i>Your High Score</i>:<br>0 [<a href=hiscores.phtml?game_id=520>All</a>]</td>                    <td align='center'> MB per 100 points<br>(1,000 maximum per game)</td>
+                </tr>
+            </table>
+         </div>
+         
+
+             </div>
+		</div>
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		<div id='footer'>
+		    
+<div id="ad_spot">
+    <a href="javascript:void(0);"  onMouseOver="showspot(); return false;" onMouseOut="hidespot(); return false;" >
+        <img src="http://graphics.millsberry.com/site_gfx/adSpot_icon.gif" width="30" height="25"  border="0"/>
+    </a>
+</div>
+<div id="warning" style="position:absolute; visibility:hidden;">
+    <img src="http://graphics.millsberry.com/site_gfx/adSpot_popup.gif" hspace="10" width="258" height="49" alt="" border="0"/>
+</div>
+
+MILLSBERRY &reg;, characters, logos, product names 
+and all related indicia are trademarks of Mills Online, Inc., &copy; 
+2004-2010.<BR> &reg; denotes Reg. US Pat. & TM Office. All rights 
+reserved.<br>
+Use of this site signifies your acceptance of the <a href='/town_hall/terms.phtml'><b>Terms and Conditions</b></a>.
+Please view our <a href='/town_hall/terms.phtml'><b>Privacy Policy</b></a>.<br>
+<br>
+
+		</div>
+	</div>
+	<div id='bottom'>&nbsp;</div>
+</div>
+
+
+</body>
+</html>

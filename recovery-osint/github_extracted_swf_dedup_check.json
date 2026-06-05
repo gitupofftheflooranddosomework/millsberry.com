@@ -1,0 +1,87 @@
+[
+  {
+    "file": "downtown_v24.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\downtown_v24.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\maps\\20060213140557__JWN7GU37V6URIZBW2CULY3ASDYBTB7SL__downtown_v24.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\maps\\20060213140557__JWN7GU37V6URIZBW2CULY3ASDYBTB7SL__downtown_v24.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\maps\\20060213140557__JWN7GU37V6URIZBW2CULY3ASDYBTB7SL__downtown_v24.swf"
+  },
+  {
+    "file": "int_arcade_v3.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_arcade_v3.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20060209104141__YKMX37XUEBG7NODB46AUN5JRZLL6RHN5__int_arcade_v3.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\interiors\\20060209104141__YKMX37XUEBG7NODB46AUN5JRZLL6RHN5__int_arcade_v3.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20060209104141__YKMX37XUEBG7NODB46AUN5JRZLL6RHN5__int_arcade_v3.swf"
+  },
+  {
+    "file": "int_classroom_v11.swf",
+    "existing_elsewhere_count": 1,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_classroom_v11.swf"
+  },
+  {
+    "file": "int_entertainment_v5.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_entertainment_v5.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20051217180814__V6BQKLLFBZV6XXZHIGNH7GKAWDP7L2WB__int_entertainment_v5.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20051217180814__V6BQKLLFBZV6XXZHIGNH7GKAWDP7L2WB__int_entertainment_v5.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\interiors\\20051217180814__V6BQKLLFBZV6XXZHIGNH7GKAWDP7L2WB__int_entertainment_v5.swf"
+  },
+  {
+    "file": "int_ext_com_center_v9_winter.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_ext_com_center_v9_winter.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20060213140441__ORGM3V5EIRGBGHX6ENN3CJTUUP7A2GMR__int_ext_com_center_v9_winter.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20060213140441__ORGM3V5EIRGBGHX6ENN3CJTUUP7A2GMR__int_ext_com_center_v9_winter.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\interiors\\20060213140441__ORGM3V5EIRGBGHX6ENN3CJTUUP7A2GMR__int_ext_com_center_v9_winter.swf"
+  },
+  {
+    "file": "int_gym_v1.swf",
+    "existing_elsewhere_count": 7,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_gym_v1.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20050526184701__44XAZE4NFR57Y3A4E5OCFX3O3CFBA4GB__int_gym_v1.swf; official-recovered-assets\\www.millsberry.com\\images\\site_gfx\\interiors\\20040926212702__44XAZE4NFR57Y3A4E5OCFX3O3CFBA4GB__int_gym_v1.swf; official-full-backup\\www.millsberry.com\\images\\site_gfx\\interiors\\20040926212702__44XAZE4NFR57Y3A4E5OCFX3O3CFBA4GB__int_gym_v1.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20050526184701__44XAZE4NFR57Y3A4E5OCFX3O3CFBA4GB__int_gym_v1.swf"
+  },
+  {
+    "file": "int_hallway_v11.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_hallway_v11.swf; official-recovered-assets\\www.millsberry.com\\images\\site_gfx\\interiors\\20041209110441__J7BXQ7SHUMDZDMI3JR2YTDPP3VDJZIHY__int_hallway_v11.swf; official-full-backup\\www.millsberry.com\\images\\site_gfx\\interiors\\20041209110441__J7BXQ7SHUMDZDMI3JR2YTDPP3VDJZIHY__int_hallway_v11.swf; another-user-backup-attempt\\broad-wayback-pass\\www.millsberry.com\\images\\site_gfx\\interiors\\20041209110441__J7BXQ7SHUMDZDMI3JR2YTDPP3VDJZIHY__int_hallway_v11.swf"
+  },
+  {
+    "file": "int_lab_v2.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_lab_v2.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20060213140608__NP6Q5XHYXWCRTUYECQOUXDHG3UIQMMFX__int_lab_v2.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20060213140608__NP6Q5XHYXWCRTUYECQOUXDHG3UIQMMFX__int_lab_v2.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\interiors\\20060213140608__NP6Q5XHYXWCRTUYECQOUXDHG3UIQMMFX__int_lab_v2.swf"
+  },
+  {
+    "file": "int_museum_v4.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_museum_v4.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20060213140427__N4GK37AGVV3MFVIW5MFLK4ANZV4IP7EJ__int_museum_v4.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\interiors\\20060213140427__N4GK37AGVV3MFVIW5MFLK4ANZV4IP7EJ__int_museum_v4.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20060213140427__N4GK37AGVV3MFVIW5MFLK4ANZV4IP7EJ__int_museum_v4.swf"
+  },
+  {
+    "file": "int_park_v13.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_park_v13.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20060203232415__32DYXTYRU7NIOLF6GX2B56DX4NQPF2AI__int_park_v13.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20060203232415__32DYXTYRU7NIOLF6GX2B56DX4NQPF2AI__int_park_v13.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\interiors\\20060203232415__32DYXTYRU7NIOLF6GX2B56DX4NQPF2AI__int_park_v13.swf"
+  },
+  {
+    "file": "int_police_v1.swf",
+    "existing_elsewhere_count": 7,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_police_v1.swf; official-recovered-assets\\www.millsberry.com\\images\\site_gfx\\interiors\\20040724215350__TAT43DIA3JOPWUE4W2CT3XXU5PILWHOZ__int_police_v1.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20051211140133__TAT43DIA3JOPWUE4W2CT3XXU5PILWHOZ__int_police_v1.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20051211140133__TAT43DIA3JOPWUE4W2CT3XXU5PILWHOZ__int_police_v1.swf; official-full-backup\\www.millsberry.com\\images\\site_gfx\\interiors\\20040724215350__TAT43DIA3JOPWUE4W2CT3XXU5PILWHOZ__int_police_v1.swf"
+  },
+  {
+    "file": "int_postoffice_v1.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_postoffice_v1.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20050526191752__PTZTJEBWF6HURA3AXTOT5GJYDBHVFJDT__int_postoffice_v1.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20050526191752__PTZTJEBWF6HURA3AXTOT5GJYDBHVFJDT__int_postoffice_v1.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\interiors\\20050526191752__PTZTJEBWF6HURA3AXTOT5GJYDBHVFJDT__int_postoffice_v1.swf"
+  },
+  {
+    "file": "int_recording_studio_v1.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\int_recording_studio_v1.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20051211150537__YY53T7NWR6KGTCIHCJW6UXUAIKCD2YUR__int_recording_studio_v1.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20051211150537__YY53T7NWR6KGTCIHCJW6UXUAIKCD2YUR__int_recording_studio_v1.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\interiors\\20051211150537__YY53T7NWR6KGTCIHCJW6UXUAIKCD2YUR__int_recording_studio_v1.swf"
+  },
+  {
+    "file": "mainmap_fall_v22.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\mainmap_fall_v22.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\maps\\20051211143625__JAKSHZWM4D7QSKNEAD2DB7BO7HSZ5WBD__mainmap_fall_v22.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\maps\\20051211143625__JAKSHZWM4D7QSKNEAD2DB7BO7HSZ5WBD__mainmap_fall_v22.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\maps\\20051211143625__JAKSHZWM4D7QSKNEAD2DB7BO7HSZ5WBD__mainmap_fall_v22.swf"
+  },
+  {
+    "file": "side_nav.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\side_nav.swf; official-full-backup\\graphics.millsberry.com\\template\\20070710080856__AOE4JAQ2YIXJG2JO6YJ76HBNASGH253C__side_nav.swf; official-recovered-assets\\graphics.millsberry.com\\template\\20070710080856__AOE4JAQ2YIXJG2JO6YJ76HBNASGH253C__side_nav.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\template\\20070710080856__AOE4JAQ2YIXJG2JO6YJ76HBNASGH253C__side_nav.swf"
+  },
+  {
+    "file": "sylvana_lake_with_sylvie_v8.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\sylvana_lake_with_sylvie_v8.swf; official-full-backup\\graphics.millsberry.com\\site_gfx\\interiors\\20060417230938__TRNWMPLJL3Q6MUCDVMPFFGH6IAQIQPQX__sylvana_lake_with_sylvie_v8.swf; official-recovered-assets\\graphics.millsberry.com\\site_gfx\\interiors\\20060417230938__TRNWMPLJL3Q6MUCDVMPFFGH6IAQIQPQX__sylvana_lake_with_sylvie_v8.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\site_gfx\\interiors\\20060417230938__TRNWMPLJL3Q6MUCDVMPFFGH6IAQIQPQX__sylvana_lake_with_sylvie_v8.swf"
+  },
+  {
+    "file": "top_nav.swf",
+    "existing_elsewhere_count": 4,
+    "sample": "recovery-osint\\github-extracted-swfs\\top_nav.swf; official-full-backup\\graphics.millsberry.com\\template\\20070710080819__AISACVEPSICH2RPHTWJGN7ZVY77BVZKF__top_nav.swf; official-recovered-assets\\graphics.millsberry.com\\template\\20070710080819__AISACVEPSICH2RPHTWJGN7ZVY77BVZKF__top_nav.swf; another-user-backup-attempt\\broad-wayback-pass\\graphics.millsberry.com\\template\\20070710080819__AISACVEPSICH2RPHTWJGN7ZVY77BVZKF__top_nav.swf"
+  }
+]

@@ -1,0 +1,126 @@
+#gazette_left {
+	float: left;
+	width: 280px;
+	margin: 0;
+	padding: 4px 4px 4px 2px;
+	border-width: 0 2px 0 0;
+}
+	#gazette_left h4 {
+		margin: 10px 0 3px 0;
+		font-size: 13px;
+		text-align: center;
+		background-color: silver;
+	}
+
+	#gazette_story {
+		width: 100%;
+		text-align: justify;
+	}
+    
+#gazette_mid {
+	float: left;
+	width: 5px;
+	height: 100px;
+}
+
+#gazette_right {
+	float: left;
+	width: 280px;
+	font-size: 7px;
+	margin: 0;
+	padding: 4px;
+}
+	#coach_link {
+		font-weight: normal;
+		cursor: pointer;
+	}
+		#coach_link #coach {
+			display: block;
+			width: 300px;
+			height: 140px;
+			background-image: url('http://graphics.millsberry.com/site_gfx/coach_tip.gif');
+		}
+			#coach_link #coach #coach_text {
+				display: block;
+				width: 155px;
+				height: 77px;
+				padding: 0;
+				margin: 10px 0 0 132px;
+				color: black;
+			}
+            
+			#coach_link #coach #coach_footer {
+				display: block;
+				width: 300px;
+				height: 25px;
+				margin: 13px 0 0 10px;
+				font-size: 11px;
+				line-height: 2.1em;
+                text-align: left;
+				color: yellow;
+			}
+	
+	.gazette_box {
+        padding-bottom: 10px;
+		width: 300px;
+		background-color: #F1F1F1;
+	}
+    #high_scores {
+        display: block;
+        width: 300px;
+        height: 323px;        
+        background-image: url('http://graphics.millsberry.com/site_gfx/high_scores.gif');
+    }
+    #high_scores_game{
+        padding: 40px 0 0 9px;
+        width: 275px;
+    }
+    #high_scores_names{
+        padding-left: 10px;
+        width: 280px;
+    }
+    #home_tours {
+        display: block;
+        width: 300px;
+        height: 145px;        
+        background-image: url('http://graphics.millsberry.com/site_gfx/home_tours.gif');
+    }
+    #home_tour_names {
+        padding: 37px 0 0 15px;
+        width: 280px;
+    }    
+    #yard_sales {
+        display: block;
+        padding: 0px 0 0 0;
+        width: 300px;
+        height: 75px;        
+        background-image: url('http://graphics.millsberry.com/site_gfx/yard_sales.gif');
+    }
+    #yard_sales a {
+        display: block;
+        text-decoration: underline;
+        color: yellow;
+    }
+    #yard_sales a:hover {
+        text-decoration: none;
+    }
+    #yard_sales a span {
+        display: block;
+        padding: 0 0 0 0;
+        font-family: trebuchet;
+        vertical-align: bottom;
+    }
+    #syndicated_ad {
+		border: 0;
+		font-size: 9px;
+		text-align: center;
+		color: white;
+	}
+    #cotw_portrait {
+        padding-top: 2px;   
+    }
+	#cotw_story {
+		padding: 2px;
+		font-size: 12px;
+		text-align: justify;
+	}

@@ -1,0 +1,30 @@
+[
+  {
+    "file": "interior_12_v3.swf",
+    "bytes": 10748,
+    "sha256": "4061FC9F4521603A582D527AA27CD09F4F6205838E66D6CC351FEAC52A4309C0",
+    "duplicate_count": 0,
+    "duplicate_paths": []
+  },
+  {
+    "file": "interior_13_v2.swf",
+    "bytes": 10744,
+    "sha256": "4AAD362CE0DE8E026CF827BCA0995CACB75CCF6957D38524ADE0F8CE0DDE67D8",
+    "duplicate_count": 0,
+    "duplicate_paths": []
+  },
+  {
+    "file": "interior_16_v3.swf",
+    "bytes": 10748,
+    "sha256": "00A1E143F821DF73B0035C108335B1CA7D6C3CA1D7AFAB2851D9D4A3D498D2D2",
+    "duplicate_count": 0,
+    "duplicate_paths": []
+  },
+  {
+    "file": "interior_80_v1.swf",
+    "bytes": 10749,
+    "sha256": "5B7A396D1192A8B14A6A4B1785A8416DA34C3D06A612277EE38426231C4A9848",
+    "duplicate_count": 0,
+    "duplicate_paths": []
+  }
+]

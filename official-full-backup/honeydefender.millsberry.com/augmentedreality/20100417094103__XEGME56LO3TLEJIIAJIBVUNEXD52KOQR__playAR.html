@@ -1,0 +1,487 @@
+<html>
+<!--
+****************************************************
+* Site: Honey Nut Cheerios - Honey Way Train	   *
+* Date Created: April 2010                         *
+* Developer: Made in Boffswana - www.boffswana.com *
+****************************************************
+-->
+<head>
+<title>Honeyway Train Game</title>
+<link rel="Shortcut Icon" href="favicon.ico">
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript" src="js/swfaddress.js"></script>
+
+<!-- Google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15173284-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+<!-- START OF SmartSource Data Collector TAG -->
+<script language="JavaScript"><!--
+	var gDcsId="dcskw180wj1afxl7hn1m7n71v_6t6rt"; 
+	var gGmiDcsSip="http://www.honeydefender.millsberry.com/augmentedreality/";
+	var gGmiOnsiteDomains="http://www.honeydefender.millsberry.com";
+	
+	function siteTracking(eventTitle, eventTag){
+		// Register Event with WebTrends
+		dcsMultiTrack(
+			'DCS.dcsuri', eventTag,                  // name/value pair for URL
+			'WT.ti', 'FlashEvent:' + eventTitle  // name/value pair for page title
+		);
+	}
+
+//-->
+</script>
+
+<script language="JavaScript" type="text/javascript" src="js/sdc1.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/sdc2.js"></script>
+<NOSCRIPT>
+<IMG ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="http://sdc.generalmills.com/dcs6t7kz2k1afx5rdlnkqqhxi_2z8k/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.0">
+</NOSCRIPT>
+<!-- END OF SmartSource Data Collector  TAG -->
+
+
+
+<script type="text/javascript">
+/*
+ * Javascript page opens
+ */
+function openSurvey(){
+	window.open("http://www.honeydefender.millsberry.com/augmentedreality/survey","survey");
+}
+
+function printMarker(){
+	window.open("box.pdf","boxfront");
+	trackPrintMarker();
+}
+
+function playOtherGames(){
+	window.location = "http://www.honeydefender.millsberry.com/";
+	trackPlayMoreGames();
+}
+
+function openHelp(){
+	window.location = "/index.html#/need-some-help";
+}
+
+function soundOff(){
+	GetUnity().SendMessage("Manager", "soundOff", 0);
+
+}
+function soundOn(){
+	GetUnity().SendMessage("Manager", "soundOn", 1);
+}
+
+function getQuerystring(key, default_)
+{
+	if (default_==null) default_="";
+	key = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	var regex = new RegExp("[\\?&]"+key+"=([^&#]*)");
+	var qs = regex.exec(window.location.href);
+	if(qs == null)
+		return default_;
+	else
+		return qs[1];
+}
+
+/*
+ *	Game tracking via google analytics / webtrends
+ */
+function trackLoadingComplete(part){
+	trackGoogleAndWebtrends('game/' + arString() + '/LoadingComplete/Part' + part);
+}
+function trackWebcamFail(){
+	trackGoogleAndWebtrends('game/' + arString() + '/WebcamFail');
+}
+function trackHoldUpBox(){
+	trackGoogleAndWebtrends('game/' + arString() + '/HoldUpBox');
+}
+function trackTutorial(){
+	trackGoogleAndWebtrends('game/' + arString() + '/Tutorial');
+}
+function trackLevelEnter(level){
+	trackGoogleAndWebtrends('game/' + arString() + '/LevelEnter/Level' + level);
+}
+function trackGameComplete(time){
+	trackGoogleAndWebtrends('game/' + arString() + '/GameComplete');
+}
+function trackPlayAgain(){
+	trackGoogleAndWebtrends('game/' + arString() + '/PlayAgain');
+}
+function trackPrintMarker(){
+	trackGoogleAndWebtrends('game/' + arString() + '/PrintMarker');
+}
+function trackPlayMoreGames(){
+	trackGoogleAndWebtrends('game/' + arString() + '/PlayMoreGames');
+}
+function trackNoUnity(){
+	trackGoogleAndWebtrends('game/' + arString() + '/NoUnity');
+}
+
+function trackGoogleAndWebtrends(tracklink){
+	var dir = window.location.href.split("#")[0];
+	dir = dir.substring(0, dir.lastIndexOf('/')+1);
+	
+	pageTracker._trackPageview(tracklink);
+	siteTracking(dir + tracklink, dir + tracklink);
+}
+
+function arString(){
+ return(getQuerystring("ar", 1) == 1 ? "AR" : "Non-AR");
+}
+
+
+/*
+ * Called by flash header/footer
+ */
+function launchPrivacy(){
+	new_win("http://www.honeydefender.millsberry.com/childPrivacy.aspx","467","450");
+}
+function launchTerms(){
+	new_win("http://www.honeydefender.millsberry.com/legal.aspx","467","450");
+}
+function launchContact(){
+	new_win("http://consumercontacts.generalmills.com/ConsolidatedContact.aspx?page=http://www.cheerios.com","467","450");
+}
+function full_win(url)
+{
+	window.open(url,"mywin","width=" + +screen.width + ",height=" + +screen.height );
+}
+function openAd()
+{
+	document.getElementById('floatingDiv').style.visibility = 'visible';
+}
+function closeAd()
+{
+	document.getElementById('floatingDiv').style.visibility = 'hidden';
+}
+function new_win(url, width, height)
+{
+	var newWin = window.open(url,"mywin","width=" + width + ",height=" + height + "toolbar=no,location=no,status=no,menubar=yes,scrollbars=yes,resizable=yes,screenX=160,left=150,screenY=150,top=150");
+
+	if( !newWin )
+		{
+		newWin = window.open("", "mywin","width=" + width + ",height=" + height + "toolbar=no,location=no,status=no,menubar=yes,scrollbars=yes,resizable=yes,screenX=160,left=150,screenY=150,top=150");
+		newWin.location.href = url;
+		}
+
+}
+function gup( name )
+{
+name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+var regexS = "[\\?&]"+name+"=([^&#]*)";
+var regex = new RegExp( regexS );
+var results = regex.exec( window.location.href );
+if( results == null )
+return "";
+else
+return results[1];
+}
+
+var flashvars = {};
+var params = {};
+var attributes = {};
+flashvars.jumpto = gup('s')
+attributes.id = "flashDiv";
+swfobject.embedSWF("unityHeader.swf", "headerDiv", "903", "61", "9.0.0", false, flashvars, params, attributes);
+attributes.id = "footerFlashDiv";
+swfobject.embedSWF("CheeriosTeaserFooter.swf", "footerDiv", "903", "46", "9.0.0", false, flashvars, params, attributes);
+</script>
+<style type="text/css">
+html, body{
+margin: 0;
+padding: 0;
+height:100%;
+
+
+}
+#footer{
+	margin-top:-5px
+}
+#footerDiv{
+	margin-top:-5px
+}
+#footerFlashDiv{
+	/*margin-top:-5px*/
+}
+body{
+text-align: center;
+}
+#floatingDiv{
+	position: absolute;
+	width:260px;
+	height:49px;
+	margin-top: -336px;
+	margin-left: 40px;
+	visibility:hidden;
+	z-index:99;
+
+}
+#content{
+position: relative;
+width: 903px;
+height: 100%;
+margin: auto;
+/*padding: auto;*/
+text-align: left;
+background: #fde058;
+z-index:1;
+}
+.column{
+width: 50%;
+position: absolute;
+top: 0;
+height:100%;
+/*overflow: hidden;*/
+}
+.left {left: 0;}
+.right {right: 0;}
+#leftcol{
+margin-right: 451px;
+background-image:url(images/HoneyCombLeft.png);
+background-position: top right;
+/*background: #009900;*/
+height: 100%;
+z-index:2;
+}
+#rightcol{
+margin-left: 451px;
+background-image:url(images/HoneyCombRight.png);
+background-position: top left;
+/*background: #0099FF;*/
+height: 100%;
+z-index:2;
+}
+#this_is{
+position: relative;
+}
+#contentDiv{
+	height:545px;
+}
+#headerDiv{
+	height:61px;
+}
+</style>
+<!--[if gte IE 5]>
+<link rel="stylesheet" type="text/css" href="ie.css" />
+<![endif]-->
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="ie.css" />
+<![endif]-->
+		<script language='VBScript'>
+		function DetectUnityWebPlayerActiveX
+			on error resume next
+			dim tControl, res, ua, re, matches, major
+			res = 0
+			set tControl = CreateObject("UnityWebPlayer.UnityWebPlayer.1")
+			if IsObject(tControl) then
+				if tControl.GetPluginVersion() = "2.5.0f5" then
+					' 2.5.0f5 on Vista and later has an auto-update issue
+					' on Internet Explorer. Detect Vista (6.0 or later)
+					' and in that case treat it as not installed
+					ua = Navigator.UserAgent
+					set re = new RegExp
+					re.Pattern = "Windows NT (\d+)\."
+					set matches = re.Execute(ua)
+					if matches.Count = 1 then
+						major = CInt(matches(0).SubMatches(0))
+						if major < 6 then
+							res = 1
+						end if
+					end if
+				else
+					res = 1
+				end if
+			end if
+			DetectUnityWebPlayerActiveX = res
+		end function
+		</script>
+		<script language="javascript1.1" type="text/javascript">
+		
+			function GetUnity () {
+				if (navigator.appVersion.indexOf("MSIE") != -1 && navigator.appVersion.toLowerCase().indexOf("win") != -1)
+					return document.getElementById("UnityObject");
+				else if (navigator.appVersion.toLowerCase().indexOf("safari") != -1)
+					return document.getElementById("UnityObject");
+				else
+					return document.getElementById("UnityEmbed");
+			}
+			
+			function DetectUnityWebPlayer () {
+        		var tInstalled = false;
+        		if (navigator.appVersion.indexOf("MSIE") != -1 && navigator.appVersion.toLowerCase().indexOf("win") != -1) {
+					tInstalled = DetectUnityWebPlayerActiveX();
+        		}
+        		else {
+            		if (navigator.mimeTypes && navigator.mimeTypes["application/vnd.unity"]) {
+                		if (navigator.mimeTypes["application/vnd.unity"].enabledPlugin && navigator.plugins && navigator.plugins["Unity Player"]) {
+                 			tInstalled = true;	
+            			}
+         			}	
+        		}
+        		return tInstalled;	
+    		}
+    		
+    		function GetInstallerPath () {
+    			var tDownloadURL = "";
+	   			var hasXpi = navigator.userAgent.toLowerCase().indexOf( "firefox" ) != -1;
+	   			
+    			// Use standalone installer
+    			if (1)
+    			{
+					if (navigator.platform == "MacIntel")
+						tDownloadURL = "http://webplayer.unity3d.com/download_webplayer-2.x/webplayer-i386.dmg";
+					else if (navigator.platform == "MacPPC")
+						tDownloadURL = "http://webplayer.unity3d.com/download_webplayer-2.x/webplayer-ppc.dmg";
+					else if (navigator.platform.toLowerCase().indexOf("win") != -1)
+						tDownloadURL = "http://webplayer.unity3d.com/download_webplayer-2.x/UnityWebPlayer.exe";
+					return tDownloadURL;
+    			}
+    			// Use XPI installer
+				else
+				{
+					if (navigator.platform == "MacIntel")
+						tDownloadURL = "http://webplayer.unity3d.com/download_webplayer-2.x/UnityWebPlayerOSX.xpi";
+					else if (navigator.platform == "MacPPC")
+						tDownloadURL = "http://webplayer.unity3d.com/download_webplayer-2.x/UnityWebPlayerOSX.xpi";
+					else if (navigator.platform.toLowerCase().indexOf("win") != -1)
+						tDownloadURL = "http://webplayer.unity3d.com/download_webplayer-2.x/UnityWebPlayerWin32.xpi";
+					return tDownloadURL;
+				}    			
+    		}
+			
+			function AutomaticReload () {
+				navigator.plugins.refresh();
+				if (DetectUnityWebPlayer())
+					window.location.reload();
+
+				setTimeout('AutomaticReload()', 500);
+			}
+			
+		</script>
+</head>
+<body>
+
+<div class="left column">
+    <div id="leftcol"></div>
+</div>
+
+<div id="content">
+	<div id="headerDiv">
+	</div>
+    <div id="contentDiv">
+			<script language="javascript1.1" type="text/javaScript">
+				var hasUnity = DetectUnityWebPlayer();
+				var brokenUnity = false;
+				if(navigator.platform == "MacPPC" && getQuerystring("ar", 1) == 1){
+					//Old Power PC Macs can't run the webcam game
+					document.write('<div align="center" id="UnityPrompt"> \n');
+					document.write('  <a href="playAR.html?ar=0"); "><img src="images/unity/old_comp.jpg" border="0"/></a> \n');
+					document.write('</div> \n');
+				}else if (hasUnity) {
+					var unityFile = "hwt.unity3d";
+					unityFile += "?ar_enabled=" + (getQuerystring("ar", 1) == 1 ? "true" : "false");
+					unityFile += "&url_prefix=data/ar/15_40_80/";
+					unityFile += "&marker_prefix=box_flipped";
+					unityFile += "&camera_para=camera_para.dat.txt";
+					
+					document.write('<object id="UnityObject" classid="clsid:444785F1-DE89-4295-863A-D46C3A781394" width="905" height="540"> \n');
+					document.write('<param name="autoupdateURL" value="http://webplayer.unity3d.com/autodownload_webplugin_boffswana_3" /> \n');
+					document.write('<param name="autoupdateURLSignature" value="99874573f0651e46ac2c9b0f872a7ecf1ee9c101195bf2d06cd6cd00508b412aa58db8b61fa898ecc0f5e37b7efd6c2762081eb5aa9810e6001c9e5a7d32d9b1fdd6ce11d7cd666a997b2c443f123173dac380ca9e06d9ac7aef7c3794d4f3dfc2b62eaf0684cb5a8ba762700b1ae74ef35ce768312c483020455936ed47bf46" /> \n');
+					
+					document.write('<param name="backgroundcolor" value="faca48/> \n');
+					document.write('<param name="bordercolor" value="faca48" /> \n');
+					document.write('<param name="textcolor" value="000000" /> \n');
+					document.write('<param name="logoimage" value="images/unity/logo.png" /> \n');
+					document.write('<param name="progressbarimage" value="images/unity/preloadbar_full.png" /> \n');
+					document.write('<param name="progressframeimage" value="images/unity/preloadbar.png" /> \n');
+					
+										document.write('  <param name="src" value="' + unityFile + '" /> \n');
+										document.write('  <embed id="UnityEmbed" src="' + unityFile + '" width="905" height="540" type="application/vnd.unity" pluginspage="http://www.unity3d.com/unity-web-player-2.x" autoupdateURL="http://webplayer.unity3d.com/autodownload_webplugin_boffswana_3" autoupdateURLSignature="99874573f0651e46ac2c9b0f872a7ecf1ee9c101195bf2d06cd6cd00508b412aa58db8b61fa898ecc0f5e37b7efd6c2762081eb5aa9810e6001c9e5a7d32d9b1fdd6ce11d7cd666a997b2c443f123173dac380ca9e06d9ac7aef7c3794d4f3dfc2b62eaf0684cb5a8ba762700b1ae74ef35ce768312c483020455936ed47bf46" backgroundcolor="faca48" bordercolor="faca48" textcolor="000000" logoimage="images/unity/logo.png" progressbarimage="images/unity/preloadbar_full.png" progressframeimage="images/unity/preloadbar.png" /> \n');
+										document.write('</object>');
+					
+					// if Unity does not define to GetPluginVersion on Safari on 10.6, we presume the plugin
+					// failed to load because it is not compatible with 64-bit Safari.
+					if (navigator.appVersion.indexOf("Safari") != -1
+						&& navigator.appVersion.indexOf("Mac OS X 10_6") != -1
+						&& document.getElementById("UnityEmbed").GetPluginVersion == undefined)
+						brokenUnity = true;
+
+					// 2.5.0 cannot auto update on ppc. Treat as broken.
+					else if (document.getElementById("UnityEmbed").GetPluginVersion() == "2.5.0f5" 
+						&& navigator.platform == "MacPPC")
+						brokenUnity = true;
+				}
+				if (!hasUnity || brokenUnity) {
+					trackNoUnity();
+					var installerPath = GetInstallerPath();
+					if (installerPath != "") {
+						// Place a link to the right installer depending on the platform we are on. The iframe is very important! Our goals are:
+						// 1. Don't have to popup new page
+						// 2. This page still remains active, so our automatic reload script will refresh the page when the plugin is installed
+						document.write('<div align="center" id="UnityPrompt"> \n');
+						if (brokenUnity)
+							document.write('  <a href= ' + installerPath + '><img src="images/unity/unity_page.jpg" border="0"/></a> \n');
+						else
+							document.write('  <a href= ' + installerPath + '><img src="images/unity/unity_page.jpg" border="0"/></a> \n');
+						document.write('</div> \n');
+						
+						// By default disable ActiveX cab installation, because we can't make a nice Install Now button
+//						if (navigator.appVersion.indexOf("MSIE") != -1 && navigator.appVersion.toLowerCase().indexOf("win") != -1)
+						if (0)
+						{	
+							document.write('<div id="InnerUnityPrompt"> <p>Title</p>');
+							document.write('<p> Contents</p>');
+							document.write("</div>");
+
+							var innerUnityPrompt = document.getElementById("InnerUnityPrompt");
+							
+							var innerHtmlDoc =
+								'<object id="UnityInstallerObject" classid="clsid:444785F1-DE89-4295-863A-D46C3A781394" width="320" height="50" codebase="http://webplayer.unity3d.com/download_webplayer-2.x/UnityWebPlayer.cab#version=2,0,0,0">\n' + 
+							    '</object>';
+							    
+							innerUnityPrompt.innerHTML = innerHtmlDoc;
+						}
+
+						document.write('<iframe name="InstallerFrame" height="0" width="0" frameborder="0"></iframe>\n');
+					}
+					else {
+						document.write('<div align="center" id="UnityPrompt"> \n');
+						if (brokenUnity)
+							document.write('  <a href="javascript: window.open("http://www.unity3d.com/unity-web-player-2.x"); "><img src="images/unity/unity_page.jpg" border="0"/></a> \n');
+						else
+							document.write('  <a href="javascript: window.open("http://www.unity3d.com/unity-web-player-2.x"); "><img src="images/unity/unity_page.jpg" border="0"/></a> \n');
+						document.write('</div> \n');
+					}
+					
+					// hide broken player
+					if (brokenUnity)
+						document.getElementById("UnityEmbed").height = 0;
+						
+					// Reload when detected unity plugin - but only if no previous plugin is installed 
+					// - in that case a browser restart is needed.
+					if (!brokenUnity)
+						AutomaticReload();
+				}
+			</script>
+    </div>
+    <div id="footerDiv"></div>
+    <img src="images/FooterExtendGraphic.png" width="903" height="336"><div id="floatingDiv" name="floatingDiv"><img src="images/AdSpot_popup.gif" width="260" height="49"></div>
+</div>
+<div class="right column">
+  <div id="rightcol"></div>
+</div>
+
+
+</body>
+</html>

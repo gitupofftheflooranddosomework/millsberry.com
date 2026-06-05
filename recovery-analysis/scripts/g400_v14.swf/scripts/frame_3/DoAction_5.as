@@ -1,0 +1,9 @@
+if(_MB8_GAME_DATA.bDictionary)
+{
+   gotoAndStop("dictionaryFrame");
+}
+else
+{
+   gotoAndStop("gameSetup");
+   play();
+}

@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-06-04T23:18:48",
+  "source_roots": [
+    "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets",
+    "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-full-backup",
+    "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-core-recovered",
+    "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered",
+    "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\another-user-backup-attempt"
+  ],
+  "candidate_count": 132,
+  "unique_recovered_count": 24,
+  "destination_root": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered",
+  "recovered": [
+    {
+      "normalized_name": "game_prototype_v9_sound.swf",
+      "size": 2019561,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\www.sillyrabbit.millsberry.com\\spalding\\20070206085843__PMRSFLCMD6DB5MPUBN77CH7TP5U42OWV__game_prototype_v9_sound.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\game_prototype_v9_sound.swf"
+    },
+    {
+      "normalized_name": "interior_100_v4.swf",
+      "size": 68820,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225210256__OE36ECRNG5OMLOEXVNUCT6YA767O5FKU__interior_100_v4.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_100_v4.swf"
+    },
+    {
+      "normalized_name": "interior_12_v3.swf",
+      "size": 24657,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225204956__DXW77LOKBWVFDCTLPYHFTRS6W44OHX4Z__interior_12_v3.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_12_v3.swf"
+    },
+    {
+      "normalized_name": "interior_13_v2.swf",
+      "size": 6379,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225203657__HXBD22S7DAGAXVRUFAFMEM7YBC6H6SV7__interior_13_v2.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_13_v2.swf"
+    },
+    {
+      "normalized_name": "interior_140_v1.swf",
+      "size": 21396,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070123203705__3HAVEK2XCIO2YTMQO26AIYTQKJPABHDT__interior_140_v1.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_140_v1.swf"
+    },
+    {
+      "normalized_name": "interior_16_v3.swf",
+      "size": 24369,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225210518__4CEJDGJSMM6OFF7QCOH5DBUQCABZ75JG__interior_16_v3.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_16_v3.swf"
+    },
+    {
+      "normalized_name": "interior_160_v1.swf",
+      "size": 19811,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20061129111200__PCZW5BRWWHYH5DM5JFYVDW3BKPJBDKXM__interior_160_v1.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_160_v1.swf"
+    },
+    {
+      "normalized_name": "interior_18_v3.swf",
+      "size": 28610,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070123025156__QL3NFUW6BHWGPCS722F45JWG7GOIJ4QN__interior_18_v3.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_18_v3.swf"
+    },
+    {
+      "normalized_name": "interior_180_v4.swf",
+      "size": 68939,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225205012__6MOUAGK7RPMYTZG3DOQYADCJ7OHNWJYU__interior_180_v4.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_180_v4.swf"
+    },
+    {
+      "normalized_name": "interior_19_v2.swf",
+      "size": 40504,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225204932__OJVIEDMQZG3VZUFEMZ7SJQRWWUXD4HCU__interior_19_v2.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_19_v2.swf"
+    },
+    {
+      "normalized_name": "interior_240_v3.swf",
+      "size": 98411,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070123025214__HHPZMI57XG26BEHCH7BYSMQXXHW3FR62__interior_240_v3.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_240_v3.swf"
+    },
+    {
+      "normalized_name": "interior_260_v6.swf",
+      "size": 148298,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070123025205__7QTTF6DH3X2VP2JPPR4EGWTFWOCIF42E__interior_260_v6.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_260_v6.swf"
+    },
+    {
+      "normalized_name": "interior_300_v4.swf",
+      "size": 177024,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225204555__PWUXV3RVVFILX7JI2MTCPMWP63RCS7PT__interior_300_v4.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_300_v4.swf"
+    },
+    {
+      "normalized_name": "interior_320_v3.swf",
+      "size": 32988,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225210211__KNTXVVHXPS5KEHEALFNJC4NSPWDCBJQY__interior_320_v3.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_320_v3.swf"
+    },
+    {
+      "normalized_name": "interior_340_v1.swf",
+      "size": 39006,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225210241__XKSR257LD5QUHQI3YKRSRQ4EVS5DB7HB__interior_340_v1.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_340_v1.swf"
+    },
+    {
+      "normalized_name": "interior_360_v2.swf",
+      "size": 162945,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070123025224__6YUI4CVMN3XBTE2IHKHJRKWURVCO4SZY__interior_360_v2.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_360_v2.swf"
+    },
+    {
+      "normalized_name": "interior_380_v6.swf",
+      "size": 67413,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070123025233__SNI6D5RYVU5Q6VRAFNOKT3ZDGIGDEAHN__interior_380_v6.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_380_v6.swf"
+    },
+    {
+      "normalized_name": "interior_40_v3.swf",
+      "size": 49483,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\devgraphics.millsberry.com\\game_interiors\\20060623081343__55TNN5LQNJAMYGKVYQRPGV6MLOYXCC3A__interior_40_v3__q997810021.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_40_v3.swf"
+    },
+    {
+      "normalized_name": "interior_400_v2.swf",
+      "size": 62621,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225204621__RYO4UQYSMLMHMKX35FXKXODHXKP4HVIA__interior_400_v2.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_400_v2.swf"
+    },
+    {
+      "normalized_name": "interior_420_v1.swf",
+      "size": 79457,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225204603__5YQD7FGSKZZYKUGXOG7OA2YKQE22JX7T__interior_420_v1.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_420_v1.swf"
+    },
+    {
+      "normalized_name": "interior_440_v3.swf",
+      "size": 69325,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225205656__TNZM37JGXSAGL4OY6LCGUPGOC4GR5SZE__interior_440_v3.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_440_v3.swf"
+    },
+    {
+      "normalized_name": "interior_484_v1.swf",
+      "size": 15336,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070814010101__CBNTBJRQ6RONLM7JH5BXSOGWU26OJ44U__interior_484_v1.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_484_v1.swf"
+    },
+    {
+      "normalized_name": "interior_60_v3.swf",
+      "size": 77857,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225205620__CLJLTOJLJR2WENR567W2Q3SSCHXWCT2D__interior_60_v3.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_60_v3.swf"
+    },
+    {
+      "normalized_name": "interior_80_v1.swf",
+      "size": 16666,
+      "source": "C:\\Users\\Mark\\Coding Projects\\millsberry.com\\official-recovered-assets\\graphics.millsberry.com\\game_interiors\\20070225205753__3IYO7R2KBFXO7N5PK52SMZVDVIA6OQ5P__interior_80_v1.swf",
+      "destination": "c:\\Users\\Mark\\Coding Projects\\millsberry.com\\app\\recovered-games\\discovered\\interior_80_v1.swf"
+    }
+  ]
+}

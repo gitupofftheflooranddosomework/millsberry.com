@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Choose Breakfast</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+function openPledge() {
+
+	var myurl = 'pledge.htm';
+	var mywidth = '720';
+	var myheight = '574';
+
+	var myleft = (screen.width - mywidth) / 2;
+	var mytop = (screen.height - myheight) / 2;
+	window.open(myurl, 'PLEDGE', 'width='+mywidth+',height='+myheight+',scrollbars=0,resizable=0,menubar=1,toolbar=0,status=0,location=0,directories=0,left='+myleft+',top='+mytop);
+}
+
+function popUpPrivacy(){
+	window.open('privacy.html','privacy','toolbar=no,location=no,status=no,menubar=yes,scrollbars=yes,resizable=no,width=467,height=450,left=0,top=0');
+}
+function popUpLegal(){
+	window.open('legal.html','privacy','toolbar=no,location=no,status=no,menubar=yes,scrollbars=yes,resizable=no,width=467,height=450,left=0,top=0');
+}
+
+</script>
+<script language="JavaScript" type="text/javascript" src="js/DocumentWriter.js"></script>
+</head>
+
+<body bgcolor="#000000" text="CC0000" link="CC0000" vlink="CC0000" alink="CC0000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td align="center" valign="middle">
+      <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+      <!--
+      var strHTML = '        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="870" height="560">'
+      + '        <param name="movie" value="main.swf">'
+      + '        <param name="quality" value="high">'
+      + '        <embed src="main.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="870" height="560"></embed></object>';
+      DocumentWriter(strHTML);
+      //-->
+      </SCRIPT>
+    </td>
+  </tr>
+  <tr> 
+    <td align="center" valign="middle">
+<p><font size="2" face="Arial, Helvetica, sans-serif"><a href="javascript:popUpLegal()">Legal</a> 
+        | <a href="javascript:popUpPrivacy()">Privacy</a></font></p></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><img src="logo.gif" width="76" height="39"></td>
+  </tr>
+</table>
+</body>
+</html>

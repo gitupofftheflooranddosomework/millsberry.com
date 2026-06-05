@@ -1,0 +1,2 @@
+gMyScoringSystem.reset();
+play();

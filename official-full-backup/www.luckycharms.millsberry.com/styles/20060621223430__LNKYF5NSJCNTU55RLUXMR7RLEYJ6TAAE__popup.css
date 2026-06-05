@@ -1,0 +1,33 @@
+body {
+	background: #C5A563 url(../images/popup_background.gif) no-repeat 0px 0px;
+	margin: 0px 20px 20px 20px;
+	color: #000;
+	font-size: 12px; 
+	font-family: "Arial"; 
+}
+
+#copy {
+	width: 410px; 
+}
+
+#title {
+	text-align: right; 
+	width: 410px; 
+	padding-bottom: 50px; 
+}
+
+.header { 
+	font-size: 12px; 
+	color: black; 
+	font-family: "Arial"; 
+}
+
+#links { 
+	font-weight: bold; 
+	padding-bottom: 20px; 
+}
+
+a { 
+	color: #003300; 
+	text-decoration: underline;
+}

@@ -1,0 +1,209 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Nuts About Honey - Child Online Privacy Policy</title>
+		<style type="text/css"> P,ol { color: #000000; font-size: 10pt; font-family: "Arial";}
+	.header { font-size: 10pt; color: #000000; font-family: "Arial"; }
+	.footerLink{ font-size: 8pt; color: #F55B1B; font-family: "Arial"; }
+	.footer { color: #FFFFFF; font-size: 8pt; font-family: "Arial, Helvetica, sans-serif";}
+	a:link { color: #F55B1B; text-decoration: underline }
+	a:visited { color: #F55B1B; text-decoraion: underline }
+	a:hover { color: #FFFF00; text-decoraion: underline }
+	a:active { color: #E51C27; text-decoration: underline }
+	</style>
+	</head>
+	<body bottommargin="0" leftmargin="0" marginwidth="0" marginheight="0" rightmargin="0"
+		topmargin="0" bgcolor="#ffba18" style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td colspan="5"><img src="images/child_top.gif" alt="honey nut cheerios - child online privacy policy" width="100%"
+						height="44" border="0"></td>
+			</tr>
+			<tr>
+				<td><img src="spacer.gif" alt="" width="1" height="100%" border="0"></td>
+				<td><img src="spacer.gif" alt="" width="10" height="1" border="0"></td>
+				<td width="428" align="left">
+					<P align="right">Last Updated: September 2004
+						<br>
+					</P>
+					<P>
+						<span class="footerLink">Child Online Privacy Policy | <a href="legal.aspx">Legal</a></span>
+						<br>
+						<br>
+						<span class="header">
+							<strong><strong><strong>General Mills Child Online Privacy Policy</strong></strong></strong></span><br>
+						General Mills and it affiliated companies care about personal privacy and takes 
+						special care of the privacy of children under the age of 13. We have developed 
+						our privacy practices as they relate to children from guidelines established by 
+						the Children's Advertising Review Unit (CARU) and in compliance with the 
+						requirements established by the Children's Online Privacy Protection Act of 
+						1998 ("COPPA"). We also recommend that parents monitor their children's 
+						Internet activities and learn and employ software or other tools which can help 
+						their children enjoy the fun and entertainment of an on-line experience without 
+						compromising their personal safety or allowing them to utilize the Internet in 
+						a manner inconsistent with their parent's preferences.
+						<br>
+						<br>
+						<span class="header">
+							<strong><strong>WHAT INFORMATION DO WE COLLECT FROM CHILDREN?</strong></strong></span><br>
+						At General Mills it is our policy to create website experiences for children 
+						under the age of 13 that require minimal or no collection of personal 
+						information. Generally, General Mills limits its collection of information to 
+						non-personally identifiable information that is gathered through a child's 
+						voluntary submission to us or through the use of cookie, web beacon, and 
+						similar technology.
+						<br>
+						<br>
+						Non-personally identifiable information that we may ask a child to voluntarily 
+						submit, generally in the form of a survey that we use for research purposes, 
+						may include personal interest, gender, snack or food preferences, or age.
+						<br>
+						<br>
+						General Mills employs cookie, web beacon, and similar technology and devices on 
+						our Websites to facilitate site administration and navigation. General Mills 
+						also uses cookie, web beacon, and similar technology and devices to collect 
+						non-personal information about users of a General Mills website, such as (1) a 
+						user's IP address (i.e. princeton.edu - 192.168.1.1), the type of web browser 
+						(i.e. Netscape Navigator or Microsoft Explorer) and operating system (i.e. 
+						Windows or Linux) being used, (2) the pages of the website a user visits, and 
+						(3) other Websites a user visited before visiting our site. General Mills 
+						collects this information in order to monitor usage of its Websites and to 
+						improve aspects of its Websites. Cookies do NOT contain any personally 
+						identifiable information such as your child's name or your e-mail address.
+						<br>
+						<br>
+						We may use web beacons on our Websites. Web beacons are 1x1 single-pixel 
+						graphics that allow us to count the number of users who have visited a 
+						particular web page or to access certain cookies. We may use web beacons on our 
+						Websites to count users and to recognize users by accessing our cookies. Being 
+						able to access our cookies allows us to personalize our Website and improve 
+						your experience at our Website. We may also include web beacons in 
+						HTML-formatted e-mail messages that we send to determine which e-mail messages 
+						were opened.
+						<br>
+						<br>
+						From time to time, however, General Mills may request limited personal 
+						information from a child (e.g. name, email address, age, and parent/guardian's 
+						mailing address) in order for that child to participate in particular online 
+						activities. Except in special, limited circumstances, we do not collect this 
+						information online from a child without the prior consent of a parent/guardian. 
+						When we ask for their consent, we will tell the parent/guardian what we will do 
+						with the information that their child provides to us, how they can review their 
+						child's information and how they can request us to delete it. General Mills 
+						does not condition a child's participation in any activity on its website on a 
+						child's disclosure of more information than is reasonably necessary to 
+						participate in the activity.
+						<br>
+						<br>
+						Also, from time to time, General Mills may collect information from a child 
+						under 13 without prior consent of a parent/guardian, but only in these special, 
+						limited circumstances:
+					</P>
+					<ol>
+						<li>
+						We may seek a child's name and a parent/guardian's email contact information to 
+						seek the parent/guardian's consent or to provide them with a notification.
+						<li>
+						We may seek a child's name and email address in order to respond on a one-time 
+						basis to a specific request of that child. For example, if a child sends us an 
+						email request, we will hold their email address long enough to respond to them 
+						and then delete it from our system after we have provided an answer.
+						<li>
+						If a child signs up for one of our email newsletters, or any other of our 
+						activities that require multiple online contact with that child, we ask that 
+						child for the name or email address of a parent or guardian so that we can 
+						notify them and give them an opportunity to opt out of the activity on behalf 
+						of their child.
+						<li>
+						From time to time, General Mills has special online promotions like sweepstakes 
+						or contests that are open to children under the age of 13. If a child under the 
+						age of 13 wishes to participate, we will ask for a parent/guardian's name and 
+						email address so that we can notify them and give them an opportunity to 
+						complete the registration for their child or opt out of the activity on behalf 
+						of their child. Any information that is given to us in this circumstance is 
+						used only for the purpose of conducting the promotion and will be deleted from 
+						our system once the promotion is concluded, and after any legally required 
+						period for keeping such information has passed.
+						<li>
+						We may seek a child's name and contact information to the extent reasonably 
+						necessary to protect the safety of a child participating on our website. In 
+						this situation the information will only be used for the sole purpose of 
+						protecting the child's safety and, as above, we will provide the 
+						parent/guardian with notice of this use.
+						<li>
+							We may seek a child's name and contact information to the extent reasonably 
+							necessary to protect the security or integrity of our website; to take 
+							precautions against liability; to respond to judicial process; or to the extent 
+							permitted under other legal provisions, to provide information to law 
+							enforcement agencies or for an investigation on a matter related to public 
+							safety. Such information will not be used for any other purpose.
+						</li>
+					</ol>
+					<P></P>
+					<p>
+						<span class="header">
+							<strong>HOW DO WE USE THE INFORMATION WE COLLECT?</strong></span><br>
+						The personally identifiable information we collect from a child under the age 
+						of 13 will be used solely by General Mills or its agents or contractors for the 
+						internal purposes indicated at the time the child, with parental/guardian 
+						notice or consent, provides the information. For example, if a parent registers 
+						a child in one of our sweepstakes, we will use the information to notify the 
+						child that he or she has won and to fulfill the sweepstakes prize. General 
+						Mills currently does not disclose, sell or otherwise transfer to third parties 
+						personally identifiable information that children provide, except, from time to 
+						time, however, we may transfer, disclose or share such information with third 
+						parties who are engaged by us specifically to administer or fulfill certain 
+						online activities (e.g. conducting sweepstakes and contest). Such third parties 
+						have access to personal information needed to perform their functions, but may 
+						not use it for other purposes. Lastly, we may also disclose personally 
+						identifiable information to third parties when required by law or pertinent to 
+						judicial or government investigations or proceedings, or otherwise necessary to 
+						protect our website or the safety of its users.
+						<br>
+						<br>
+						<span class="header">
+							<strong>SECURITY</strong></span><br>
+						We have taken steps to protect the confidentiality, security and integrity of 
+						all information our visitors share will us. This includes setting up processes 
+						to avoid any unauthorized access or disclosure of this information. We will 
+						also use our best efforts to maintain accurate personal information collected 
+						from our visitors.
+						<br>
+						<br>
+						<span class="header">
+							<strong>CONTACTING US REGARDING YOUR CHILD'S PERSONALLY IDENTIFIABLE INFORMATION</strong></span><br>
+						Upon providing proper identification, parents can request review, correct, 
+						update or have deleted their child's personally identifiable information from 
+						our database by sending us e-mail to Customer Services or writing to us at 
+						General Mills, Inc., Number One General Mills Boulevard, Minneapolis, MN 55426, 
+						Attn: Customer Services. We can also be reached by telephone by dialing our 
+						consumer response department at 1-800-328-8360 weekdays from 8 a.m. - 5 p.m. 
+						Central Time.. Please feel free to use this same contact information if at any 
+						time you have questions or concerns about our Privacy Policy.
+						<br>
+						<br>
+						General Mills reserves the right to change our Privacy Policies or practices at 
+						any time. Any changes will be reflected on this page. Therefore we recommend 
+						that you visit our Privacy site often so that you are always fully informed. In 
+						addition, we will send a notice to any parent informing them of any material 
+						change in the collection, use, and/or disclosure practices to which that parent 
+						previously consented.
+						<br>
+						<br>
+						&copy; 2006 General Mills.
+						<br>
+						<br>
+						<span class="footerLink">Child Online Privacy Policy | <a href="legal.aspx">Legal</a></span>
+					</p>
+				</td>
+				<td><img src="spacer.gif" alt="" width="10" height="1" border="0"></td>
+				<td><img src="spacer.gif" alt="" width="1" height="100%" border="0"></td>
+			</tr>
+			<tr>
+				<td colspan="5"><img src="spacer.gif" alt="" width="100%" height="2" border="0"></td>
+			</tr>
+		</table>
+	</body>
+</html>
+

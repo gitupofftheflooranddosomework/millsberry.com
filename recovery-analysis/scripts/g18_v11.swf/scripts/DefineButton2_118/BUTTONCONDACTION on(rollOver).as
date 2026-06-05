@@ -1,0 +1,3 @@
+on(rollOver){
+   overEndGame = true;
+}

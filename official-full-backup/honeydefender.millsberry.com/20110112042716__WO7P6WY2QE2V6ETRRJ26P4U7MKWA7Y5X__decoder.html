@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta name="keywords" content="minigames, puzzles, Buzz the Bee, Honey Nut Cheerios, Honey Express, Yellow Jacket, Secret Decoder, runaway train" />
+		<meta name="description" content="In this FREE high-speed adventure GAME, kids PLAY mini-games and solve PUZZLES to help BUZZ stop Yellow Jacket from stealing the Honey Express TRAIN, and save the DELICIOUS honey!" />
+		<title>Save the Honey Express!</title>
+		<script type="text/javascript" src="js/swfobject.js"></script>
+		<script type="text/javascript" src="js/swffit.js"></script>
+		<script type="text/javascript">
+			var flashVars = {
+			};
+			var parameters = {
+				allowFullScreen: "true",
+				scaleMode: "noscale"
+			};
+			var attributes = {
+			};
+
+			swfobject.embedSWF("index.swf", "my_flash", "960", "540", "10.0.0", "js/expressInstall.swf", flashVars, parameters, attributes);
+			swffit.fit("my_flash"); //Since v2.3 swffit use the same size of swfobject by default (but you can set a new size if you want)
+		</script>
+		<style media="all" type="text/css">
+			body{
+				background-color: #4d1509; /*ps: change this value to the same background color of your flash movie*/
+				border: none;
+				margin-top: 0;
+				width:100%;
+				height:100%;
+			}
+			.full {
+				width:100%;
+				height:100%;
+			}
+		</style>
+	
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var GA_ID = 'UA-20231702-1'
+  _gaq.push(['_setAccount', GA_ID]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+		function trackP(key) {
+			var tracker = _gat._getTracker(GA_ID);
+			tracker._trackPageview(key);
+		}
+		 
+		function trackE (category, action, label){
+			var tracker = _gat._getTracker(GA_ID);
+			tracker._trackEvent(category, action, label);
+		}
+</script>
+	</head>
+	<body>
+		<div id="my_flash">
+			<div class="full" style="background-color: #4d1509;">
+				<div style="text-align: center;"><img src="img/hnc_no_flash.jpg" alt="" usemap="#noflash_map" style="border: none;"/>
+					<map id="noflash_map" name="noflash_map">
+						<area alt="" shape="rect" coords="346,226,384,240" href="http://www.adobe.com/go/getflashplayer"/>
+						<area alt="" shape="rect" coords="264,507,333,521" href="http://www.millsberry.com/"/>
+						<area alt="" shape="rect" coords="343,507,405,521" href="http://www.choosebreakfast.com/"/>
+						<area alt="" shape="rect" coords="456,507,516,521" href="http://honeydefender.millsberry.com/legal.aspx"/>
+						<area alt="" shape="rect" coords="529,507,596,521" href="http://honeydefender.millsberry.com/childPrivacy.aspx"/>
+					</map>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

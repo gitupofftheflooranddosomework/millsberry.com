@@ -1,0 +1,104 @@
+[
+  {
+    "file": "downtown_v24.swf",
+    "duplicate_count_total": 4,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 2
+  },
+  {
+    "file": "int_arcade_v3.swf",
+    "duplicate_count_total": 33,
+    "duplicate_in_official": 23,
+    "duplicate_non_official": 10
+  },
+  {
+    "file": "int_classroom_v11.swf",
+    "duplicate_count_total": 6,
+    "duplicate_in_official": 4,
+    "duplicate_non_official": 2
+  },
+  {
+    "file": "int_entertainment_v5.swf",
+    "duplicate_count_total": 4,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 2
+  },
+  {
+    "file": "int_ext_com_center_v9_winter.swf",
+    "duplicate_count_total": 4,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 2
+  },
+  {
+    "file": "int_gym_v1.swf",
+    "duplicate_count_total": 7,
+    "duplicate_in_official": 4,
+    "duplicate_non_official": 3
+  },
+  {
+    "file": "int_hallway_v11.swf",
+    "duplicate_count_total": 4,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 2
+  },
+  {
+    "file": "int_lab_v2.swf",
+    "duplicate_count_total": 4,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 2
+  },
+  {
+    "file": "int_museum_v4.swf",
+    "duplicate_count_total": 4,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 2
+  },
+  {
+    "file": "int_park_v13.swf",
+    "duplicate_count_total": 4,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 2
+  },
+  {
+    "file": "int_police_v1.swf",
+    "duplicate_count_total": 7,
+    "duplicate_in_official": 4,
+    "duplicate_non_official": 3
+  },
+  {
+    "file": "int_postoffice_v1.swf",
+    "duplicate_count_total": 8,
+    "duplicate_in_official": 5,
+    "duplicate_non_official": 3
+  },
+  {
+    "file": "int_recording_studio_v1.swf",
+    "duplicate_count_total": 7,
+    "duplicate_in_official": 4,
+    "duplicate_non_official": 3
+  },
+  {
+    "file": "mainmap_fall_v22.swf",
+    "duplicate_count_total": 4,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 2
+  },
+  {
+    "file": "side_nav.swf",
+    "duplicate_count_total": 3,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 1
+  },
+  {
+    "file": "sylvana_lake_with_sylvie_v8.swf",
+    "duplicate_count_total": 3,
+    "duplicate_in_official": 2,
+    "duplicate_non_official": 1
+  },
+  {
+    "file": "top_nav.swf",
+    "duplicate_count_total": 7,
+    "duplicate_in_official": 5,
+    "duplicate_non_official": 2
+  }
+]

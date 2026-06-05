@@ -1,0 +1,72 @@
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=iadgenmdev02)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=gmod)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=20)(DELAY=2))(CID=(PROGRAM=httpd)(HOST=iadgenmdev01)(USER=nobody))))
+
+  VERSION INFORMATION:
+	TNS for Linux: Version 10.2.0.2.0 - Production
+	TCP/IP NT Protocol Adapter for Linux: Version 10.2.0.2.0 - Production
+  Time: 14-NOV-2006 06:40:47
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=iadgenmdev02)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=gmod)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=20)(DELAY=2))(CID=(PROGRAM=httpd)(HOST=iadgenmdev01)(USER=nobody))))
+
+  VERSION INFORMATION:
+	TNS for Linux: Version 10.2.0.2.0 - Production
+	TCP/IP NT Protocol Adapter for Linux: Version 10.2.0.2.0 - Production
+  Time: 14-NOV-2006 07:22:44
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=iadgenmdev02)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=gmod)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=20)(DELAY=2))(CID=(PROGRAM=httpd)(HOST=iadgenmdev01)(USER=nobody))))
+
+  VERSION INFORMATION:
+	TNS for Linux: Version 10.2.0.2.0 - Production
+	TCP/IP NT Protocol Adapter for Linux: Version 10.2.0.2.0 - Production
+  Time: 14-NOV-2006 08:27:13
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=iadgenmdev02)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=gmod)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=20)(DELAY=2))(CID=(PROGRAM=httpd)(HOST=iadgenmdev01)(USER=nobody))))
+
+  VERSION INFORMATION:
+	TNS for Linux: Version 10.2.0.2.0 - Production
+	TCP/IP NT Protocol Adapter for Linux: Version 10.2.0.2.0 - Production
+  Time: 14-NOV-2006 08:51:14
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+    nt OS err code: 0

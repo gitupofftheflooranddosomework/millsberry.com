@@ -1,0 +1,134 @@
+/* CSS for Millsville */
+/* Ordinary Links */
+A {
+  COLOR:#000099;
+  FONT-FAMILY: Comic Sans MS,helvetica;
+  FONT-SIZE:10pt;
+  TEXT-DECORATION:none;
+  FONT-WEIGHT: bold;
+}
+/* Links on mouseovers */
+A:hover {
+  FONT-FAMILY: Comic Sans MS,helvetica;
+  COLOR:#990000;
+}
+/* Table cells, paragraphs, body */
+TD,P,body {
+  FONT-FAMILY:Comic Sans MS,helvetica;
+  FONT-SIZE:11pt;
+}
+
+INPUT {
+  BORDER-RIGHT: #000000 1px solid;
+  BORDER-TOP: #000000 2px solid;
+  FONT-SIZE: 11px;
+  BORDER-LEFT: #000000 2px solid;
+  BORDER-BOTTOM: #000000 1px solid;
+  FONT-FAMILY: Comic Sans MS, Helvetica, sans-serif;
+} 
+
+TEXTAREA {
+  BORDER-RIGHT: #000000 1px solid;
+  BORDER-TOP: #000000 1px solid;
+  FONT-SIZE: 11px;
+  BORDER-LEFT: #000000 1px solid;
+  BORDER-BOTTOM: #000000 1px solid;
+  FONT-FAMILY: Comic Sans MS, Helvetica, sans-serif;
+} 
+
+SELECT {
+  BORDER-RIGHT: #000000 1px solid;
+  BORDER-TOP: #000000 1px solid;
+  FONT-SIZE: 11px;
+  BORDER-LEFT: #000000 1px solid;
+  BORDER-BOTTOM: #000000 1px solid;
+  FONT-FAMILY: Comic Sans MS, Helvetica, sans-serif;
+} 
+
+/* For when you need your text SMALL */
+.smallfont {
+  FONT-SIZE:7.5pt;
+}
+
+.footerfont {
+  FONT-SIZE:9pt;
+}
+
+/* Site Color Coding */
+
+.article_body {
+  background-color: #FFFFFF;
+}
+
+/*  Same as regular TDs, with BG Color */
+.sidenav_TD {
+  background-color: #CBF2FE;
+}
+
+.footer_TD {
+  background-color: #CBF2FE;
+}
+
+.header_stripe_TD {
+  COLOR:#FFFFFF;
+  background-color: #1887B6;
+  FONT-WEIGHT: bold;
+}
+
+.header_TD {
+  background-color: #000000;
+}
+
+.content_TD {
+  background-color: #FFFFFF;
+}
+
+/* Regular Table Cell Styles */
+.table_top {
+  FONT-SIZE: 8pt;
+  FONT-WEIGHT: bold;
+  background-color: #CCCCCC;
+  BORDER-RIGHT: #000000 2px solid;
+  BORDER-TOP: #000000 1px solid;
+  BORDER-LEFT: #000000 1px solid;
+  BORDER-BOTTOM: #000000 2px solid;
+  COLOR: #000000;
+}
+.table_bottom {
+  FONT-SIZE: 7.5pt;
+  background-color: #FFFFFF;
+  BORDER-RIGHT: #000000 2px solid;
+  BORDER-TOP: #000000 1px solid;
+  BORDER-LEFT: #000000 1px solid;
+  BORDER-BOTTOM: #000000 2px solid;
+  COLOR: #000000;
+}
+
+/* Game Launcher Styles*/
+.game_menu_top {
+  FONT-SIZE: 8pt;
+  FONT-WEIGHT: bold;
+  background-color: #CCCCCC;
+  BORDER-RIGHT: #000000 2px solid;
+  BORDER-TOP: #000000 1px solid;
+  BORDER-LEFT: #000000 1px solid;
+  BORDER-BOTTOM: #000000 2px solid;
+  COLOR: #000000;
+}
+.game_menu_bottom {
+  FONT-SIZE: 7.5pt;
+  background-color: #FFFFFF;
+  BORDER-RIGHT: #000000 2px solid;
+  BORDER-TOP: #000000 1px solid;
+  BORDER-LEFT: #000000 1px solid;
+  BORDER-BOTTOM: #000000 2px solid;
+  COLOR: #000000;
+}
+
+/* Checkboxes */
+.checkbox {
+  BORDER-RIGHT: #000000 0px;
+  BORDER-TOP: #000000 0px;
+  BORDER-LEFT: #000000 0px;
+  BORDER-BOTTOM: #000000 0px;
+}

@@ -1,0 +1,8 @@
+.playwright-cli/
+app/data/accounts.json
+app/data/*.tmp
+app/output/missing-requests.jsonl
+app/output/*.tmp
+*.tar.gz
+*.zip
+*.tmp

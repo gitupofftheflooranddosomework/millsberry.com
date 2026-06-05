@@ -1,0 +1,29 @@
+body {
+	margin: 0;
+	background-image:url('../images/tile.jpg');	
+	background-repeat:repeat-x repeat-y;
+}	
+
+img, div {
+	behavior: url(css/iepngfix.htc);
+}
+
+#flashcontent {
+	margin: 0 auto;
+	background-color:#000;
+	width:960px;
+	display:block;
+}
+#shadow {
+	margin: 0 auto;
+	width:999px;
+	height:1132px;
+	background-image:url('../images/shadow2.png');	
+}
+
+#footerspace {
+	height: 50px;	
+}
+
+#AdPlane {width:960px; height:50px;}
+#AdPlane img {margin-top:8px; position:relative; left:720px;}

@@ -1,0 +1,34 @@
+[
+  {
+    "replay": "http://web.archive.org/web/20051210130026/http://www.millsberry.com:80/gamepages/flashgame_ctp.phtml?game_id=13",
+    "decoded_url": "http://graphics.millsberry.com/game_interiors/interior_13_v2.swf"
+  },
+  {
+    "replay": "http://web.archive.org/web/20051210130026/http://www.millsberry.com:80/gamepages/flashgame_ctp.phtml?game_id=13",
+    "decoded_url": "http://graphics.millsberry.com/site_gfx/stat_icon_fitness_v1.swf"
+  },
+  {
+    "replay": "http://web.archive.org/web/20051210140538/http://www.millsberry.com:80/gamepages/flashgame_ctp.phtml?game_id=16",
+    "decoded_url": "http://graphics.millsberry.com/game_interiors/interior_16_v3.swf"
+  },
+  {
+    "replay": "http://web.archive.org/web/20051210140538/http://www.millsberry.com:80/gamepages/flashgame_ctp.phtml?game_id=16",
+    "decoded_url": "http://graphics.millsberry.com/site_gfx/stat_icon_civics_v1.swf"
+  },
+  {
+    "replay": "http://web.archive.org/web/20060105084014/http://www.millsberry.com:80/gamepages/flashgame_ctp.phtml?game_id=80",
+    "decoded_url": "http://graphics.millsberry.com/game_interiors/interior_80_v1.swf"
+  },
+  {
+    "replay": "http://web.archive.org/web/20060105084014/http://www.millsberry.com:80/gamepages/flashgame_ctp.phtml?game_id=80",
+    "decoded_url": "http://graphics.millsberry.com/site_gfx/stat_icon_intelligence_v1.swf"
+  },
+  {
+    "replay": "http://web.archive.org/web/20060105100609/http://www.millsberry.com:80/gamepages/flashgame_ctp.phtml?game_id=12",
+    "decoded_url": "http://graphics.millsberry.com/game_interiors/interior_12_v3.swf"
+  },
+  {
+    "replay": "http://web.archive.org/web/20060105100609/http://www.millsberry.com:80/gamepages/flashgame_ctp.phtml?game_id=12",
+    "decoded_url": "http://graphics.millsberry.com/site_gfx/stat_icon_intelligence_v1.swf"
+  }
+]

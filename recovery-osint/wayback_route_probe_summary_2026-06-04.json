@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-06-05T00:33:51",
+  "interiors_batch1": {
+    "hits": 0,
+    "miss": 600,
+    "size": 600
+  },
+  "interiors_extra10": {
+    "hits": 1,
+    "hit_file": "interior_484_v1.swf",
+    "miss": 9,
+    "size": 10
+  },
+  "missing_game_batch1a": {
+    "hits": 0,
+    "miss": 25,
+    "size": 25,
+    "offset": 0
+  },
+  "missing_game_batch1b": {
+    "hits": 0,
+    "miss": 25,
+    "size": 25,
+    "offset": 25
+  },
+  "missing_hiscore_batch1a": {
+    "hits": 0,
+    "miss": 25,
+    "size": 25,
+    "offset": 0
+  },
+  "missing_hiscore_batch1b": {
+    "hits": 0,
+    "miss": 25,
+    "size": 25,
+    "offset": 25
+  },
+  "known_ids_probe": {
+    "hits": 5,
+    "hit_ids": "12,13,16,80,180",
+    "miss": 5,
+    "size": 10
+  }
+}

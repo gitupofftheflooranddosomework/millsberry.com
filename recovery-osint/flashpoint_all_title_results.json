@@ -1,0 +1,582 @@
+[
+  {
+    "query": "Solver",
+    "id": "106e9ef1-dede-46c4-853f-17e9eabd26db",
+    "title": "1st Sudoku solver",
+    "developer": "aagaard",
+    "publisher": "Newgrounds",
+    "source": "https://www.newgrounds.com/portal/view/519218",
+    "launch": "http://uploads.ungrounded.net/519000/519218_sudokusolver.swf",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "14dbe2ba-eb7c-47fb-a539-9a8eafd275f0",
+    "title": "Crime Solvers Missing Puppy",
+    "developer": "Selfdefiant",
+    "publisher": "Melting-Mindz",
+    "source": "http://melting-mindz.com/",
+    "launch": "http://melting-mindz.com/Crime-Solvers-Missing-Puppy.swf",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "1d43e6d1-9c6b-4ff8-98a9-35832fcf604b",
+    "title": "Yet Another Sudoku Solver",
+    "developer": "",
+    "publisher": "",
+    "source": "https://yet-another-sudoku-solver.herokuapp.com/",
+    "launch": "http://yet-another-sudoku-solver.herokuapp.com/",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "3918f5f7-521f-4f3e-bbaf-e06f2df986cb",
+    "title": "PUZZLER EXTREME",
+    "developer": "ZabuJard",
+    "publisher": "Newgrounds",
+    "source": "https://www.newgrounds.com/portal/view/617562",
+    "launch": "http://uploads.ungrounded.net/617000/617562_puzzle.swf",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "506e349c-07c3-4f65-951d-bde38f8578a6",
+    "title": "Hades interactive simulation framework",
+    "developer": "Norman Hendrich; Andreas Ruge; Andrej Walczak; Class Rink; Johannes Bitterling; Karola Krönert; Lars Larsson; Manfred Grove; Marcus Carl; Matthias Meyer; Norman Hendrich; Ullrich Dallmann",
+    "publisher": "University of Hamburg",
+    "source": "http://tams.informatik.uni-hamburg.de/applets/hades/webdemos/index.html",
+    "launch": "http://tams.informatik.uni-hamburg.de/applets/hades/webdemos/index.html",
+    "notes": "https://tams.informatik.uni-hamburg.de/applets/hades/webdemos/classes/hades-models-mips-src.jar is lost.\n\nSaving doesn't work."
+  },
+  {
+    "query": "Solver",
+    "id": "51077fa5-b7b2-4795-a9c8-79842e23ba58",
+    "title": "-Game Path Solver-",
+    "developer": "ken1171 / Ken Kawashima",
+    "publisher": "DeviantArt",
+    "source": "https://www.deviantart.com/ken1171/art/Game-Path-Solver-417767217",
+    "launch": "http://api-da.wixmp.com/_api/download/_game_path_solver__by_ken1171_d6wq78x.swf",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "5b18e624-e88d-4af3-8ad1-5c04346b1be8",
+    "title": "LiveMath OnLine: Cubic Solver",
+    "developer": "Stephen Arnold",
+    "publisher": "",
+    "source": "https://compasstech.com.au/ARNOLD/MATHS/LIVEMATH/MathView/cubesolv.htm",
+    "launch": "http://compasstech.com.au/ARNOLD/MATHS/LIVEMATH/MathView/cubesolv.htm",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "71743dc6-bf76-430c-a49c-269728b22be7",
+    "title": "teal nonogram solver",
+    "developer": "Anton Natarov / Teal",
+    "publisher": "",
+    "source": "http://a.teall.info/nonogram/",
+    "launch": "http://a.teall.info/nonogram/",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "95701b5d-3777-416d-b891-3d48b6b81575",
+    "title": "Mine Solver",
+    "developer": "",
+    "publisher": "Cute Flash Games",
+    "source": "http://www.cuteflashgames.com/game/mine_solver.html",
+    "launch": "http://game.cuteflashgames.com/game_0003/cute/minesolver.swf",
+    "notes": "Levels 18 and 23 seem to be unplayable, because the player character starts outside the main playing field"
+  },
+  {
+    "query": "Solver",
+    "id": "a1122f49-11e8-4102-910f-7fd03ea23d8e",
+    "title": "PolyForm Puzzle Solver",
+    "developer": "Jaap Scherphuis",
+    "publisher": "Jaap's Puzzle Page",
+    "source": "https://www.jaapsch.net/puzzles/polysolver.htm",
+    "launch": "http://www.jaapsch.net/puzzles/java/polyapplet/polyapp.htm",
+    "notes": "The executable .jar file and source files are included in Extras.\n\nOnce you launch the game, you may get an error of \"Your settings could not be saved. The next time you start this program, default settings will be used.\" Click \"OK\" to launch the game.\n\nNotably used by amateur mathematician David Smith to accidentally solve the long-standing Einstein problem in late 2022."
+  },
+  {
+    "query": "Solver",
+    "id": "b242d4ed-57ec-4c5e-95f4-ff5f54d116e9",
+    "title": "The Problem Solverz: Tomb of Nefertiti",
+    "developer": "Frima Studio",
+    "publisher": "Cartoon Network",
+    "source": "http://www.gamegape.com/en-2372-tomb-of-nefertiti.html",
+    "launch": "http://swf3.gamegape.com/008cdbc1/008cdbc1.swf",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "c845baa2-72d7-42e3-be9b-7b85748d7913",
+    "title": "Sudoku Solver",
+    "developer": "jchange",
+    "publisher": "Newgrounds",
+    "source": "https://www.newgrounds.com/portal/view/593367",
+    "launch": "http://uploads.ungrounded.net/593000/593367_SudokuAS34web.swf",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "e6134059-dc14-4d89-88a2-f2e2b6e79be1",
+    "title": "n-e-x-t solver!",
+    "developer": "Tom Theisen",
+    "publisher": "",
+    "source": "http://tomtheisen.com",
+    "launch": "http://tomtheisen.com/next/",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "ed12c0f1-3520-44cd-bd2d-5e6a7916477d",
+    "title": "A Lights Out Puzzle with Solver",
+    "developer": "JessicaC",
+    "publisher": "",
+    "source": "chenschool.elementfx.com",
+    "launch": "http://chenschool.elementfx.com/lightsout/lightsout.html",
+    "notes": ""
+  },
+  {
+    "query": "Solver",
+    "id": "f4880f3a-179b-4e38-b746-192ae2df38df",
+    "title": "Sudoku Solver",
+    "developer": "",
+    "publisher": "",
+    "source": "https://solve-them.herokuapp.com/",
+    "launch": "http://solve-them.herokuapp.com/",
+    "notes": "Entering an invalid sudoku will crash the application.\n\nHacked to display correct fonts."
+  },
+  {
+    "query": "Solver",
+    "id": "f9451c7a-287f-41c3-8dc5-3f1fa497f829",
+    "title": "Countdown",
+    "developer": "James Stanley; Dave McDermid",
+    "publisher": "",
+    "source": "https://incoherency.co.uk/countdown/practice/",
+    "launch": "http://incoherency.co.uk/countdown/practice/",
+    "notes": "Also includes a Countdown Solver. Release date from github commit https://github.com/jes/cntdn/commits/master/README"
+  },
+  {
+    "query": "Solver",
+    "id": "fe8e1552-e45f-4ca5-8d09-b0666d18de7e",
+    "title": "Function grapher and solver",
+    "developer": "Donald Allen",
+    "publisher": "Texas A&M University",
+    "source": "https://www.math.tamu.edu/~dallen/ictcm_colo/flash_examples/grapher/solver.htm",
+    "launch": "http://www.math.tamu.edu/~dallen/ictcm_colo/flash_examples/grapher/solver.htm",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "00a28b05-54fd-47c2-8ba6-62761758933c",
+    "title": "Basic countdown bar",
+    "developer": "",
+    "publisher": "",
+    "source": "http://www.directoratnight.com/2006/02/22/basic-countdown-bar/",
+    "launch": "http://localsw/countdown_bar/countdown_bar.dir",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "012ba04e-36e2-4e27-be09-d4aa8607106b",
+    "title": "[S] Vasgen: Enter",
+    "developer": "selenaopal / severumchameleon",
+    "publisher": "MS Paint Fan Adventures",
+    "source": "https://mspfa.com/?s=1566&p=553",
+    "launch": "http://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d7e56bfe-dadc-48ca-9c7f-47838571aec7/d7vmvwx-aaee33a2-e86e-4aef-af34-8a00de99af5f.swf",
+    "notes": "\"Countdown Quest\" page 553."
+  },
+  {
+    "query": "Countdown",
+    "id": "01bef7c2-e22d-40a7-8478-4e91ffe1145f",
+    "title": "Istituto Luce Countdown Animation",
+    "developer": "",
+    "publisher": "Istituto Luce",
+    "source": "www.luce.it/istitutoluce/index.htm (via Wayback Machine)",
+    "launch": "http://www.luce.it/istitutoluce/istituzionale/immagini/lucecountdown4.swf",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "10d8e37c-422d-4ce1-8e8b-3f78ab7e0066",
+    "title": "Sundown Countdown",
+    "developer": "",
+    "publisher": "Disney",
+    "source": "http://lol.disney.com/",
+    "launch": "http://play.lol.disney.com/v1/files/38be4440-7f42-11e4-b935-06de3600005d/4c766a1dfb1fc5d52173bbb6_flash/fai_spl_acv_countdown_v002.swf?gameConfigUrl=http%3A%2F%2Fhome.disney.go.com%2Fdxd%2Fdynamic%2Fzl%2Fitem%3Fid%3D10383%26apiUrl%3Dhttp%3A%2F%2Fplay.lol.disney.com%2Fv1%2Fgame_container%2Fswf%2Fas3MinigameApi_2_5_6.swf%26assetPath%3Dhttp%3A%2F%2Fplay.lol.disney.com%2Fv1%2Ffiles%2F38be4440-7f42-11e4-b935-06de3600005d%2F4c766a1dfb1fc5d52173bbb6_flash%2F%26gameDivId%3DDisneyGameElement&apiUrl=http%3A%2F%2Fplay.lol.disney.com%2Fv1%2Fgame_container%2Fswf%2Fas3MinigameApi_2_5_6.swf&apiConfigUrl=http%3A%2F%2Fplay.lol.disney.com%2Fv1%2Fgame_container%2Fxml%2FminigameAPIConfig.xml",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "10ed7a12-8a76-41fa-84a2-870c3d97b1ef",
+    "title": "Winx Club: Pets Countdown",
+    "developer": "StarSue",
+    "publisher": "StarSue",
+    "source": "www.starsue.net/game/Winx_Pets_Countdown.html",
+    "launch": "http://www.starsue.net/gameswf/Winx_Pets_Gerisayim.swf",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "1435859f-7ff7-49b4-a651-56bef5cf84c5",
+    "title": "ABC countdown",
+    "developer": "Cambridge English Online Ltd.",
+    "publisher": "British Council",
+    "source": "https://learnenglishkids.britishcouncil.org/games/abc-countdown",
+    "launch": "http://1c7951e0f713f82c10d3-9c5e6fbd2c9d828eb37b6bf0399bddd6.ssl.cf1.rackcdn.com/abc/index.html",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "30d35ef9-a5d1-408e-9d2a-99cf5967c57f",
+    "title": "BBC 2 - Test Card F - with countdown #2",
+    "developer": "Dave Jeffery",
+    "publisher": "625.uk.com",
+    "source": "625.uk.com",
+    "launch": "http://625.uk.com/tv_logos/flash/tcf_4_bbc2.swf",
+    "notes": "After clicking on the image, repeatedly pressing the spacebar will re-create a countdown."
+  },
+  {
+    "query": "Countdown",
+    "id": "31b87525-e415-4291-b2bb-766445f35b8f",
+    "title": "Countdown",
+    "developer": "",
+    "publisher": "",
+    "source": "http://flashman02.persiangig.com/Action/02/Swf/",
+    "launch": "http://flashman02.persiangig.com/Action/02/Swf/Countdown.swf",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "32347cd9-6d8d-41bd-9066-565878460779",
+    "title": "Full Metal Alchemist Countdown",
+    "developer": "sd0711",
+    "publisher": "Deviantart",
+    "source": "https://www.deviantart.com/sd0711/art/Full-Metal-Alchemist-Countdown-72851434",
+    "launch": "http://www.deviantart.com/download/72851434/full_metal_alchemist_countdown_by_sd0711_d17dgiy.swf",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "3d17c412-9a4a-4009-9c78-ae94f25f827f",
+    "title": "Jed's VRML Stuff",
+    "developer": "Jed Hartman; Josie Wernecke",
+    "publisher": "",
+    "source": "http://kith.org/logos/things/VRML/index.html",
+    "launch": "http://kith.org/logos/things/VRML/index.html",
+    "notes": "Pages from other sites were not included. Some images for the site are missing and some examples will not work."
+  },
+  {
+    "query": "Countdown",
+    "id": "44d2f09f-057b-4681-b7a6-4c4e6f6f0eec",
+    "title": "[S] Lucas: Enter.",
+    "developer": "selenaopal / severumchameleon",
+    "publisher": "MS Paint Fan Adventures",
+    "source": "https://mspfa.com/?s=1443&p=302",
+    "launch": "http://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d7e56bfe-dadc-48ca-9c7f-47838571aec7/d7jokdo-f544b0a9-6c26-4601-8936-d7f959d992f3.swf",
+    "notes": "\"Countdown Quest\" page 302."
+  },
+  {
+    "query": "Countdown",
+    "id": "450b1ee9-6109-4dce-b48c-a313477c752f",
+    "title": "Bunny Countdown",
+    "developer": "snowbunnyluv",
+    "publisher": "DeviantArt",
+    "source": "https://www.deviantart.com/snowbunnyluv/art/Flash-Bunny-Countdown-22919541?qo=64&q=by%3Asnowbunnyluv&qh=sort%3Atime+-in%3Ascraps",
+    "launch": "http://deviantart.com/flash__bunny_countdown_by_snowbunnyluv_ddn8tx.swf",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "45458514-060f-4a75-a5f8-5e9f97a5950f",
+    "title": "[S] Lucas: Explore",
+    "developer": "selenaopal / severumchameleon",
+    "publisher": "DeviantArt",
+    "source": "https://www.deviantart.com/severumchameleon/art/S-game-Lucas-Explore-474367050",
+    "launch": "http://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d7e56bfe-dadc-48ca-9c7f-47838571aec7/d7ufbyi-b4b54154-5f15-412c-81c8-b613edd9eb22.swf",
+    "notes": "\"Countdown Quest\" at https://mspfa.com/?s=1566&p=537 , page 537."
+  },
+  {
+    "query": "Countdown",
+    "id": "4b169e1b-a43a-4998-b4b5-b2be2f21fb9b",
+    "title": "Cartoon Network Holiday Countdown",
+    "developer": "",
+    "publisher": "Cartoon Network",
+    "source": "https://web.archive.org/web/20081227033116if_/http://www.cartoonnetwork.com:80/",
+    "launch": "http://www.cartoonnetwork.com/walmart.roll.swf",
+    "notes": "If you switch to different holiday, your default browser will start."
+  },
+  {
+    "query": "Countdown",
+    "id": "50bda6ea-79b5-4e0b-a34f-f41e715c52a5",
+    "title": "Generic Countdown Timer",
+    "developer": "Chuck Neal",
+    "publisher": "MediaMacros",
+    "source": "http://mediamacros.com/item/item-986157078/",
+    "launch": "http://www.mediamacros.com/item_files/986157078/0029.dcr",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "520fc25e-179a-43d1-a93f-3bd518252e97",
+    "title": "Mickey Mouse Clubhouse: Holiday Countdown",
+    "developer": "",
+    "publisher": "Disney",
+    "source": "http://disneyjunior.disney.co.uk/mickey-mouse-clubhouse/play/holiday-countdown",
+    "launch": "http://img.lum.dolimg.com/v1/files/5b5daa20-cca6-11e4-b974-062bc8000035/index.html",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "5455663f-8d79-411d-a8e2-73a83342253d",
+    "title": "The Land Before Time: Countdown Game",
+    "developer": "Zeek Interactive Inc.",
+    "publisher": "Universal Studios",
+    "source": "http://homevideo.universalstudios.com/lbt/greatvalley/countdowngame.html (via Wayback Machine)",
+    "launch": "http://homevideo.universalstudios.com/lbt/greatvalley/lbtctdwn.dcr",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "56c712bb-2279-45fe-adfb-97826bc2323b",
+    "title": "Countdown to Retirement",
+    "developer": "",
+    "publisher": "Practical Money Skills",
+    "source": "http://practicalmoneyskills.com/play/countdown_to_retirement (via Wayback Machine)",
+    "launch": "http://practicalmoneyskills.com/assets/games/countdown/countdown.html",
+    "notes": ""
+  },
+  {
+    "query": "Countdown",
+    "id": "57e34b23-9274-4a46-a12e-5087bb093d6c",
+    "title": "BBC 2 - Test Card F - with countdown",
+    "developer": "Dave Jeffery",
+    "publisher": "625.uk.com",
+    "source": "625.uk.com",
+    "launch": "http://625.uk.com/tv_logos/flash/tcf_2.swf",
+    "notes": "After clicking on the image, repeatedly pressing the spacebar will re-create a countdown."
+  },
+  {
+    "query": "Countdown",
+    "id": "666cd096-8c0f-4ce8-b140-8cdbba710654",
+    "title": "Shane's Kindergarten Countdown",
+    "developer": "Cricket Moon Media",
+    "publisher": "Disney",
+    "source": "http://atv.disney.go.com/playhouse/shane/kindergartencountdown/index.html (via Wayback Machine)",
+    "launch": "http://atv.disney.go.com/playhouse/media/shane/kindergartencountdown/kindergartencountdown.swf",
+    "notes": ""
+  },
+  {
+    "query": "Archery Challenge",
+    "id": "2b411df7-a008-0d3a-244f-b3e879521c7b",
+    "title": "Pee Wee Harris Archery Challenge",
+    "developer": "",
+    "publisher": "Boys' Life",
+    "source": "boyslife.org",
+    "launch": "http://boyslife.org/Pee Wee Harris - Archery Challenge/archery.swf",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "01cab3a1-3a1b-4d6e-b98e-d92ccb1f5765",
+    "title": "Sudoku Daily",
+    "developer": "uclick",
+    "publisher": "Big Fish Games",
+    "source": "http://games.bigfishgames.com/en_sudoku-daily/online/index.html",
+    "launch": "http://games.bigfishgames.com/en_sudoku-daily/online/index.html?year=2007&month=06&day=01",
+    "notes": "Includes 246 puzzles from June 1st 2007, to January 31st 2008\nThe game was hacked to load puzzles through flashvars"
+  },
+  {
+    "query": "Sudoku",
+    "id": "02c92a4e-0c77-4820-9ae4-b6040739a8bc",
+    "title": "247 Sudoku",
+    "developer": "24/7 Games",
+    "publisher": "24/7 Games",
+    "source": "https://www.247sudoku.com",
+    "launch": "http://www.247sudoku.com/index.html",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "02e44490-a3c4-d8e8-0d84-5c1843ba2a1b",
+    "title": "Sudoku Game Play - 1",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-game-play-1.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "035616e3-8911-4996-9d70-b3e83404bb72",
+    "title": "Plop Art Sudoku",
+    "developer": "Candylandstudio.de",
+    "publisher": "Big Fish Games",
+    "source": "https://games.bigfishgames.com/en_plop-art-sudoku/online/",
+    "launch": "http://games.bigfishgames.com/en_plop-art-sudoku/online/PlopArtSuDoku_en.swf",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "056bf19f-9e62-15d1-88f8-40193a1591dc",
+    "title": "Sudoku Game Play - 13",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-game-play-13.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "08e3c99a-6354-4350-9db3-7568809f7c5e",
+    "title": "Beach Sudoku",
+    "developer": "Arkadium",
+    "publisher": "",
+    "source": "http://arena4.arkadium.com/games/beach-sudoku/",
+    "launch": "http://ams.cdn.arkadiumhosted.com/assets/global/game/beach-sudoku/3f5cbbaf-7d94-4468-b05e-a3a065883dee/beach-sudoku.swf",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "092f417d-4ef1-4960-833e-892581657589",
+    "title": "Sudoku Game",
+    "developer": "",
+    "publisher": "",
+    "source": "https://ababasoft.com/kids/sudoku.html",
+    "launch": "http://ababasoft.com/kids/sudoku.swf",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "0a8c8362-bbe2-a1ba-6ea1-b555bccdbdeb",
+    "title": "Sudoku Game Play - 38",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-game-play-38.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "0a9fd4d4-9bfe-a1d2-f11e-64d10898e14d",
+    "title": "Button Sudoku",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/button-sudoku.swf?123",
+    "notes": "The objective of the game is to fill all the empty squares with the correct numbers. Every row of 9 numbers must include all digits 1 through 9 in any order. Every column of 9 numbers must include all digits 1 through 9 in any order. Every 3 by 3 subsection of the 9 by 9 square must include all digits 1 through 9. To start the game again, click Reset."
+  },
+  {
+    "query": "Sudoku",
+    "id": "0b70d214-c6aa-5a91-3bb2-58b6af6c8227",
+    "title": "Sudoku Game Play - 77",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-game-play-77.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "0bc68a17-8b15-cfec-9d76-418b25c33ecd",
+    "title": "Sudoku Game Play - 64",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-game-play-64.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "0c30bdd8-5264-eeb0-913f-ad017673086a",
+    "title": "Sudoku Game Play - 90",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-game-play-90.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "0d24a986-06ca-9217-3df3-f7aa3da1923f",
+    "title": "Sudoku Game Play - 16",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-game-play-16.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "0efc8184-cfdc-5eed-1699-a5def7df97b1",
+    "title": "Beach Sudoku",
+    "developer": "Arkadium",
+    "publisher": "",
+    "source": "http://www.greatdaygames.com/games/play/beach-sudoku/beach-sudoku.aspx",
+    "launch": "http://gdgfiles.arkadium.com/games/beach-sudoku/game/beach-sudoku.swf",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "0f0c3f62-806e-a7f6-a40f-476afb452dfc",
+    "title": "Sudoku Game Play - 98",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-game-play-98.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "0fcaeb70-960c-d353-bc8e-567435269a98",
+    "title": "Sudoku Challenge - 120",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-120.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "10173750-b03c-49c4-aa41-3479a8233a50",
+    "title": "Traditional Sudoku",
+    "developer": "",
+    "publisher": "Daily Games",
+    "source": "https://www.hiddenogames.com/play/Traditional-Sudoku/9648",
+    "launch": "http://www.hiddenogames.com/images/uploads/swf/23022481TraditionalSudoku.swf",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "1046cb38-ca16-ddfb-b4ad-ae3c14a63627",
+    "title": "Sudoku Game Play - 12",
+    "developer": "123Bee",
+    "publisher": "123Bee",
+    "source": "http://www.123bee.com/",
+    "launch": "http://bee.123bee.com/sudoku-game-play-12.swf?123",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "106e9ef1-dede-46c4-853f-17e9eabd26db",
+    "title": "1st Sudoku solver",
+    "developer": "aagaard",
+    "publisher": "Newgrounds",
+    "source": "https://www.newgrounds.com/portal/view/519218",
+    "launch": "http://uploads.ungrounded.net/519000/519218_sudokusolver.swf",
+    "notes": ""
+  },
+  {
+    "query": "Sudoku",
+    "id": "10d33b6f-c1ce-4315-9ec5-45f81877c33e",
+    "title": "Sudoku Silverlight",
+    "developer": "Han Hung",
+    "publisher": "CodeProject",
+    "source": "https://www.codeproject.com/Articles/855699/Complete-Sudoku-Game-in-Csharp-WPF-Silverlight",
+    "launch": "http://www.codeproject.com/Articles/855699/Sudoku%20SilverlightTestPage.html",
+    "notes": "The original .zips are included as Extras."
+  }
+]
