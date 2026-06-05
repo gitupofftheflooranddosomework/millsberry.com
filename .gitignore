@@ -1,9 +1,33 @@
+# Local agent instructions — never push
 AGENTS.md
+
+# Playwright internal state
 .playwright-cli/
+
+# Runtime account/session data — contains passwords and tokens
 app/data/accounts.json
 app/data/*.tmp
+
+# Large runtime output logs
 app/output/missing-requests.jsonl
 app/output/*.tmp
+
+# Large binary archives — do not commit
 *.tar.gz
 *.zip
+
+# Temp files
 *.tmp
+
+# Environment / secrets — catch-all safety net
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+*.secret
+secrets.json
+credentials.json
