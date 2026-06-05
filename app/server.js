@@ -10,6 +10,7 @@ const DATA_ROOT = process.env.DATA_ROOT || path.resolve(__dirname, "..");
 const APP_ROOT = __dirname;
 const RECOVERED_GAMES_ROOT = path.join(APP_ROOT, "recovered-games");
 const RUFFLE_ROOT = path.join(APP_ROOT, "vendor", "ruffle");
+const SWF_TEASER_MANIFEST_PATH = path.join(APP_ROOT, "public", "teasers", "swf-manifest.json");
 const ACCOUNT_STORE_PATH = process.env.ACCOUNT_STORE_PATH || path.join(APP_ROOT, "data", "accounts.json");
 const MISSING_LOG_PATH = process.env.MISSING_LOG_PATH || path.join(APP_ROOT, "output", "missing-requests.jsonl");
 const RUFFLE_URL = process.env.RUFFLE_URL === "0" ? "" : (process.env.RUFFLE_URL || "/__ruffle/ruffle.js");
@@ -1093,6 +1094,7 @@ function renderIndex(user, activeView = "routes") {
   const quickLinks = [
     ["/arcade", "Recovered Arcade"],
     ["/swfs", "Recovered SWFs"],
+    ["/swf-teasers", "SWF Teaser Gallery"],
     ["/gamepages/games_list.phtml", "Games Listing"],
     ["/gamepages/hiscores.phtml", "Hi Scores"],
     ["/main_map.phtml", "Main Map"],
@@ -1123,7 +1125,8 @@ function renderIndex(user, activeView = "routes") {
   const listRows = isSwfView
     ? recoveredSwfs.map((entry) => {
       const search = entry.search;
-      return `<div class="route-row" data-route-row data-route="${escapeHtml(entry.path)}" data-timestamp="${escapeHtml(entry.timestamp)}" data-search="${escapeHtml(search)}"><a class="route-path" href="${escapeHtml(entry.href)}">${escapeHtml(entry.label)}</a><span class="route-meta">${escapeHtml(entry.kind)}${entry.timestamp ? ` · ${escapeHtml(entry.timestamp)}` : ""}</span></div>`;
+      const href = swfPreviewHref(entry.href);
+      return `<div class="route-row" data-route-row data-route="${escapeHtml(entry.path)}" data-timestamp="${escapeHtml(entry.timestamp)}" data-search="${escapeHtml(search)}"><a class="route-path" href="${escapeHtml(href)}">${escapeHtml(entry.label)}</a><span class="route-meta">${escapeHtml(entry.kind)}${entry.timestamp ? ` · ${escapeHtml(entry.timestamp)}` : ""}</span></div>`;
     }).join("")
     : uniqueRoutes.map((route) => {
       const search = `${route.route} ${route.original} ${route.timestamp}`.toLowerCase();
@@ -1232,6 +1235,108 @@ function renderRecoveredArcade(user) {
     <p class="note">These game IDs are confirmed from historical arcade pages. Their original SWF files are still missing, so the links open preserved placeholders instead of dead links.</p>
     <div class="game-grid">${missingCards}</div>
     <p><a href="/complex/arcade.phtml">Original arcade page</a> · <a href="/">All recovered routes</a></p>`,
+    user
+  );
+}
+
+function renderSwfPreview(url, user) {
+  const source = String(url.searchParams.get("src") || "");
+  const decodedSource = decodeURIComponentSafe(source);
+  if (!decodedSource || !decodedSource.startsWith("/")) {
+    return renderAppPage(
+      "SWF Preview",
+      `<p class="note">Missing SWF source path. Return to <a href="/swfs">Recovered SWFs</a>.</p>`,
+      user
+    );
+  }
+
+  let exists = false;
+  if (decodedSource.startsWith("/__games/")) {
+    let relativePath = decodeURIComponentSafe(decodedSource.slice("/__games/".length));
+    if (relativePath.startsWith("flashgames/")) {
+      relativePath = relativePath.slice("flashgames/".length);
+    }
+    const gamesRoot = path.resolve(RECOVERED_GAMES_ROOT);
+    const gamePath = path.resolve(gamesRoot, relativePath);
+    exists = gamePath.startsWith(`${gamesRoot}${path.sep}`) && fs.existsSync(gamePath) && fs.statSync(gamePath).isFile();
+  } else if (/\.swf$/i.test(decodedSource)) {
+    const previewUrl = new URL(decodedSource, "http://www.millsberry.com");
+    const asset = findAsset(previewUrl);
+    exists = Boolean(asset && fs.existsSync(asset.filePath));
+  }
+
+  if (!exists) {
+    return renderAppPage(
+      "SWF Preview",
+      `<p class="note">That SWF is not currently recovered or indexed: <b>${escapeHtml(decodedSource)}</b></p>
+      <p><a href="/swfs">Back to Recovered SWFs</a></p>`,
+      user
+    );
+  }
+
+  const embed = `<div class="map-stage" style="max-width:960px; margin: 14px auto; background:#111;">
+      <object data="${escapeHtml(decodedSource)}" type="application/x-shockwave-flash" width="960" height="720">
+        <param name="movie" value="${escapeHtml(decodedSource)}">
+        <param name="quality" value="high">
+        <param name="allowScriptAccess" value="sameDomain">
+        <embed src="${escapeHtml(decodedSource)}" type="application/x-shockwave-flash" width="960" height="720" quality="high">
+      </object>
+    </div>`;
+
+  return `<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SWF Preview - ${escapeHtml(path.basename(decodedSource))}</title>
+  <link rel="stylesheet" href="/__app/app.css">
+</head>
+<body class="replay-index">
+  <main class="shell">
+    <div class="topbar">
+      <div class="brand">
+        <img src="/images/site_gfx/logo.gif" alt="Millsberry">
+        <div>
+          <h1>SWF Preview</h1>
+          <div class="note">${escapeHtml(decodedSource)}</div>
+        </div>
+      </div>
+      <a class="home-button" href="/swfs">Back to Recovered SWFs</a>
+    </div>
+    <p class="note">This preview loads the SWF through Ruffle where supported. Some ActionScript features may still fail depending on emulator coverage.</p>
+    ${embed}
+  </main>
+  ${RUFFLE_URL ? `<script src="${escapeHtml(RUFFLE_URL)}"></script>` : ""}
+</body>
+</html>`;
+}
+
+function renderSwfTeasers(user) {
+  const teasers = loadSwfTeaserManifest();
+  if (!teasers.length) {
+    return renderAppPage(
+      "SWF Teaser Gallery",
+      `<p class="note">No teaser manifest found yet. Run <b>node tools/extract-swf-teasers.js</b> in the app directory, then refresh this page.</p>
+      <p><a href="/swfs">Back to Recovered SWFs</a></p>`,
+      user
+    );
+  }
+
+  const cards = teasers.map((teaser) => {
+    const previewHref = swfPreviewHref(teaser.sourceHref);
+    return `<article class="inventory-item">
+      <a href="${escapeHtml(previewHref)}"><img src="${escapeHtml(teaser.teaserHref)}" alt="${escapeHtml(teaser.title || teaser.sourcePath || teaser.sourceHref)}" style="width:100%; max-width:220px; height:auto; border:1px solid #c9bd8f;"></a>
+      <h2 style="font-size:13px; overflow-wrap:anywhere;">${escapeHtml(teaser.title || path.basename(teaser.sourcePath || teaser.sourceHref))}</h2>
+      <p style="min-height:0;">${escapeHtml(teaser.kind || "SWF")}</p>
+      <a href="${escapeHtml(previewHref)}">Open Preview</a>
+    </article>`;
+  }).join("");
+
+  return renderAppPage(
+    "SWF Teaser Gallery",
+    `<p class="note">Generated teaser frames from recovered SWFs. Click any card to open a playable preview route.</p>
+    <div class="inventory-grid">${cards}</div>
+    <p><a href="/swfs">Back to Recovered SWFs</a></p>`,
     user
   );
 }
@@ -1368,6 +1473,21 @@ function recoveredSwfEntries() {
 
   entries.sort((a, b) => a.path.localeCompare(b.path) || b.timestamp.localeCompare(a.timestamp) || a.label.localeCompare(b.label));
   return entries;
+}
+
+function swfPreviewHref(sourcePath = "") {
+  return `/__swf_preview?src=${encodeURIComponent(sourcePath)}`;
+}
+
+function loadSwfTeaserManifest() {
+  if (!fs.existsSync(SWF_TEASER_MANIFEST_PATH)) return [];
+  try {
+    const manifest = JSON.parse(fs.readFileSync(SWF_TEASER_MANIFEST_PATH, "utf8"));
+    if (!Array.isArray(manifest)) return [];
+    return manifest.filter((item) => item && item.sourceHref && item.teaserHref);
+  } catch {
+    return [];
+  }
 }
 
 function recordMissing(req, url, kind) {
@@ -2524,6 +2644,14 @@ async function handleRequest(req, res) {
 
   if (url.pathname === "/swfs") {
     return sendText(res, 200, renderIndex(user, "swfs"));
+  }
+
+  if (url.pathname === "/swf-teasers") {
+    return sendText(res, 200, renderSwfTeasers(user));
+  }
+
+  if (url.pathname === "/__swf_preview") {
+    return sendText(res, 200, renderSwfPreview(url, user));
   }
 
   if (url.pathname === "/" || url.pathname === "/index.html" || url.pathname === "/index.phtml") {
