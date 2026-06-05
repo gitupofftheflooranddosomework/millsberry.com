@@ -93,4 +93,163 @@ class ReplayRouteIndexController {
   }
 }
 
+class SwfTeaserScrollController {
+  constructor() {
+    this.filterInput = document.querySelector("[data-filter]");
+    this.sortSelect = document.querySelector("[data-sort]");
+    this.resultsCount = document.querySelector("[data-results-count]");
+    this.resultsLabel = String(this.resultsCount?.dataset.resultsLabel || "teaser");
+    this.list = document.querySelector("[data-teaser-list]");
+    this.loader = document.querySelector("[data-teaser-loader]");
+    this.empty = document.querySelector("[data-teaser-empty]");
+    this.sentinel = document.querySelector("[data-teaser-sentinel]");
+    this.offset = 0;
+    this.total = 0;
+    this.loading = false;
+    this.hasMore = true;
+    this.abortController = null;
+    this.observer = null;
+    this.debounceId = null;
+    this.pageSize = 36;
+  }
+
+  init() {
+    if (!this.list || !this.sentinel) return;
+    this.bindEvents();
+    this.loadNextPage(true);
+    this.observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        this.loadNextPage(false);
+      }
+    }, { rootMargin: "300px 0px" });
+    this.observer.observe(this.sentinel);
+  }
+
+  bindEvents() {
+    const scheduleReset = () => {
+      if (this.debounceId !== null) window.clearTimeout(this.debounceId);
+      this.debounceId = window.setTimeout(() => this.loadNextPage(true), 200);
+    };
+
+    if (this.filterInput) {
+      this.filterInput.addEventListener("input", scheduleReset);
+    }
+    if (this.sortSelect) {
+      this.sortSelect.addEventListener("change", () => this.loadNextPage(true));
+    }
+  }
+
+  queryParams(reset) {
+    const params = new URLSearchParams();
+    params.set("offset", String(reset ? 0 : this.offset));
+    params.set("limit", String(this.pageSize));
+    const query = String(this.filterInput?.value || "").trim();
+    if (query) params.set("q", query);
+    const sortBy = String(this.sortSelect?.value || "time-desc");
+    params.set("sort", sortBy);
+    return params;
+  }
+
+  async loadNextPage(reset) {
+    if (this.loading) return;
+    if (!reset && !this.hasMore) return;
+
+    this.loading = true;
+    this.toggleLoader(true);
+    this.empty.hidden = true;
+
+    if (reset) {
+      this.offset = 0;
+      this.total = 0;
+      this.hasMore = true;
+      this.list.innerHTML = "";
+      if (this.abortController) this.abortController.abort();
+    }
+
+    const controller = new AbortController();
+    this.abortController = controller;
+
+    try {
+      const response = await fetch(`/__swf_teasers.json?${this.queryParams(reset).toString()}`, {
+        headers: { "Accept": "application/json" },
+        signal: controller.signal
+      });
+      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+      const payload = await response.json();
+      this.total = Number(payload.total || 0);
+      this.offset = Number(payload.nextOffset || 0);
+      this.hasMore = Boolean(payload.hasMore);
+      this.renderItems(Array.isArray(payload.items) ? payload.items : []);
+      this.updateResultsCount(this.total);
+      this.empty.hidden = this.total !== 0;
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        this.empty.textContent = "Unable to load teaser photos right now.";
+        this.empty.hidden = false;
+      }
+    } finally {
+      this.loading = false;
+      this.toggleLoader(false);
+    }
+  }
+
+  renderItems(items) {
+    if (!items.length) return;
+    const fragment = document.createDocumentFragment();
+    for (const item of items) {
+      fragment.appendChild(this.buildCard(item));
+    }
+    this.list.appendChild(fragment);
+  }
+
+  buildCard(item) {
+    const title = item.title || item.sourcePath || item.sourceHref || "Recovered SWF";
+    const previewHref = `/__swf_preview?src=${encodeURIComponent(item.sourceHref || "")}`;
+    const card = document.createElement("article");
+    card.className = "teaser-card";
+
+    const imageLink = document.createElement("a");
+    imageLink.href = previewHref;
+    imageLink.className = "teaser-thumb";
+
+    const image = document.createElement("img");
+    image.src = item.teaserHref || "";
+    image.alt = title;
+    image.loading = "lazy";
+    image.decoding = "async";
+
+    imageLink.appendChild(image);
+    card.appendChild(imageLink);
+
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+    card.appendChild(heading);
+
+    const meta = document.createElement("p");
+    const kind = item.kind || "SWF";
+    const stamp = item.timestamp ? ` · ${item.timestamp}` : "";
+    meta.textContent = `${kind}${stamp}`;
+    card.appendChild(meta);
+
+    const action = document.createElement("a");
+    action.href = previewHref;
+    action.className = "teaser-open";
+    action.textContent = "Open Preview";
+    card.appendChild(action);
+
+    return card;
+  }
+
+  toggleLoader(show) {
+    if (!this.loader) return;
+    this.loader.hidden = !show;
+  }
+
+  updateResultsCount(visibleCount) {
+    if (!this.resultsCount) return;
+    this.resultsCount.textContent = `${visibleCount} ${this.resultsLabel}${visibleCount === 1 ? "" : "s"}`;
+  }
+}
+
 new ReplayRouteIndexController().init();
+new SwfTeaserScrollController().init();

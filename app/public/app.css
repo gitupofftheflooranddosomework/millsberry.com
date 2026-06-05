@@ -196,6 +196,77 @@ a {
   background: #fff;
 }
 
+.teaser-list-wrap {
+  max-height: none;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+
+.teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.teaser-card {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  gap: 8px;
+  border: 1px solid #c9bd8f;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fff;
+}
+
+.teaser-thumb {
+  display: block;
+  border: 1px solid #c9bd8f;
+  background: #f7f2da;
+}
+
+.teaser-thumb img {
+  display: block;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.teaser-card h3 {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.teaser-card p {
+  margin: 0;
+  color: #5c553f;
+  font-size: 12px;
+}
+
+.teaser-open {
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.teaser-loader,
+.teaser-empty {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid #c9bd8f;
+  border-radius: 4px;
+  background: #fff9df;
+  color: #5c553f;
+  font-size: 13px;
+}
+
+.teaser-sentinel {
+  width: 100%;
+  height: 1px;
+}
+
 .route-row {
   display: grid;
   grid-template-columns: 1fr auto;

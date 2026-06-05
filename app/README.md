@@ -50,6 +50,45 @@ The public deployment should run the container on localhost only and expose it t
 
 Modern browser support for old Flash content is still imperfect. The SWFs are served locally, but some games and page behaviors still depend on browser or Flash-era behavior that Ruffle does not fully reproduce.
 
+## SWF Teaser Photos
+
+The repository includes generated teaser photos for recovered SWFs under [public/teasers/swf](public/teasers/swf) with an index manifest at [public/teasers/swf-manifest.json](public/teasers/swf-manifest.json).
+
+In the app UI, open the third tab at `/swf-teasers` (Teaser Photos) to browse these previews with lazy loading and infinite scroll.
+
+Teaser generation command:
+
+```powershell
+cd app
+npm run teasers:swf
+```
+
+Sample teaser previews from the current dataset:
+
+### Batman Landing
+
+![Batman Landing Teaser](public/teasers/swf/activities/batmanfru/landing.webp)
+
+### Activity Break
+
+![Activity Break Teaser](public/teasers/swf/activity_break.webp)
+
+### Ad Loader
+
+![Ad Loader Teaser](public/teasers/swf/ads/ad_loader.webp)
+
+### Home Source Adventure
+
+![Home Source Teaser](public/teasers/swf/adventures/Home_Source.webp)
+
+### Lucky Charms Pinball
+
+![Lucky Charms Pinball Teaser](public/teasers/swf/berry/pinball.webp)
+
+### Buddy Featured
+
+![Buddy Featured Teaser](public/teasers/swf/buddy/buddy_featured_v13.webp)
+
 ## Launch Checks
 
 With the Docker app running:

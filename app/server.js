@@ -1090,7 +1090,9 @@ function renderIndex(user, activeView = "routes") {
   }
 
   const recoveredSwfs = recoveredSwfEntries();
+  const teaserEntries = activeView === "teasers" ? loadSwfTeaserManifest() : [];
   const isSwfView = activeView === "swfs";
+  const isTeaserView = activeView === "teasers";
   const quickLinks = [
     ["/arcade", "Recovered Arcade"],
     ["/swfs", "Recovered SWFs"],
@@ -1110,19 +1112,31 @@ function renderIndex(user, activeView = "routes") {
   ];
   const groups = routeGroups(uniqueRoutes);
   const tabs = [
-    { href: "/", label: "Recovered Routes", active: !isSwfView },
-    { href: "/swfs", label: "Recovered SWFs", active: isSwfView }
+    { href: "/", label: "Recovered Routes", active: !isSwfView && !isTeaserView },
+    { href: "/swfs", label: "Recovered SWFs", active: isSwfView },
+    { href: "/swf-teasers", label: "Teaser Photos", active: isTeaserView }
   ];
-  const listTitle = isSwfView ? "Recovered SWFs" : "Recovered Routes";
-  const listNote = isSwfView
-    ? "These are recovered SWF files and playable binaries. Search by filename, title, or path, then click through to open the file directly."
-    : "Recovered official pages, navigation, and SWF assets served locally.";
-  const filterPlaceholder = isSwfView
-    ? "Filter SWFs, e.g. g400_v14, interior_180, item_7018"
-    : "Filter routes, e.g. arcade, game_id=420, historical";
-  const resultsLabel = isSwfView ? "swf" : "route";
-  const rowCount = isSwfView ? recoveredSwfs.length : uniqueRoutes.length;
-  const listRows = isSwfView
+  const listTitle = isTeaserView ? "SWF Teaser Photos" : (isSwfView ? "Recovered SWFs" : "Recovered Routes");
+  const listNote = isTeaserView
+    ? "Generated first-frame teaser photos from recovered SWFs. Photos load as you scroll so large sets stay fast."
+    : (isSwfView
+      ? "These are recovered SWF files and playable binaries. Search by filename, title, or path, then click through to open the file directly."
+      : "Recovered official pages, navigation, and SWF assets served locally.");
+  const filterPlaceholder = isTeaserView
+    ? "Filter teaser photos, e.g. batman, map, g400"
+    : (isSwfView
+      ? "Filter SWFs, e.g. g400_v14, interior_180, item_7018"
+      : "Filter routes, e.g. arcade, game_id=420, historical");
+  const resultsLabel = isTeaserView ? "teaser" : (isSwfView ? "swf" : "route");
+  const rowCount = isTeaserView ? teaserEntries.length : (isSwfView ? recoveredSwfs.length : uniqueRoutes.length);
+  const listRows = isTeaserView
+    ? `<div class="route-list teaser-list-wrap" data-route-list>
+          <div class="teaser-grid" data-teaser-list></div>
+          <div class="teaser-loader" data-teaser-loader hidden>Loading more teaser photos...</div>
+          <div class="teaser-empty" data-teaser-empty hidden>No teaser photos matched your filter.</div>
+          <div class="teaser-sentinel" data-teaser-sentinel></div>
+        </div>`
+    : isSwfView
     ? recoveredSwfs.map((entry) => {
       const search = entry.search;
       const href = swfPreviewHref(entry.href);
@@ -1169,10 +1183,14 @@ function renderIndex(user, activeView = "routes") {
         </div>
         ${user ? `<p class="note"><b>${escapeHtml(user.displayName)}</b><br>${Number(user.millsBucks || 0).toLocaleString("en-US")} Millsbucks</p>` : `<p class="note">Test account: <b>${escapeHtml(TEST_USERNAME)}</b> / <b>${escapeHtml(TEST_PASSWORD)}</b></p>`}
         <p class="note">Flash embeds are served and Ruffle is injected into recovered pages. Some original SWFs may still depend on old browser behavior or missing server APIs.</p>
-        ${isSwfView ? `<p class="note">The SWF tab is for direct file browsing. Playable binaries open through the recovered game files, while the rest are the archived assets that were found in the official mirrors.</p>` : `<h2 class="section-title">Route Groups</h2>
+        ${isTeaserView
+          ? `<p class="note">The Teaser Photos tab streams image cards as you scroll. Use the filter box to narrow by title, path, or host.</p>`
+          : (isSwfView
+            ? `<p class="note">The SWF tab is for direct file browsing. Playable binaries open through the recovered game files, while the rest are the archived assets that were found in the official mirrors.</p>`
+            : `<h2 class="section-title">Route Groups</h2>
         <div class="group-list">
           ${groups.map((group) => `<button type="button" data-route-filter="${escapeHtml(group.filter)}"><span>${escapeHtml(group.label)}</span><b>${group.count}</b></button>`).join("")}
-        </div>`}
+        </div>`)}
       </section>
       <section class="panel">
         <nav class="map-tabs" aria-label="Recovered content tabs">
@@ -1187,17 +1205,20 @@ function renderIndex(user, activeView = "routes") {
           <div class="sort-wrap">
             <label for="route-sort">Sort:</label>
             <select id="route-sort" data-sort>
-              <option value="route-asc">${isSwfView ? "SWF A-Z" : "Route A-Z"}</option>
+              ${isTeaserView
+      ? `<option value="time-desc">Newest first</option>
+              <option value="time-asc">Oldest first</option>
+              <option value="route-asc">Title A-Z</option>
+              <option value="route-desc">Title Z-A</option>`
+      : `<option value="route-asc">${isSwfView ? "SWF A-Z" : "Route A-Z"}</option>
               <option value="route-desc">${isSwfView ? "SWF Z-A" : "Route Z-A"}</option>
               <option value="time-desc">Newest first</option>
-              <option value="time-asc">Oldest first</option>
+              <option value="time-asc">Oldest first</option>`}
             </select>
             <span class="note" data-results-count data-results-label="${resultsLabel}">${rowCount} ${resultsLabel}${rowCount === 1 ? "" : "s"}</span>
           </div>
         </div>
-        <div class="route-list" data-route-list>
-          ${listRows}
-        </div>
+        ${listRows}
       </section>
     </div>
   </main>
@@ -1488,6 +1509,59 @@ function loadSwfTeaserManifest() {
   } catch {
     return [];
   }
+}
+
+function parsePositiveInt(value, fallback, max) {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return fallback;
+  const normalized = Math.floor(parsed);
+  if (normalized < 0) return fallback;
+  return Math.min(normalized, max);
+}
+
+function compareTeasersBySort(sortBy) {
+  const titleValue = (entry) => String(entry.title || path.basename(entry.sourcePath || entry.sourceHref || "")).toLowerCase();
+  const stampValue = (entry) => String(entry.timestamp || "");
+
+  if (sortBy === "time-asc") {
+    return (a, b) => stampValue(a).localeCompare(stampValue(b)) || titleValue(a).localeCompare(titleValue(b));
+  }
+  if (sortBy === "route-asc") {
+    return (a, b) => titleValue(a).localeCompare(titleValue(b)) || stampValue(b).localeCompare(stampValue(a));
+  }
+  if (sortBy === "route-desc") {
+    return (a, b) => titleValue(b).localeCompare(titleValue(a)) || stampValue(b).localeCompare(stampValue(a));
+  }
+  return (a, b) => stampValue(b).localeCompare(stampValue(a)) || titleValue(a).localeCompare(titleValue(b));
+}
+
+function listTeasersPage(url) {
+  const allTeasers = loadSwfTeaserManifest();
+  const queryText = String(url.searchParams.get("q") || "").trim().toLowerCase();
+  const sortBy = String(url.searchParams.get("sort") || "time-desc");
+  const offset = parsePositiveInt(url.searchParams.get("offset"), 0, Math.max(0, allTeasers.length));
+  const limit = parsePositiveInt(url.searchParams.get("limit"), 36, 120);
+
+  let filtered = allTeasers;
+  if (queryText) {
+    const tokens = queryText.split(/\s+/).filter(Boolean);
+    filtered = allTeasers.filter((teaser) => {
+      const haystack = `${teaser.title || ""} ${teaser.sourcePath || ""} ${teaser.sourceHref || ""} ${teaser.kind || ""} ${teaser.id || ""}`.toLowerCase();
+      return tokens.every((token) => haystack.includes(token));
+    });
+  }
+
+  const sorted = [...filtered].sort(compareTeasersBySort(sortBy));
+  const items = sorted.slice(offset, offset + limit);
+  const nextOffset = offset + items.length;
+  return {
+    total: sorted.length,
+    offset,
+    limit,
+    nextOffset,
+    hasMore: nextOffset < sorted.length,
+    items
+  };
 }
 
 function recordMissing(req, url, kind) {
@@ -2647,7 +2721,11 @@ async function handleRequest(req, res) {
   }
 
   if (url.pathname === "/swf-teasers") {
-    return sendText(res, 200, renderSwfTeasers(user));
+    return sendText(res, 200, renderIndex(user, "teasers"));
+  }
+
+  if (url.pathname === "/__swf_teasers.json") {
+    return sendText(res, 200, JSON.stringify(listTeasersPage(url)), "application/json; charset=utf-8");
   }
 
   if (url.pathname === "/__swf_preview") {
