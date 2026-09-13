@@ -1,0 +1,131 @@
+name: Deploy Millsberry Reborn to VPS1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: millsberry-production-vps1
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, recovery]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Build deployment bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar \
+            --exclude='app/data' \
+            --exclude='app/output' \
+            -czf /tmp/millsberry-app-${GITHUB_RUN_ID}.tgz app
+          sha256sum /tmp/millsberry-app-${GITHUB_RUN_ID}.tgz
+
+      - name: Deploy to vps1.markshaw.ca
+        shell: bash
+        env:
+          DEPLOY_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          ARCHIVE="/tmp/millsberry-app-${GITHUB_RUN_ID}.tgz"
+          REMOTE_ARCHIVE="/tmp/millsberry-app-${GITHUB_RUN_ID}.tgz"
+          SSH=(ssh -p 2022 -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=yes root@vps1.markshaw.ca)
+          SCP=(scp -P 2022 -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=yes)
+
+          "${SCP[@]}" "$ARCHIVE" "root@vps1.markshaw.ca:${REMOTE_ARCHIVE}"
+
+          "${SSH[@]}" "bash -s -- '$REMOTE_ARCHIVE' '$DEPLOY_SHA'" <<'REMOTE'
+          set -euo pipefail
+          ARCHIVE="$1"
+          DEPLOY_SHA="$2"
+          STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
+          BACKUP_ROOT="/root/millsberry-deploy-backups"
+          STAGING="/tmp/millsberry-deploy-${STAMP}"
+
+          CID="$(docker ps --filter 'label=com.docker.compose.service=millsberry' --format '{{.ID}}' | head -1)"
+          if [ -z "$CID" ]; then
+            CID="$(docker ps --filter 'name=millsberry' --format '{{.ID}}' | head -1)"
+          fi
+          test -n "$CID"
+
+          APP_DIR="$(docker inspect -f '{{ index .Config.Labels "com.docker.compose.project.working_dir" }}' "$CID")"
+          test -n "$APP_DIR"
+          test -f "$APP_DIR/docker-compose.yml"
+          printf 'MILLSBERRY_APP_DIR=%s\n' "$APP_DIR"
+
+          install -d -m 0700 "$BACKUP_ROOT/$STAMP" "$STAGING"
+          rsync -a --exclude='data/' --exclude='output/' "$APP_DIR/" "$BACKUP_ROOT/$STAMP/app/"
+
+          rollback() {
+            rc=$?
+            if [ "$rc" -eq 0 ]; then
+              return 0
+            fi
+            echo "DEPLOY_FAILED rc=$rc; restoring previous app source"
+            rsync -a --delete --exclude='data/' --exclude='output/' "$BACKUP_ROOT/$STAMP/app/" "$APP_DIR/"
+            cd "$APP_DIR"
+            docker compose up -d --build --remove-orphans || true
+            exit "$rc"
+          }
+          trap rollback EXIT
+
+          tar -xzf "$ARCHIVE" -C "$STAGING"
+          test -f "$STAGING/app/docker-compose.yml"
+          rsync -a --delete --exclude='data/' --exclude='output/' "$STAGING/app/" "$APP_DIR/"
+
+          cat > "$APP_DIR/release.env" <<EOF
+          PROJECT_BRANCH=main
+          PROJECT_COMMIT=$DEPLOY_SHA
+          PROJECT_STATUS=Active restoration
+          PROJECT_DEPLOYED_AT=$(date -u +%FT%TZ)
+          EOF
+
+          cd "$APP_DIR"
+          docker compose --env-file release.env up -d --build --remove-orphans
+
+          ready=0
+          for _ in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:3000/ >/tmp/millsberry-live-home.html 2>/dev/null; then
+              ready=1
+              break
+            fi
+            sleep 2
+          done
+          test "$ready" -eq 1
+
+          curl -fsS http://127.0.0.1:3000/__project-status.json >/tmp/millsberry-status.json
+          grep -Fq "$DEPLOY_SHA" /tmp/millsberry-status.json
+          grep -Fq 'ca-pub-3957541427097660' /tmp/millsberry-live-home.html
+          grep -Fq 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3957541427097660' /tmp/millsberry-live-home.html
+
+          trap - EXIT
+          rm -rf "$STAGING" "$ARCHIVE"
+          echo 'MILLSBERRY_VPS1_DEPLOY=PASS'
+          REMOTE
+
+      - name: Verify public production
+        shell: bash
+        env:
+          DEPLOY_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          for _ in $(seq 1 20); do
+            curl -fsS https://millsberryreborn.com/ > /tmp/millsberry-public.html || true
+            curl -fsS https://millsberryreborn.com/__project-status.json > /tmp/millsberry-public-status.json || true
+            if grep -Fq "$DEPLOY_SHA" /tmp/millsberry-public-status.json 2>/dev/null \
+              && grep -Fq 'ca-pub-3957541427097660' /tmp/millsberry-public.html 2>/dev/null; then
+              echo 'MILLSBERRY_PUBLIC_DEPLOY=PASS'
+              exit 0
+            fi
+            sleep 3
+          done
+          echo 'Public verification did not observe the deployed commit and AdSense tag.' >&2
+          exit 1
