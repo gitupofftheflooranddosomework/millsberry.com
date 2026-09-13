@@ -3,6 +3,7 @@ FROM node:22-alpine
 WORKDIR /app
 COPY package.json ./
 COPY server.js ./
+COPY adsense-bootstrap.js ./
 COPY auth.js ./
 COPY public ./public
 COPY recovered-games ./recovered-games
@@ -12,4 +13,4 @@ ENV NODE_ENV=production
 ENV PORT=3000
 EXPOSE 3000
 
-CMD ["node", "server.js"]
+CMD ["node", "-r", "./adsense-bootstrap.js", "server.js"]

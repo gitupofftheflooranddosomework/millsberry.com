@@ -4,8 +4,8 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "start": "node -r ./adsense-bootstrap.js server.js",
+    "dev": "node -r ./adsense-bootstrap.js server.js",
     "crawl": "node tools/crawl-replay.js",
     "teasers:swf": "node tools/extract-swf-teasers.js",
     "test:auth": "node tools/test-auth.js",
