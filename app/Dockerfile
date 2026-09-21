@@ -5,6 +5,7 @@ COPY package.json ./
 COPY server.js ./
 COPY adsense-bootstrap.js ./
 COPY auth.js ./
+COPY shell.js ./
 COPY public ./public
 COPY recovered-games ./recovered-games
 COPY vendor ./vendor

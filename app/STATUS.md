@@ -1,6 +1,6 @@
 # Millsberry Replay Status
 
-Last updated: 2026-06-05
+Last updated: 2026-09-21
 
 ## Current Runtime
 
@@ -18,7 +18,12 @@ Last updated: 2026-06-05
 ## What Works Now
 
 - The app starts in Docker and serves the replay launcher.
-- Official recovered routes are indexed from the targeted manifest.
+- Every page except the launcher sits in the 2010 site frame: the 775px shell from the 2006 `template.css`, the top-bar pills, and the left column with the Buddy name plate, stat meters, and the "my" destinations, set in the nav movies' own typefaces. `shell.js` renders it; `public/shell.css` and `public/nav/` style it, and `public/nav/SOURCES.md` names the recovered movie each sprite and face was taken from. The launcher (`/`, `/swfs`, `/swf-teasers`) keeps its own layout.
+- The Arcade pill goes to the reconstructed `/arcade` (playable games and placeholders), which now carries the arcade's interior plate; the archived `/complex/arcade.phtml` is linked from it.
+- Recovered page captures are reframed: only their content region is kept — `#main` (plate, stripe, `#content`) from the 2006 layout on, the 650px table cell from the 2004 layout — and the capture's own stylesheets and scripts stay with it. Captures with neither region (popups, `break_time`, process pages, bare frames) are served as captured. The capture files themselves are not modified.
+- The stat meters draw empty and say so on hover: account records carry no stats yet. The Buddy frame is likewise an empty box at the figure's height. Art Class in Hot Spots is inert for the same reason (`/museum/paint/` only reaches a map fallback).
+- Official recovered routes are indexed from the targeted manifest. A capture of `page?logout=1` (the sign-out confirmation, appended to whatever page you were on) is indexed under the bare page, and a capture of a bare URL outranks captures of its query variants — so `/complex/arcade.phtml` now serves the 2006 capture with the full 37-game list instead of the empty `?show=item` view.
+- Query strings a movie appends when it navigates with `getURL(…, "GET")` (`?instance5=_level0.instance1.instance5&…`, as the complex's arcade door does) are dropped before route lookup, as the original server ignored them.
 - Extra official pages are inferred from `official-full-backup`.
 - Official SWF, image, CSS, JS, PDF, XML, and Unity3D assets are served from recovered host trees.
 - Local replay asset requests default to the matching official host before broad path/name fallbacks, which keeps older page captures paired with their correct recovered CSS when available.
@@ -63,7 +68,7 @@ Last updated: 2026-06-05
 - `/process_bank.phtml` deposit and withdrawal
 - `/process_buddy_list.phtml`
 - `/process_break_time.phtml?choice=1&redirect=%2Fbank%2F`
-- `npm run crawl`: 211 representative requests, 0 hard 404 failures
+- `npm run crawl`: 220 representative requests, 0 hard 404 failures
 - `npm run test:auth`: 8 checks passed
 - `npm run test:economy`: 19 checks passed
 - Browser screenshots: `verified-hiscores.png`, `verified-authenticated-hiscores.png`, `verified-inventory.png`, `verified-shortcuts.png`, and `verified-main-map.png` in `app/output/`.

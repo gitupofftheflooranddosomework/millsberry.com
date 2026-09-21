@@ -1,0 +1,728 @@
+/*
+ * The 2010 page frame: header stripe, 155px left column, 600px content pane,
+ * footer. Geometry and colours are from the recovered 2006 template.css and
+ * the navigation movies (top_nav_v2.swf, side_nav_v3.swf); the sprites those
+ * rules paint with are in /__app/nav/ (see nav/SOURCES.md).
+ *
+ * Scope: only the frame — #top, #side_nav, #footer and the pane itself. What
+ * a page puts inside #content keeps app.css's own styling, apart from the
+ * handful of overrides at the end that fold two-column layouts into the
+ * 590px pane.
+ *
+ * Fixed 775px and deliberately not responsive. That is what the site was.
+ */
+
+:root {
+  --mb-page: #e6ecff;
+  --mb-nav: #7f98e5;
+  /* The darker half of the side column: everything from the name plate down
+     sat on the movie's own dark ground; Sign Out above it sits on the
+     container's light blue showing through. */
+  --mb-sidenav: #0040e0;
+  --mb-nav-dark: #0d1e7d;
+  --mb-navy: #001e7b;
+  --mb-content: #f1f1f1;
+  /* Sampled from DefineSprite_16_iconbutton in top_nav_v2.swf. */
+  --mb-button: #004ad5;
+  --mb-button-edge: #182187;
+  /* The movies' own DefineEditText colours: the badged buttons and the top
+     pills letter in #fcff2d, the plain side-nav bar in #fffa35. */
+  --mb-button-text: #fcff2d;
+  --mb-bar-text: #fffa35;
+  --mb-plate-text: #004ad5;
+  --mb-title-text: #ffffff;
+  --mb-link: #000099;
+  --mb-link-hover: #990000;
+  --mb-stripe-hover: #ffff40;
+  /*
+   * The side-nav movie's own face. The top pills use Cheeseburger instead —
+   * the two movies export their button font under the same role name and it
+   * resolves to a different face in each. Both faces draw lowercase as small
+   * capitals, so nothing here asks for `font-variant: small-caps`: with no
+   * smcp feature to use, the browser would shrink the capitals a second time.
+   */
+  --mb-nav-face: "Fontdinerdotcom Huggable", "Trebuchet MS", "Helvetica", sans-serif;
+}
+
+/*
+ * The site's own lettering, taken out of the Flash rather than approximated.
+ * The nav movies embed their faces as glyph outlines, so JPEXS reconstructs a
+ * TTF from them (converted to woff2). See nav/SOURCES.md.
+ */
+@font-face {
+  /* The top nav pills. Fontalicious, 2002. */
+  font-family: "Cheeseburger";
+  src: url("/__app/nav/fonts/cheeseburger.woff2") format("woff2");
+  font-display: block;
+}
+
+@font-face {
+  /* The side nav buttons, plates and headings. Font Diner. */
+  font-family: "Fontdinerdotcom Huggable";
+  src: url("/__app/nav/fonts/huggable.woff2") format("woff2");
+  font-display: block;
+}
+
+body.mb_site {
+  margin: 0;
+  padding: 0;
+  background-color: var(--mb-page);
+  color: #000;
+  font-family: "Trebuchet MS", "Helvetica", sans-serif;
+  font-size: 13px;
+}
+
+/*
+ * A recovered capture keeps its own stylesheets, and those reach into the
+ * frame: the 2004 styles.css sets `A:hover { font-family: Comic Sans MS }`,
+ * the 2006 template.css sets hover sizes on `#stripe a` and a hover
+ * background on `#side_nav .nav_button`, and royal.css adds shadows and
+ * borders to `#top`, `#body` and `#side_nav`. So every frame rule below that
+ * such a sheet could reach is written with its `:hover` twin, at a
+ * specificity above theirs, and the few properties they set that the frame
+ * does not use are reset explicitly.
+ */
+body.mb_site #login_info a,
+body.mb_site #login_info a:hover,
+body.mb_site #side_nav_links a,
+body.mb_site #side_nav_links a:hover,
+body.mb_site #footer a,
+body.mb_site #footer a:hover {
+  font-family: "Trebuchet MS", "Helvetica", sans-serif;
+  font-weight: bold;
+  font-variant: normal;
+  text-decoration: none;
+  color: var(--mb-link);
+}
+
+body.mb_site #login_info a:hover,
+body.mb_site #side_nav_links a:hover,
+body.mb_site #footer a:hover {
+  color: var(--mb-link-hover);
+}
+
+/* ---------------------------------------------------------------- header */
+
+body.mb_site #top {
+  width: 775px;
+  height: 75px;
+  margin: 0 auto;
+  position: relative;
+  background: none;
+}
+
+body.mb_site #top #logo {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  z-index: 20;
+  width: 192px;
+  height: 80px;
+  background: none;
+}
+
+body.mb_site #top #logo img {
+  display: block;
+  width: 192px;
+  height: auto;
+}
+
+body.mb_site #top #layout_head {
+  width: 775px;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+body.mb_site #top #layout_head #login_info {
+  float: none;
+  width: 750px;
+  height: 20px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: right;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000;
+}
+
+body.mb_site #top #layout_head #login_info a,
+body.mb_site #top #layout_head #login_info a:hover {
+  font-size: 11px;
+}
+
+/* 45px tall, because this is where the pill buttons live. */
+body.mb_site #top #layout_head #stripe {
+  float: none;
+  display: flex;
+  align-items: center;
+  /* Spread rather than bunched: with three equal destinations sharing the
+     space, Downtown lands in the middle of the bar as it did originally. */
+  justify-content: space-around;
+  /* 755px of bar plus its two 2px borders — the same outer width as
+     #layout_body below it, so the two left edges fall on the same pixel. */
+  width: 759px;
+  height: 45px;
+  margin: 0 auto;
+  /* The logo overlaps the left end, so the pills start clear of it. */
+  padding: 0 12px 0 198px;
+  background: var(--mb-nav);
+  border: 2px solid var(--mb-nav-dark);
+  border-bottom: none;
+  box-sizing: border-box;
+  font-variant: normal;
+}
+
+/*
+ * The 2010 buttons, 9-sliced out of the real sprites: the 28px badge end and
+ * the 10px right cap are drawn at their natural size and only the flat bar
+ * between them stretches to the label. The border *is* the artwork, so the
+ * label sits in what is left.
+ */
+body.mb_site .mb_button,
+body.mb_site .mb_button:hover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 32px;
+  position: relative;
+  /* Its own stacking context, so the hover overlay below can sit between
+     the sprite and the label. */
+  isolation: isolate;
+  border-style: solid;
+  /* Transparent, not currentColor: until the sprite arrives the border is
+     painted plain, and in the label's yellow it flashed. */
+  border-color: transparent;
+  border-width: 0 10px 0 28px;
+  border-image-source: url("/__app/nav/side_button.png");
+  border-image-slice: 0 10 0 28 fill;
+  border-image-repeat: stretch;
+  background: none;
+  color: var(--mb-button-text);
+  font-family: var(--mb-nav-face);
+  font-size: 14px;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/*
+ * The hover state, from the buttons' own scripts (DefineSprite_36_button,
+ * _31_iconbutton, top_nav_v2's _16_iconbutton — all the same):
+ *
+ *   onRollOver: fill_mc.tintTo(0xFFFA35, 100, 0.1, "easeOutBack");
+ *               icon.tintTo(0x004AD5, 100, 0.1, ...); txt.textColor = 0x004AD5;
+ *   onRollOut:  fill_mc.colorResetTo(100, 0.5, "easeOutBack");
+ *               txt.textColor = 0xFFFA35;
+ *
+ * So the face tweens to yellow in a tenth of a second and back over half
+ * a second, while the label snaps. The face is a border-image, which cannot
+ * be transitioned, so the tween is a cross-fade: each button's `*_hover.png`
+ * twin (the flat #004AD5 remapped to #FFFA35 along the outline→face axis)
+ * is laid over the base sprite as an `::after` and its opacity animates.
+ * `easeOutBack` overshoots, which opacity clamps away; the curve is kept for
+ * its fast start.
+ */
+body.mb_site .mb_button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -28px;
+  right: -10px;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 10px 0 28px;
+  border-image-source: url("/__app/nav/side_button_hover.png");
+  border-image-slice: 0 10 0 28 fill;
+  border-image-repeat: stretch;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+body.mb_site a.mb_button:hover::after {
+  opacity: 1;
+  transition-duration: 0.1s;
+}
+
+/* The mark inside the badge, centred on the 28px left border. It tints with
+   the face — 0.1s in, 0.5s out — where the label snaps. */
+body.mb_site .mb_button::before {
+  content: var(--mb-badge, "\25C0");
+  position: absolute;
+  left: -28px;
+  top: 0;
+  width: 28px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-variant: normal;
+  line-height: 1;
+  color: var(--mb-button-text);
+  transition: color 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+body.mb_site a.mb_button:hover,
+body.mb_site #top #layout_head #stripe a.mb_button:hover,
+body.mb_site #body #layout_body #side_nav a.mb_button:hover {
+  color: var(--mb-plate-text);
+}
+
+body.mb_site a.mb_button:hover::before {
+  color: var(--mb-plate-text);
+  transition-duration: 0.1s;
+}
+
+body.mb_site #top #layout_head #stripe a.top_pill,
+body.mb_site #top #layout_head #stripe a.top_pill:hover {
+  border-image-source: url("/__app/nav/top_button.png");
+  /* top_nav_v2's own field: Cheeseburger at 14, centred. */
+  font-family: "Cheeseburger", "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  font-variant: normal;
+  min-width: 62px;
+}
+
+body.mb_site #top #layout_head #stripe a.top_pill::after {
+  border-image-source: url("/__app/nav/top_button_hover.png");
+}
+
+/* ---------------------------------------------------------------- body */
+
+body.mb_site #body {
+  width: 775px;
+  margin: 0 auto;
+  position: relative;
+  background: none;
+}
+
+body.mb_site #body #layout_body {
+  clear: none;
+  display: flow-root;
+  box-sizing: content-box;
+  width: 755px;
+  margin: 0 auto;
+  border: 2px solid var(--mb-nav-dark);
+  border-top: none;
+  /* The side column painted dark for the full height of the body, whatever
+     the column's own height — a float cannot be stretched to its container. */
+  background: linear-gradient(to right, var(--mb-sidenav) 155px, var(--mb-nav) 155px);
+}
+
+body.mb_site #body #layout_body #side_nav {
+  float: left;
+  box-sizing: border-box;
+  width: 155px;
+  margin: 0;
+  padding: 8px 0;
+  border: 0;
+  background-color: var(--mb-nav);
+  text-align: center;
+}
+
+/* The darker part of the column, from the name plate down. The negative
+   margin cancels #side_nav's bottom padding so the dark reaches the foot. */
+body.mb_site #body #layout_body #side_nav .nav_body {
+  background-color: var(--mb-sidenav);
+  margin-bottom: -8px;
+  padding-bottom: 8px;
+}
+
+body.mb_site #body #layout_body #side_nav .nav_button,
+body.mb_site #body #layout_body #side_nav .nav_button:hover {
+  /* DefineSprite_36_button, 151x29, at 1:1. No `border` shorthand: it resets
+     border-image to none. */
+  display: inline-flex;
+  font-size: 14px;
+  color: var(--mb-bar-text);
+  width: 151px;
+  height: 29px;
+  justify-content: center;
+  margin: 0 auto;
+  border-width: 0 6px;
+  border-image-source: url("/__app/nav/side_bar.png");
+  border-image-slice: 0 6 0 6 fill;
+  background: none;
+}
+
+body.mb_site #body #layout_body #side_nav .nav_button::before {
+  content: none;
+}
+
+/* The bar's hover overlay: the same cross-fade, on the bar's own slices. */
+body.mb_site #body #layout_body #side_nav .nav_button::after {
+  left: -6px;
+  right: -6px;
+  border-width: 0 6px;
+  border-image-source: url("/__app/nav/side_bar_hover.png");
+  border-image-slice: 0 6 0 6 fill;
+}
+
+/* Sign Out is the one side-nav destination with a badge. */
+body.mb_site #body #layout_body #side_nav .nav_button_lead,
+body.mb_site #body #layout_body #side_nav .nav_button_lead:hover {
+  width: 151px;
+  height: 32px;
+  font-size: 16px;
+  color: var(--mb-button-text);
+  margin: 0 auto 6px;
+  border-width: 0 10px 0 28px;
+  border-image-source: url("/__app/nav/side_button.png");
+  border-image-slice: 0 10 0 28 fill;
+}
+
+body.mb_site #body #layout_body #side_nav .nav_button_lead::before {
+  content: var(--mb-badge, "\25C0");
+}
+
+body.mb_site #body #layout_body #side_nav .nav_button_lead::after {
+  left: -28px;
+  right: -10px;
+  border-width: 0 10px 0 28px;
+  border-image-source: url("/__app/nav/side_button_hover.png");
+  border-image-slice: 0 10 0 28 fill;
+}
+
+body.mb_site #body #layout_body #side_nav a.nav_button:hover {
+  color: var(--mb-plate-text);
+}
+
+/* A destination that has no page yet: same button, no link. */
+body.mb_site .nav_button_off,
+body.mb_site .nav_button_off:hover {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/*
+ * The Buddy's name plate: DefineSprite_44_header, 150x51, the lean drawn in.
+ * Painted over the portrait box, whose top edge is tucked up under the
+ * plate's sloping bottom.
+ */
+#body #layout_body #side_nav .name_plate {
+  width: 150px;
+  height: 51px;
+  margin: 8px auto 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/__app/nav/name_plate.png") center / 150px 51px no-repeat;
+  position: relative;
+  z-index: 1;
+  color: var(--mb-plate-text);
+  font-family: var(--mb-nav-face);
+  font-weight: normal;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+/* The Buddy's frame, tucked up under the plate's sloping bottom edge. Held
+   at the height of the 82px figure plus its 4px surround, empty until buddy
+   artwork exists. */
+#body #layout_body #side_nav .nav_portrait {
+  width: 137px;
+  height: 92px;
+  box-sizing: border-box;
+  margin: -3px auto 0;
+  background: #fff;
+  border: 2px solid #002ea8;
+  border-top: none;
+}
+
+/* "Buddy Stats": DefineSprite_47_title, the one white heading in the column. */
+#body #layout_body #side_nav .nav_title {
+  width: 148px;
+  margin: 4px auto 3px;
+  padding-left: 6px;
+  box-sizing: border-box;
+  text-align: left;
+  color: var(--mb-title-text);
+  font-family: var(--mb-nav-face);
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+
+#body #layout_body #side_nav #status {
+  width: 148px;
+  margin: 6px auto 0 auto;
+}
+
+/* DefineSprite_63_stat is 145x30, so the row is 30px. */
+#body #layout_body #side_nav #status .status_row {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+#body #layout_body #side_nav #status .status_icon {
+  width: 34px;
+  text-align: center;
+}
+
+#body #layout_body #side_nav #status .status_icon img {
+  display: block;
+  margin: 0 auto;
+}
+
+#body #layout_body #side_nav #status .status_info {
+  width: 109px;
+  text-align: left;
+}
+
+/*
+ * The meter: DefineSprite_57 is the trough at 109x14 in #182187,
+ * DefineSprite_59 the bar inside it at 101x4. The fill is gold as both 2010
+ * captures show it in play; the movie tinted it at runtime.
+ */
+.meter {
+  width: 109px;
+  height: 14px;
+  box-sizing: border-box;
+  padding: 5px 4px;
+  background: #182187;
+  overflow: hidden;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  background-color: #ffff39;
+}
+
+/* Millsbucks, sharing the meters' 34px icon column so the rows line up. */
+#body #layout_body #side_nav .nav_tally {
+  display: flex;
+  align-items: center;
+  width: 148px;
+  height: 24px;
+  margin: 0 auto 3px;
+  color: var(--mb-button-edge);
+  font-family: var(--mb-nav-face);
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+#body #layout_body #side_nav .nav_tally .nav_tally_icon {
+  flex: none;
+  width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#body #layout_body #side_nav .nav_tally img {
+  display: block;
+}
+
+#body #layout_body #side_nav .nav_tally .nav_tally_value {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+/* "Find a Buddy" and "Hot Spots": DefineSprite_40_header_blue, 151x27. */
+#body #layout_body #side_nav .nav_head {
+  width: 151px;
+  height: 27px;
+  margin: 32px auto 3px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/__app/nav/section_plate.png") 0 0 / 151px 27px no-repeat;
+  color: var(--mb-plate-text);
+  font-family: var(--mb-nav-face);
+  font-weight: normal;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  padding-bottom: 2px;
+}
+
+/* The search panel, from DefineSprite_96_search (153x81). */
+#body #layout_body #side_nav .nav_find {
+  width: 151px;
+  margin: 0 auto;
+  padding: 5px;
+  box-sizing: border-box;
+  background: var(--mb-button);
+  border: 2px solid var(--mb-button-edge);
+  text-align: right;
+}
+
+#body #layout_body #side_nav .nav_find input {
+  width: 100%;
+  height: 18px;
+  box-sizing: border-box;
+  border: 2px solid #172357;
+  background: #fff;
+  font: 11px Arial, Helvetica, sans-serif;
+}
+
+#body #layout_body #side_nav .nav_go {
+  display: inline-block;
+  margin-top: 3px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--mb-button-text);
+  font-size: 11px;
+  font-weight: bold;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+
+#body #layout_body #side_nav #side_nav_links {
+  clear: left;
+  margin-top: 6px;
+  padding: 5px 0;
+  background-color: var(--mb-nav-dark);
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#body #layout_body #side_nav #side_nav_links a {
+  color: #ffe94a;
+}
+
+/* ---------------------------------------------------------------- content */
+
+#body #layout_body #main {
+  float: right;
+  box-sizing: border-box;
+  width: 600px;
+  min-height: 420px;
+  background-color: var(--mb-content);
+}
+
+/* The plate a room is drawn on: 600x400, on the theme's own interior blue
+   (royal.css). Captures bring that rule with them; app pages need it here. */
+body.mb_site #body #layout_body #main #interior {
+  width: 600px;
+  margin: 0;
+  padding: 0;
+  background-color: #316bf0;
+}
+
+body.mb_site #body #layout_body #main #interior object {
+  display: block;
+}
+
+#body #layout_body #main #interior_stripe {
+  box-sizing: border-box;
+  width: 600px;
+  padding: 2px 5px;
+  background-color: var(--mb-navy);
+  font-weight: bold;
+  font-style: italic;
+  color: #fff;
+}
+
+#body #layout_body #main #content {
+  box-sizing: border-box;
+  width: 600px;
+  padding: 5px;
+  background-color: var(--mb-content);
+}
+
+body.mb_site #body #layout_body #footer {
+  clear: both;
+  padding: 7px 0;
+  background: none;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.2em;
+  color: #e1e1e1;
+}
+
+#body #layout_body #footer a {
+  font-size: 10px;
+  color: #fff;
+}
+
+#body #layout_body #footer a:hover {
+  color: var(--mb-stripe-hover);
+}
+
+/* The project's release line and links, folded into the footer. */
+#body #layout_body #footer .project-footer {
+  justify-content: center;
+  margin-top: 6px;
+  border-top: 1px solid rgb(255 255 255 / 25%);
+  padding: 6px 12px 0;
+  color: #e1e1e1;
+  font-size: 10px;
+}
+
+#body #layout_body #footer .project-footer b {
+  color: #ffe94a;
+}
+
+body.mb_site #bottom {
+  width: 775px;
+  height: 15px;
+  margin: 0 auto;
+  background: none;
+  font-size: 1px;
+  line-height: 1px;
+}
+
+/*
+ * Captures wrote their Flash embeds as `<object classid=…><embed …></object>`
+ * and were served with an HTML 4.01 doctype, in quirks mode. The shell's
+ * doctype puts them in standards mode, where Chrome lays a classid-only
+ * object out as an inline fallback box a line tall with `overflow: clip` —
+ * and the 150x100 player Ruffle builds inside it is clipped to nothing. Size
+ * the box to its attributes instead. Captures only: app pages size their
+ * players in app.css.
+ */
+body.mb_site:not(.mb_app) #content object {
+  display: inline-block;
+  overflow: visible;
+}
+
+/* ------------------------------------------- app.css inside the 590px pane */
+
+/* The reconstructed pages were laid out for a wide, responsive shell and
+   their two-column grids key on viewport width, so they would not fold on
+   their own inside the pane. Scoped to `mb_app`: a 2006 capture has a
+   `#content` of its own, styled by its own sheets, and these must not reach
+   it. */
+body.mb_app #content h1 {
+  margin: 4px 0 8px;
+  font-size: 18px;
+}
+
+body.mb_app #content .map-layout,
+body.mb_app #content .account-grid {
+  grid-template-columns: 1fr;
+}
+
+body.mb_app #content .panel {
+  margin-bottom: 8px;
+}
+
+body.mb_app #content .route-list {
+  max-height: 420px;
+}
+
+body.mb_app #content .route-row {
+  font-size: 13px;
+}
+
+body.mb_app #content .map-stage object,
+body.mb_app #content .map-stage ruffle-player {
+  max-width: 100%;
+}
