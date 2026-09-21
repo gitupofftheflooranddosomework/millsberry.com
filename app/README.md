@@ -43,6 +43,7 @@ The public deployment should run the container on localhost only and expose it t
 - Prefers the matching official-host asset first, then falls back to broader path and filename matches.
 - Injects vendored Ruffle so recovered SWF embeds can run in modern browsers without an external dependency.
 - Keeps the replay launcher at `/`; the recovered official root capture is available at `/__official-root`.
+- Frames every page except the launcher in the 2010 site chrome (`shell.js`, `public/shell.css`, `public/nav/`): the top-bar pills and the left column with the Buddy name plate, stat meters, and "my" destinations. Recovered captures are reframed too — their content region is lifted out of whichever era's chrome it was captured with, and the capture files are left as they are.
 - Tracks missing or generated fallback responses at `/__missing` and `/__missing.json`.
 - Publishes the live branch, commit, recovery counts, community links, and support links in the launcher and at `/__project-status.json`.
 - Persists local accounts and sessions in `app/data/accounts.json`.

@@ -4,6 +4,7 @@ const path = require("path");
 const { execFileSync } = require("child_process");
 const { URL } = require("url");
 const { AccountStore, expiredSessionCookie, sessionCookie } = require("./auth");
+const { renderShell } = require("./shell");
 
 const PORT = Number(process.env.PORT || 3000);
 const HOST = process.env.HOST || "0.0.0.0";
@@ -96,7 +97,8 @@ const MIME_TYPES = {
   ".pdf": "application/pdf",
   ".xml": "application/xml; charset=utf-8",
   ".txt": "text/plain; charset=utf-8",
-  ".unity3d": "application/vnd.unity"
+  ".unity3d": "application/vnd.unity",
+  ".woff2": "font/woff2"
 };
 
 const pageRoots = [
@@ -626,7 +628,14 @@ function indexManifestRoutes() {
     }
     const page = pagesByDigest.get(digestLookupKey(timestamp, digest));
     if (!page) continue;
-    const key = canonicalRouteKey(parsedUrl.pathname, parsedUrl.search);
+    // `?logout=1` was the sign-out confirmation, appended to whatever page
+    // you were on: the page underneath is the same route, and it is often the
+    // fuller capture (the arcade's complete game list only survives this
+    // way). It has to be indexed under the bare route, because a live
+    // `?logout=1` is handled as a sign-out and never reaches the capture.
+    const search = new URLSearchParams(parsedUrl.search);
+    search.delete("logout");
+    const key = canonicalRouteKey(parsedUrl.pathname, search.toString());
     const pathname = canonicalPath(parsedUrl.pathname);
     const entry = {
       ...page,
@@ -673,7 +682,14 @@ function indexAssets() {
 }
 
 function indexInferredRoutes() {
-  for (const page of pagesByDigest.values()) {
+  // A capture of `page.phtml?show=item` is filed here under the bare path too,
+  // since the query is lost from the filename. It must not displace a capture
+  // of the bare URL itself — the arcade's `?show=item` (an empty filtered
+  // view) was outranking its full list that way — so query captures go in a
+  // second pass and only fill routes nothing else claimed.
+  const isQueryCapture = (page) => /__q[0-9a-f]+(?=\.[^.]+$)/i.test(path.basename(page.filePath));
+  const pages = [...pagesByDigest.values()].sort((a, b) => Number(isQueryCapture(a)) - Number(isQueryCapture(b)));
+  for (const page of pages) {
     const ext = recoveredExtension(page.originalName);
     if (!PAGE_EXTENSIONS.has(ext) || !page.pathname || !page.host) continue;
     const key = canonicalRouteKey(page.pathname);
@@ -683,8 +699,11 @@ function indexInferredRoutes() {
       route: key,
       mimeType: MIME_TYPES[ext] || "application/octet-stream"
     };
-    routeIndex.set(key, newest(routeIndex.get(key), entry));
-    pathFallbackIndex.set(page.pathname, newest(pathFallbackIndex.get(page.pathname), entry));
+    const claimed = routeIndex.has(key);
+    if (!claimed || !isQueryCapture(page)) {
+      routeIndex.set(key, newest(routeIndex.get(key), entry));
+      pathFallbackIndex.set(page.pathname, newest(pathFallbackIndex.get(page.pathname), entry));
+    }
     if (ext === ".html" || ext === ".phtml") {
       browsableRoutes.push(entry);
     }
@@ -1040,9 +1059,106 @@ function rewriteHtml(html, entry, user) {
   });
   output = rewriteEncodedOfficialUrls(output);
   output = rewriteAccountState(output, user);
+  const reframed = reframeCapture(output, entry, user);
+  if (reframed) return reframed;
   output = output.replace(/(<head[^>]*>)/i, `$1\n${ruffleSnippet()}`);
   output = output.replace(/<\/body>/i, `${replayToolbar(entry, user)}</body>`);
   return output;
+}
+
+// Put a recovered page's content in the 2010 frame, in place of whatever
+// chrome it was captured with.
+//
+// The captures span the site's whole life, so the same room arrives in three
+// wrappers: the 2004 table layout with its Map/Games buttons, the 2006
+// template.css layout with a Flash side nav, and the 2010 version of that. All
+// of them put the page itself in one place — `#main` (the plate, the stripe
+// and `#content`) from 2006 on, and the 650px table cell before that — and
+// that is the only part kept. The capture's own stylesheets and scripts stay,
+// because the content was styled by them; the shell's stylesheet loads after
+// them so `#top`/`#side_nav` rules in the old template.css cannot restyle the
+// frame. Pages with neither region — popups, break_time, process pages, bare
+// frames — are left exactly as captured.
+function reframeCapture(html, entry, user) {
+  const page = windows1252ToUnicode(html);
+  const region = captureMainRegion(page);
+  if (!region) return null;
+  const title = (page.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || "")
+    .replace(/\s+/g, " ")
+    .replace(/^\s*Millsberry\s*-\s*/i, "")
+    .trim() || entry.route || entry.pathname || "Millsberry";
+  const onload = page.match(/<body\b[^>]*\s(onload\s*=\s*(?:"[^"]*"|'[^']*'))/i)?.[1] || "";
+  return renderShell({
+    title,
+    main: region.main,
+    content: region.content,
+    user,
+    head: `${ruffleSnippet()}\n${captureHeadExtras(page)}`,
+    appCss: false,
+    bodyAttrs: onload,
+    after: replayToolbar(entry, user),
+    footer: renderProjectFooter()
+  });
+}
+
+// Captures are read as latin1 and sent as UTF-8, and the original pages were
+// windows-1252: the curly quotes and dashes in their copy sit in the 0x80-0x9F
+// range, which latin1 reads as C1 control characters. Harmless while a page
+// declared no charset and the browser guessed; visible as U+FFFD once the
+// shell declares UTF-8.
+const WINDOWS_1252_C1 =
+  "\u20AC\u0081\u201A\u0192\u201E\u2026\u2020\u2021\u02C6\u2030\u0160\u2039\u0152\u008D\u017D\u008F" +
+  "\u0090\u2018\u2019\u201C\u201D\u2022\u2013\u2014\u02DC\u2122\u0161\u203A\u0153\u009D\u017E\u0178";
+
+function windows1252ToUnicode(text) {
+  return text.replace(/[\u0080-\u009F]/g, (char) => WINDOWS_1252_C1[char.charCodeAt(0) - 0x80]);
+}
+// The stylesheets and scripts a capture loaded, minus its title. The AdSense
+// and analytics tags are added again at send time, so they are dropped here
+// rather than doubled.
+function captureHeadExtras(html) {
+  const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1] || "";
+  const parts = head.match(/<link\b[^>]*>|<script\b[^>]*>[\s\S]*?<\/script>|<style\b[^>]*>[\s\S]*?<\/style>/gi) || [];
+  return parts
+    .filter((part) => !/googlesyndication|googletagmanager|gtag\(|adsbygoogle|__ruffle\/ruffle\.js|window\.RufflePlayer|window\.flash_object/i.test(part))
+    .join("\n");
+}
+
+function captureMainRegion(html) {
+  const mainOpen = html.match(/<div\s+id=['"]main['"][^>]*>/i);
+  if (mainOpen) {
+    const inner = innerHtmlOf(html, mainOpen.index, mainOpen[0].length, "div");
+    if (inner !== null) return { main: inner, content: "" };
+  }
+  // 2004: the content cell of the layout table, beside the 150px side-nav
+  // cell. The header row has a 650px cell too; HEIGHT="100%" tells them apart.
+  const cellOpen = html.match(/<td\s+width=["']650["']\s+height=["']100%["'][^>]*valign=["']top["'][^>]*>/i);
+  if (cellOpen) {
+    const inner = innerHtmlOf(html, cellOpen.index, cellOpen[0].length, "td");
+    // Kept in a cell: styles.css sets its type on `TD`, and bare text in the
+    // cell has no other element to take it from.
+    if (inner !== null) {
+      return {
+        main: "",
+        content: `<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td valign="top" align="left">${inner}</td></tr></table>`
+      };
+    }
+  }
+  return null;
+}
+
+// The markup between an opening tag and its matching close, counting nested
+// tags of the same name — a regex cannot see how deep a <div> or <td> goes.
+function innerHtmlOf(html, openIndex, openLength, tagName) {
+  const tags = new RegExp(`<(/?)${tagName}\\b[^>]*>`, "gi");
+  tags.lastIndex = openIndex;
+  let depth = 0;
+  let match;
+  while ((match = tags.exec(html))) {
+    depth += match[1] ? -1 : 1;
+    if (depth === 0) return html.slice(openIndex + openLength, match.index);
+  }
+  return null;
 }
 
 function rewriteAccountState(html, user) {
@@ -1097,7 +1213,9 @@ function ruffleSnippet() {
       "window.RufflePlayer = window.RufflePlayer || {};",
       "window.RufflePlayer.config = { autoplay: 'on', unmuteOverlay: 'hidden', maxExecutionDuration: 2 };",
       "</script>",
-      `<script src="${escapeHtml(RUFFLE_URL)}"></script>`
+      `<script src="${escapeHtml(RUFFLE_URL)}"></script>`,
+      // The site's own loading screen over Ruffle's splash; see public/loader.js.
+      `<script src="/__app/loader.js"></script>`
     );
   }
   return snippets.join("\n");
@@ -1153,13 +1271,21 @@ function replayToolbar(entry, user) {
   ].join("");
 }
 
-function sendFile(res, filePath, overrideType) {
+function sendFile(res, filePath, overrideType, cacheControl = "no-store") {
   const ext = path.extname(filePath).toLowerCase();
   const type = overrideType || MIME_TYPES[ext] || "application/octet-stream";
-  res.writeHead(200, {
+  const headers = {
     "Content-Type": type,
-    "Cache-Control": "no-store"
-  });
+    "Cache-Control": cacheControl
+  };
+  // Ruffle only shows download progress when it knows the total; a chunked
+  // response hides the loading bar behind a spinner.
+  try {
+    headers["Content-Length"] = fs.statSync(filePath).size;
+  } catch {
+    // Streamed without a length, as before.
+  }
+  res.writeHead(200, headers);
   fs.createReadStream(filePath).pipe(res);
 }
 
@@ -1529,17 +1655,30 @@ function renderRecoveredArcade(user) {
     })
     .join("");
 
-  return renderAppPage(
-    "Recovered Arcade",
-    `<p class="note">Original game binaries recovered from a preserved 2010 Millsberry browser cache.</p>
+  const content = `<p class="note">Original game binaries recovered from a preserved 2010 Millsberry browser cache.</p>
     <h2>Playable Games</h2>
     <div class="game-grid">${playableCards}</div>
     <h2 style="margin-top:18px">Known But Not Yet Recovered</h2>
     <p class="note">These game IDs are confirmed from historical arcade pages. Their original SWF files are still missing, so the links open preserved placeholders instead of dead links.</p>
     <div class="game-grid">${missingCards}</div>
-    <p><a href="/complex/arcade.phtml">Original arcade page</a> · <a href="/">All recovered routes</a></p>`,
-    user
-  );
+    <p><a href="/complex/arcade.phtml">Original arcade page</a> · <a href="/">All recovered routes</a></p>`;
+
+  // The arcade's own interior plate over the list, as the archived
+  // /complex/arcade.phtml carried it — the same 600x400 movie that page embeds.
+  const interior = resolveOfficialAssetPath("/site_gfx/interiors/int_arcade_v3.swf");
+  const plate = interior.available
+    ? `<div id="interior">${renderOfficialMapObject(interior.pathname, 400, "unixTimeStamp=1144723503")}</div>`
+    : "";
+
+  return renderShell({
+    title: "Recovered Arcade",
+    main: `${plate}
+        <div id="interior_stripe">Millsberry Arcade</div>
+        <div id="content">${content}</div>`,
+    user,
+    head: ruffleSnippet(),
+    footer: renderProjectFooter()
+  });
 }
 
 function renderSwfPreview(url, user) {
@@ -1890,29 +2029,17 @@ function missingRows() {
     }));
 }
 
-function renderMissingReport() {
+function renderMissingReport(user) {
   const rows = missingRows();
-  return `<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Millsberry Missing Report</title>
-  <link rel="stylesheet" href="/__app/app.css">
-</head>
-<body class="replay-index">
-  <main class="shell">
+  const content = `
     <section class="panel">
-      <h1>Missing Report</h1>
       <p class="note">${rows.length} unique missing route or asset requests recorded since server start. Decorative missing images served by transparent fallback are also tracked.</p>
       <p><a href="/">Back to recovered routes</a> · <a href="/__missing.json">JSON</a></p>
       <div class="route-list">
         ${rows.map((row) => `<div class="route-row"><div class="route-path"><b>${escapeHtml(row.kind)}</b> ${escapeHtml(row.path + row.query)}<br><span class="note">${escapeHtml(row.referers.join(" | "))}</span></div><span class="route-meta">${row.count}x</span></div>`).join("") || "<div class=\"route-row\"><div>No missing requests recorded yet.</div></div>"}
       </div>
-    </section>
-  </main>
-</body>
-</html>`;
+    </section>`;
+  return renderShell({ title: "Missing Report", content, user });
 }
 
 function renderAccountPage(user, message = "", error = "", redirect = "/__account") {
@@ -2798,48 +2925,24 @@ function renderProjectFooter() {
     </footer>`;
 }
 
+// The frame for every page this server renders itself; see shell.js for the
+// 2010 frame it draws. Recovered captures go through reframeCapture instead.
 function renderAppPage(title, content, user, message = "", error = "") {
-  return `<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(title)}</title>
-  <link rel="stylesheet" href="/__app/app.css">
-  ${ruffleSnippet()}
-</head>
-<body class="replay-index">
-  <main class="shell">
-    <div class="topbar">
-      <a class="brand" href="/"><img src="/images/site_gfx/logo.gif" alt="Millsberry"></a>
-      <div class="session-links">${user ? `<a href="/__account">${escapeHtml(user.username)}</a> · <a href="/logout.phtml">Log Out</a>` : `<a href="/__account">Sign In</a> · <a href="/signup.phtml">Sign Up</a>`}</div>
-    </div>
-    <section class="panel">
-      <h1>${escapeHtml(title)}</h1>
-      ${message ? `<p class="message">${escapeHtml(message)}</p>` : ""}
-      ${error ? `<p class="error-message">${escapeHtml(error)}</p>` : ""}
-      ${content}
-    </section>
-    ${renderProjectFooter()}
-  </main>
-</body>
-</html>`;
+  return renderShell({
+    title,
+    content,
+    user,
+    message,
+    error,
+    head: ruffleSnippet(),
+    footer: renderProjectFooter()
+  });
 }
 
-function renderPlaceholderRoute(url) {
+function renderPlaceholderRoute(url, user = null) {
   const title = placeholderTitle(canonicalPath(url.pathname));
-  return `<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(title)}</title>
-  <link rel="stylesheet" href="/__app/app.css">
-</head>
-<body class="replay-index">
-  <main class="shell">
+  const content = `
     <section class="panel">
-      <h1>${escapeHtml(title)}</h1>
       <p class="note">This was a live Millsberry route, but no official page capture is currently available in the recovered files. The replay app keeps this placeholder so navigation continues and the gap stays visible.</p>
       <p class="note">Requested: ${escapeHtml(url.pathname + url.search)}</p>
       <div class="quick-links">
@@ -2848,28 +2951,16 @@ function renderPlaceholderRoute(url) {
         <a href="/gamepages/hiscores.phtml">Hi Scores</a>
         <a href="/__missing">Missing Report</a>
       </div>
-    </section>
-  </main>
-</body>
-</html>`;
+    </section>`;
+  return renderShell({ title, content, user });
 }
 
-function renderGamePlaceholder(url) {
+function renderGamePlaceholder(url, user = null) {
   const gameId = url.searchParams.get("game_id") || "unknown";
   const known = GAME_CATALOG.isKnownGameId(gameId);
   const hasInterior = GAME_CATALOG.hasInteriorWrapper(gameId);
-  return `<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Millsberry Game ${escapeHtml(gameId)}</title>
-  <link rel="stylesheet" href="/__app/app.css">
-</head>
-<body class="replay-index">
-  <main class="shell">
+  const content = `
     <section class="panel">
-      <h1>Game ${escapeHtml(gameId)}</h1>
       <p class="note">${known
     ? "This game ID is known from historical Millsberry pages, but its launch SWF is not yet recovered."
     : "This game ID was requested by a recovered page or manual URL, but its launch SWF is not yet recovered."}</p>
@@ -2883,10 +2974,8 @@ function renderGamePlaceholder(url) {
         <a href="/arcade">Recovered Arcade</a>
         <a href="/__missing">Missing Report</a>
       </div>
-    </section>
-  </main>
-</body>
-</html>`;
+    </section>`;
+  return renderShell({ title: `Game ${gameId}`, content, user });
 }
 
 function renderSiteSearchPage(url, user) {
@@ -2901,18 +2990,8 @@ function renderSiteSearchPage(url, user) {
   const results = rows.length
     ? rows.map((entry) => `<tr><td><a href="${escapeHtml(entry.pathname || "/")}">${escapeHtml(entry.pathname || "/")}</a></td><td>${escapeHtml(entry.host || "")}</td><td>${escapeHtml(entry.timestamp || "")}</td></tr>`).join("")
     : (term ? `<tr><td colspan="3">No recovered routes matched this search.</td></tr>` : `<tr><td colspan="3">Enter a keyword to search recovered routes.</td></tr>`);
-  return `<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Millsberry Search</title>
-  <link rel="stylesheet" href="/__app/app.css">
-</head>
-<body class="replay-index">
-  <main class="shell">
+  const content = `
     <section class="panel">
-      <h1>Site Search</h1>
       <p class="note">Search recovered Millsberry routes by path and source file metadata.</p>
       <form class="account-form" method="get" action="/site_search.phtml">
         <label>Search term
@@ -2926,10 +3005,8 @@ function renderSiteSearchPage(url, user) {
         <tbody>${results}</tbody>
       </table>
       <div class="quick-links"><a href="/">Recovered Routes</a><a href="/swfs">Recovered SWFs</a><a href="/__missing">Missing Report</a></div>
-    </section>
-  </main>
-</body>
-</html>`;
+    </section>`;
+  return renderShell({ title: "Site Search", content, user });
 }
 
 
@@ -2947,7 +3024,7 @@ function placeholderTitle(pathname) {
   return labels[pathname] || "Millsberry Placeholder";
 }
 
-function handleStubEndpoint(url, res) {
+function handleStubEndpoint(url, res, user = null) {
   const pathname = canonicalPath(url.pathname).split("&")[0];
   if (pathname === "/process_break_time.phtml") {
     if (url.searchParams.get("choice") === "2") return sendRedirect(res, "/");
@@ -3003,7 +3080,7 @@ function handleStubEndpoint(url, res) {
   }
 
   if (PROCESS_ENDPOINTS.has(pathname)) {
-    return sendText(res, 200, renderProcessStub(pathname, url));
+    return sendText(res, 200, renderProcessStub(pathname, url, user));
   }
 
   return false;
@@ -3098,26 +3175,14 @@ function buddyXml(url) {
 </message>`;
 }
 
-function renderProcessStub(pathname, url) {
-  return `<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Millsberry Process Stub</title>
-  <link rel="stylesheet" href="/__app/app.css">
-</head>
-<body class="replay-index">
-  <main class="shell">
+function renderProcessStub(pathname, url, user = null) {
+  const content = `
     <section class="panel">
-      <h1>Recovered Process Stub</h1>
       <p class="note">${escapeHtml(pathname)} is a dynamic Millsberry endpoint. The original server behavior is not recovered, so this replay app returns a local placeholder instead of a broken 404.</p>
       <p class="note">Query: ${escapeHtml(url.search || "(none)")}</p>
       <p><a href="/">Back to recovered routes</a></p>
-    </section>
-  </main>
-</body>
-</html>`;
+    </section>`;
+  return renderShell({ title: "Recovered Process Stub", content, user });
 }
 
 function escapeXml(value) {
@@ -3363,6 +3428,13 @@ async function handleAccountRequest(req, url, bodyParams, user, res) {
 
 async function handleRequest(req, res) {
   const url = new URL(req.url, `http://${req.headers.host || "localhost"}`);
+  // A movie navigating with getURL(url, "_self", "GET") sends every variable
+  // on its main timeline as a query string — the complex's arcade door arrives
+  // as /complex/arcade.phtml?instance105=_level0.instance1.instance105&… —
+  // which the original server ignored and the route index cannot match.
+  for (const [key, value] of [...url.searchParams]) {
+    if (/^_level\d+\./.test(value)) url.searchParams.delete(key);
+  }
   const bodyParams = await requestParams(req);
   const user = accounts.userForRequest(req);
 
@@ -3389,7 +3461,7 @@ async function handleRequest(req, res) {
       return sendFile(res, gamePath);
     }
     recordMissing(req, url, "game-file-unavailable");
-    return sendText(res, 200, renderGamePlaceholder(url));
+    return sendText(res, 200, renderGamePlaceholder(url, user));
   }
 
   if (
@@ -3426,7 +3498,11 @@ async function handleRequest(req, res) {
   if (url.pathname.startsWith("/__app/")) {
     const filePath = path.join(APP_ROOT, "public", url.pathname.replace("/__app/", ""));
     if (filePath.startsWith(path.join(APP_ROOT, "public")) && fs.existsSync(filePath)) {
-      return sendFile(res, filePath);
+      // The frame's sprites and faces are the same on every page; re-fetching
+      // them per navigation is what made the chrome redraw piece by piece.
+      // Recovered material stays no-store, as it is still being corrected.
+      const cache = url.pathname.startsWith("/__app/nav/") ? "public, max-age=3600" : "no-store";
+      return sendFile(res, filePath, undefined, cache);
     }
     recordMissing(req, url, "app-asset-unavailable");
     if (/\.css$/i.test(url.pathname)) {
@@ -3439,7 +3515,7 @@ async function handleRequest(req, res) {
   }
 
   if (url.pathname === "/__missing") {
-    return sendText(res, 200, renderMissingReport());
+    return sendText(res, 200, renderMissingReport(user));
   }
 
   if (url.pathname === "/__project-status.json") {
@@ -3492,10 +3568,10 @@ async function handleRequest(req, res) {
       return sendText(res, 200, gameHtml);
     }
     recordMissing(req, url, "game-binary-not-recovered");
-    return sendText(res, 200, renderGamePlaceholder(url));
+    return sendText(res, 200, renderGamePlaceholder(url, user));
   }
 
-  const stubbed = handleStubEndpoint(url, res);
+  const stubbed = handleStubEndpoint(url, res, user);
   if (stubbed !== false) return stubbed;
 
   const asset = findAsset(url);
@@ -3524,11 +3600,11 @@ async function handleRequest(req, res) {
   }
 
   if (PLACEHOLDER_ROUTES.has(canonicalPath(url.pathname))) {
-    return sendText(res, 200, renderPlaceholderRoute(url));
+    return sendText(res, 200, renderPlaceholderRoute(url, user));
   }
 
   if (canonicalPath(url.pathname) === "/gamepages/flashgame_ctp.phtml" && url.searchParams.has("game_id")) {
-    return sendText(res, 200, renderGamePlaceholder(url));
+    return sendText(res, 200, renderGamePlaceholder(url, user));
   }
 
   if (canonicalPath(url.pathname) === HISCORES_CSS_PATH) {
@@ -3576,7 +3652,7 @@ async function handleRequest(req, res) {
   }
 
   recordMissing(req, url, "not-recovered");
-  return sendText(res, 200, renderPlaceholderRoute(url));
+  return sendText(res, 200, renderPlaceholderRoute(url, user));
 }
 
 function generatedNavImageLabel(pathname) {
