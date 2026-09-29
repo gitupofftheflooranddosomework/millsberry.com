@@ -1,0 +1,16 @@
+{
+  "canonical_id": "body.base_b",
+  "style_id": "example_classic_cartoon",
+  "status": "example",
+  "pose": "neutral_front",
+  "anchor_profile": "../../anchors.json",
+  "approx_bounds": {
+    "left": 305,
+    "top": 95,
+    "right": 719,
+    "bottom": 930
+  },
+  "proportion_notes": "Broader shoulder and torso profile. Uses the same logical anchors so shared item placement remains predictable.",
+  "production_asset_expected": "body.base_b.png",
+  "documentation_only": true
+}

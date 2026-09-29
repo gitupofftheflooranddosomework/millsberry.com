@@ -1,0 +1,14 @@
+{
+  "canonical_id": "pants.blue_jeans",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "supported_bodies": ["body.base_a", "body.base_b"],
+  "anchors_used": ["waist", "left_foot", "right_foot"],
+  "layers": [
+    {"layer": "bottom", "file": "pants.blue_jeans.png"}
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "documentation_only": true,
+  "notes": "Example bottom aligned from waist toward the shared foot region."
+}

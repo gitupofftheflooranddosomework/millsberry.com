@@ -1,0 +1,15 @@
+{
+  "canonical_id": "hair.short_messy_01",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "supported_bodies": ["body.base_a", "body.base_b"],
+  "anchors_used": ["head_center", "head_top"],
+  "layers": [
+    {"layer": "hair_back", "file": "hair.short_messy_01.back.png"},
+    {"layer": "hair_front", "file": "hair.short_messy_01.front.png"}
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "documentation_only": true,
+  "notes": "Two-part example showing how hair can render both behind and in front of the body/head."
+}

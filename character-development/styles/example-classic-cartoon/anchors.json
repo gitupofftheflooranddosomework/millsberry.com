@@ -1,0 +1,18 @@
+{
+  "canvas": [1024, 1024],
+  "origin": "top_left",
+  "anchors": {
+    "head_center": [512, 260],
+    "head_top": [512, 95],
+    "face_center": [512, 285],
+    "neck": [512, 405],
+    "torso_center": [512, 545],
+    "waist": [512, 660],
+    "left_hand": [350, 610],
+    "right_hand": [674, 610],
+    "left_foot": [455, 895],
+    "right_foot": [569, 895],
+    "back_center": [512, 535]
+  },
+  "notes": "Reference coordinates for the neutral-front example pose. Real styles should revise these only through a documented style-level change."
+}
