@@ -9,6 +9,7 @@ Start here:
 - [CHARACTER_STANDARD.md](./CHARACTER_STANDARD.md) — the technical and production standard.
 - [canonical/](./canonical/) — shared IDs and definitions that every art style implements.
 - [styles/](./styles/) — one folder per supported visual style.
+- [styles/example-classic-cartoon/](./styles/example-classic-cartoon/) — a completely filled-out, non-production worked example for artists and developers.
 - [templates/](./templates/) — copyable manifests and artist handoff templates.
 - [qa/](./qa/) — review checklists and release requirements.
 
