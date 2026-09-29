@@ -1,0 +1,19 @@
+{
+  "canvas": [
+    1024,
+    1024
+  ],
+  "draw_order": [
+    "09-accessories/backpack_green_01.png",
+    "04-hair/hair_short_messy_01_back.png",
+    "01-base-body/body_male_01.png",
+    "06-pants/pants_jeans_blue_01.png",
+    "05-shirts/shirt_hoodie_red_01.png",
+    "07-shoes/shoes_sneakers_blue_01.png",
+    "02-eyes/eyes_normal_01.png",
+    "03-mouth/mouth_smile_01.png",
+    "04-hair/hair_short_messy_01_front.png",
+    "09-accessories/glasses_round_black_01.png",
+    "08-hats/hat_blue_cap_01.png"
+  ]
+}
