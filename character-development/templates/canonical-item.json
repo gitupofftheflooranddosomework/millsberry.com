@@ -1,0 +1,16 @@
+{
+  "id": "hat.example_item",
+  "display_name": "Example Item",
+  "category": "hat",
+  "equip_slot": "headwear",
+  "layer_group": "headwear",
+  "supported_bodies": [
+    "body.base_a",
+    "body.base_b"
+  ],
+  "required_styles": [],
+  "release_state": "draft",
+  "provenance": "reborn_original",
+  "references": [],
+  "notes": ""
+}

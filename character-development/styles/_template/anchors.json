@@ -1,0 +1,13 @@
+{
+  "head_center": [0, 0],
+  "head_top": [0, 0],
+  "face_center": [0, 0],
+  "neck": [0, 0],
+  "torso_center": [0, 0],
+  "waist": [0, 0],
+  "left_hand": [0, 0],
+  "right_hand": [0, 0],
+  "left_foot": [0, 0],
+  "right_foot": [0, 0],
+  "back_center": [0, 0]
+}
