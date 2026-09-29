@@ -1,7 +1,7 @@
 {
   "canonical_id": "body.base_a",
   "style_id": "example_classic_cartoon",
-  "status": "example",
+  "status": "not_started",
   "pose": "neutral_front",
   "anchor_profile": "../../anchors.json",
   "approx_bounds": {

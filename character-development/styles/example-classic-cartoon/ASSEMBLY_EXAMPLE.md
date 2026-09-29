@@ -8,6 +8,8 @@ This file shows how one player's canonical equipment would be interpreted by thi
 {
   "avatar_style": "example_classic_cartoon",
   "body": "body.base_a",
+  "eyes": "eyes.round_01",
+  "mouth": "mouth.smile_01",
   "hair": "hair.short_messy_01",
   "top": "shirt.red_hoodie",
   "bottom": "pants.blue_jeans",
@@ -27,6 +29,8 @@ body.base_a                    -> body
 pants.blue_jeans               -> bottom
 shirt.red_hoodie               -> top
 shoes.white_sneakers           -> feet
+eyes.round_01                  -> eyes
+mouth.smile_01                 -> mouth
 hair.short_messy_01            -> hair_front
 glasses.round_black            -> glasses
 hat.blue_cap                   -> headwear

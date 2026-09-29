@@ -11,6 +11,8 @@ This folder is documentation-only, so it cannot pass production QA.
 - [x] Anchor map defined
 - [x] Two body profiles documented
 - [x] Example assembly documented
+- [x] Default eyes documented
+- [x] Default mouth documented
 - [x] Hair multi-layer case documented
 - [x] Top documented
 - [x] Bottom documented
@@ -23,6 +25,7 @@ This folder is documentation-only, so it cannot pass production QA.
 ## Production requirements intentionally not met
 
 - [ ] Final body artwork
+- [ ] Final face artwork
 - [ ] Final item artwork
 - [ ] Runtime PNG exports
 - [ ] Per-body visual compatibility review
