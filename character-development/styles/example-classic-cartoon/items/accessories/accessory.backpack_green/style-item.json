@@ -1,0 +1,14 @@
+{
+  "canonical_id": "accessory.backpack_green",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "supported_bodies": ["body.base_a", "body.base_b"],
+  "anchors_used": ["back_center", "torso_center"],
+  "layers": [
+    {"layer": "back_accessory", "file": "accessory.backpack_green.png"}
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "documentation_only": true,
+  "notes": "Rendered behind the body. Straps that need to appear in front should be declared as a second component rather than baked into the body."
+}

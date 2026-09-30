@@ -1,0 +1,14 @@
+{
+  "canonical_id": "glasses.round_black",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "supported_bodies": ["body.base_a", "body.base_b"],
+  "anchors_used": ["face_center", "head_center"],
+  "layers": [
+    {"layer": "glasses", "file": "glasses.round_black.png"}
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "documentation_only": true,
+  "notes": "Face accessory remains independent from eye artwork."
+}

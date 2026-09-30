@@ -1,0 +1,14 @@
+{
+  "canonical_id": "shirt.red_hoodie",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "supported_bodies": ["body.base_a", "body.base_b"],
+  "anchors_used": ["neck", "torso_center", "waist"],
+  "layers": [
+    {"layer": "top", "file": "shirt.red_hoodie.png"}
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "documentation_only": true,
+  "notes": "Example top. The same canonical hoodie may be proportioned differently in another style."
+}

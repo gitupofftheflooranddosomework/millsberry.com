@@ -1,0 +1,18 @@
+{
+  "canonical_id": "hat.example_item",
+  "style_id": "replace_me",
+  "status": "not_started",
+  "supported_bodies": [
+    "body.base_a",
+    "body.base_b"
+  ],
+  "layers": [
+    {
+      "layer": "headwear",
+      "file": "hat.example_item.png"
+    }
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "notes": ""
+}

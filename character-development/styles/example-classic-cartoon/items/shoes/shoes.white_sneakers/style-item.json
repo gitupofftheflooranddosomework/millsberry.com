@@ -1,0 +1,14 @@
+{
+  "canonical_id": "shoes.white_sneakers",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "supported_bodies": ["body.base_a", "body.base_b"],
+  "anchors_used": ["left_foot", "right_foot"],
+  "layers": [
+    {"layer": "feet", "file": "shoes.white_sneakers.png"}
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "documentation_only": true,
+  "notes": "Pair exported on the full canvas. A style may instead use separate left/right components if declared."
+}

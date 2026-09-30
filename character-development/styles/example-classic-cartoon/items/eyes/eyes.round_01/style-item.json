@@ -1,0 +1,14 @@
+{
+  "canonical_id": "eyes.round_01",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "supported_bodies": ["body.base_a", "body.base_b"],
+  "anchors_used": ["face_center", "head_center"],
+  "layers": [
+    {"layer": "eyes", "file": "eyes.round_01.png"}
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "documentation_only": true,
+  "notes": "Default example eye set. Face features remain independent so they can be changed without replacing the body."
+}
