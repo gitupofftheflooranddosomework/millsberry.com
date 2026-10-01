@@ -1,0 +1,16 @@
+{
+  "canonical_id": "body.base_a",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "pose": "neutral_front",
+  "anchor_profile": "../../anchors.json",
+  "approx_bounds": {
+    "left": 330,
+    "top": 95,
+    "right": 694,
+    "bottom": 930
+  },
+  "proportion_notes": "Narrower shoulder and hip profile. Uses the shared style anchors without overrides.",
+  "production_asset_expected": "body.base_a.png",
+  "documentation_only": true
+}

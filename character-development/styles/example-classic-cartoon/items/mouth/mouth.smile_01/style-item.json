@@ -1,0 +1,14 @@
+{
+  "canonical_id": "mouth.smile_01",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "supported_bodies": ["body.base_a", "body.base_b"],
+  "anchors_used": ["face_center"],
+  "layers": [
+    {"layer": "mouth", "file": "mouth.smile_01.png"}
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "documentation_only": true,
+  "notes": "Default example smile. Mouth artwork must not be baked into the base body."
+}

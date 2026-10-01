@@ -1,0 +1,16 @@
+{
+  "style_id": "replace_me",
+  "display_name": "Replace Me",
+  "status": "incubating",
+  "canvas": {
+    "width": 0,
+    "height": 0
+  },
+  "lead_artist": null,
+  "contributors": [],
+  "required_bodies": [
+    "body.base_a",
+    "body.base_b"
+  ],
+  "anchors_file": "anchors.json"
+}

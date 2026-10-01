@@ -1,0 +1,30 @@
+{
+  "style_id": "example_classic_cartoon",
+  "display_name": "Classic Cartoon (Worked Example)",
+  "status": "incubating",
+  "documentation_only": true,
+  "eligible_for_activation": false,
+  "canvas": {
+    "width": 1024,
+    "height": 1024,
+    "origin": "top_left",
+    "ground_line_y": 930
+  },
+  "lead_artist": null,
+  "contributors": [],
+  "required_bodies": [
+    "body.base_a",
+    "body.base_b"
+  ],
+  "anchors_file": "anchors.json",
+  "style_guide": "STYLE.md",
+  "default_pose": "neutral_front",
+  "runtime_export_format": "png",
+  "source_formats_allowed": [
+    "psd",
+    "kra",
+    "clip",
+    "svg",
+    "afdesign"
+  ]
+}

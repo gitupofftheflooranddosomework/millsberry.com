@@ -1,0 +1,14 @@
+{
+  "canonical_id": "hat.blue_cap",
+  "style_id": "example_classic_cartoon",
+  "status": "not_started",
+  "supported_bodies": ["body.base_a", "body.base_b"],
+  "anchors_used": ["head_center", "head_top"],
+  "layers": [
+    {"layer": "headwear", "file": "hat.blue_cap.png"}
+  ],
+  "artist": null,
+  "reviewed_by": [],
+  "documentation_only": true,
+  "notes": "Classic Cartoon interpretation should remain recognizably the same Blue Cap without copying another style's proportions."
+}
